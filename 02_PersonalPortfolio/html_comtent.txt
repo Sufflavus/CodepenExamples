@@ -1,0 +1,138 @@
+<nav id="navbar" class="navbar navbar-fixed-top">
+  <div class="container">
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="#section1">About</a></li>
+      <li><a href="#section2">Portfolio</a></li>
+      <li><a href="#section3">Contact</a></li>      
+    </ul>
+  </div>
+</nav>
+
+<div class="content">
+  <div id="content" data-spy="scroll" data-target="#navbar">
+    
+    <section id="section1" class="page about">
+      <div class="container about-content">
+        <div class="text-center name">Tania</div>
+        <div class="text-center 	calling">Software Developer</div>  
+        <div class="text-center summary">An experienced software .Net developer specialized on Full-Stack Web applications. My technical expertise is in accessibility, security and cross-browser compatibility using ASP.NET MVC, C#, JavaScript, HTML, CSS.</div>
+      </div>      
+    </section>
+
+    <section id="section2" class="page">
+      <h1 class="text-center section-header">Portfolio</h1>
+      
+      <div class="container">        
+        
+        <!-- row 1 -->
+        <div class="row">
+          
+          <!-- col 1 -->
+          <div class="col-sm-6 col-md-4">
+            <div class="thumbnail">
+              <img src="https://s15.postimg.org/jf6py4yrv/GeekData.png" alt="GeekData image">
+              <div class="caption text-center">
+                <h3>GeekData</h3>
+                <p class="project-info">Visualization of technologies, courses and geeks</p>
+                <p>
+                  <a href="http://geekdata.io/" target="_blank" class="btn btn-circle" role="button"><span class="glyphicon glyphicon-link" aria-hidden="true"></span></a>
+                </p>
+              </div>
+            </div>
+          </div>
+          
+          <!-- col 2 -->
+          <div class="col-sm-6 col-md-4">
+            <div class="thumbnail">
+              <img src="http://s24.postimg.org/jptmcodg5/tumblr_nj32za_Oz_TC1sh2zxyo1_500.jpg" alt="Lorem image">
+              <div class="caption text-center">
+                <h3>Lorem Impus</h3>
+                <p class="project-info">Lorem ipsum dolor sit amet, consectetur adipiscing elit </p>
+                <p>
+                  <a href="#" target="_blank" class="btn btn-circle" role="button"><span class="glyphicon glyphicon-link" aria-hidden="true"></span></a>
+                </p>
+              </div>
+            </div>
+          </div>
+          
+          <!-- col 3 -->
+          <div class="col-sm-6 col-md-4">
+            <div class="thumbnail">
+              <img src="http://s29.postimg.org/qpcbdgkhz/tumblr_n1tnr4q_EFZ1t01g56o1_500.jpg" alt="Lorem image">
+              <div class="caption text-center">
+                <h3>Lorem Impus</h3>
+                <p class="project-info">Lorem ipsum dolor sit amet, consectetur adipiscing elit </p>
+                <p>
+                  <a href="#" target="_blank" class="btn btn-circle" role="button"><span class="glyphicon glyphicon-link" aria-hidden="true"></span></a>
+                </p>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+        
+        <!-- row 2 -->
+        <div class="row">
+          
+          <!-- col 1 -->
+          <div class="col-sm-6 col-md-4">
+            <div class="thumbnail">
+              <img src="http://s29.postimg.org/ybpa2chc7/bee_bounty_6_x_6_acrylic_painting_of_a_honey_bee.jpg" alt="Lorem image">
+              <div class="caption text-center">
+                <h3>Lorem Impus</h3>
+                <p class="project-info">Lorem ipsum dolor sit amet, consectetur adipiscing elit </p>
+                <p>
+                  <a href="#" target="_blank" class="btn btn-circle" role="button"><span class="glyphicon glyphicon-link" aria-hidden="true"></span></a>
+                </p>
+              </div>
+            </div>
+          </div>
+          
+          <!-- col 2 -->
+          <div class="col-sm-6 col-md-4">
+            <div class="thumbnail">
+              <img src="http://s17.postimg.org/6mm54p6bj/images_q_tbn_ANd9_Gc_Qm2_C74_EYTSUHBWp_O83zm_Ee_Hlo7cq_K.jpg" alt="Lorem image">
+              <div class="caption text-center">
+                <h3>Lorem Impus</h3>
+                <p class="project-info">Lorem ipsum dolor sit amet, consectetur adipiscing elit </p>
+                <p>
+                  <a href="#" target="_blank" class="btn btn-circle" role="button"><span class="glyphicon glyphicon-link" aria-hidden="true"></span></a>
+                </p>
+              </div>
+            </div>
+          </div>
+          
+          <!-- col 3 -->
+          <div class="col-sm-6 col-md-4">
+            <div class="thumbnail">
+              <img src="http://s28.postimg.org/h0u04w999/55e059a7804e301247e8389cf892b61f.jpg" alt="Lorem image">
+              <div class="caption text-center">
+                <h3>Lorem Impus</h3>
+                <p class="project-info">Lorem ipsum dolor sit amet, consectetur adipiscing elit </p>
+                <p>
+                  <a href="#" target="_blank" class="btn btn-circle" role="button"><span class="glyphicon glyphicon-link" aria-hidden="true"></span></a>
+                </p>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+        
+      </div>
+    </section>
+    
+    <section id="section3" class="page">
+      <h1 class="text-center section-header">Contact</h1>
+      <div class="container">
+        <h3 class="text-center contact">If you have any questions, suggestions or even just want to say Hi, feel free! :)</h3>        
+        <div class="text-center social-buttons">
+          <a href="https://github.com/Sufflavus" target="_blank" class="btn btn-circle" role="button"><span class="fa fa-fw fa-github" aria-hidden="true"></span></a>
+          
+          <a href="http://us.linkedin.com/pub/tatiana-shatilova/81/94/260" target="_blank" class="btn btn-circle" role="button"><span class="fa fa-linkedin" aria-hidden="true"></span></a>
+          
+          <a href="http://sufflavus.github.io" target="_blank" class="btn btn-circle" role="button"><span class="fa fa-rss" aria-hidden="true"></span></a>      
+        </div>
+      </div>
+    </section>
+  </div>
+</div>

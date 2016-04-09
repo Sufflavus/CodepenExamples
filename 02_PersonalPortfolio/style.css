@@ -1,0 +1,102 @@
+.navbar {
+  margin-bottom: 0;
+  background: #DEF1FF;
+  border-color: #BBE2FF;
+}
+
+.nav > li > a:focus {
+  background: #DEF1FF;
+  border-color: #DEF1FF;
+}
+
+.navbar .active {
+  background: #BBE2FF;
+}
+
+.nav > li > a:hover {
+  background: #D3ECFF;
+}
+
+.about {
+  height: 550px;
+  background: url(https://s28.postimg.org/dx8iirbzh/ocean.jpg) no-repeat;
+  background-size: 100%
+}
+
+.about-content {
+  color: #FFFFFF;  
+  padding: 100px;
+}
+
+.name {
+  font-size: 150px;
+}
+
+.calling {
+  margin-top: 30px;
+  font-size: 50px;
+}
+
+.summary {
+  margin-top: 20px;
+  font-size: 20px;
+}
+
+body {
+  background: #EAF6FF;
+  padding-bottom: 100px;
+}
+
+.section-header {
+  font-size: 40px;
+  padding: 40px;
+  margin: 0;  
+  color: #002359;
+  background: #CFEAFF;
+}
+
+.thumbnail {
+  margin: 30px;
+  border-color: #CFEAFF;
+}
+
+.thumbnail img {
+  height: 290px;
+}
+
+h3 {
+  color: #3B6BA5;
+}
+
+.project-info {
+  font-style: italic;
+  color: #586C91;
+}
+
+.btn-circle {
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  padding: 0;
+  border-radius: 50%;
+}
+
+.btn-circle,
+.btn-circle:focus {
+  background-color: #2F8FD8;
+  border-color: #2F8FD8;
+  color: #FFFFFF;
+}
+
+.btn-circle:hover {
+  background-color: #1483D8;
+  color: #FFFFFF;
+}
+
+.contact {
+  margin: 30px 0;
+}
+
+.social-buttons a {
+  margin: 0 10px;
+}

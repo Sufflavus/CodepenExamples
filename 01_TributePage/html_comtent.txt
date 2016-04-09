@@ -1,0 +1,77 @@
+<div class="container">
+  
+  <div class="page-header">
+    <h1>Mark Kistler <small>an artist</small></h1>
+  </div>  
+  
+  <div class="thumbnail">
+    <img src="http://markkistler.com/wp-content/uploads/2012/06/art-prize-photo-1024x683.jpg" alt="Mark Kistler with Miranda and NBC WoodTV Team">    
+    
+    <div class="caption text-center">
+      <h5>
+        Mark Kistler with Miranda and NBC WoodTV Team during his 30 minute LIVE broadcast from the International ArtPrize event in Grand Rapids Michigan.
+      </h5>       
+    </div>
+  </div>
+  
+  <h3 class="text-center">About Mark Kistler</h3>
+  
+  <p>
+    Over the past 35 years, Mark Kistler has taught millions of children how to draw in 3-D at over seven thousand elementary school assembly workshops around the world, including Australia, Germany, England, Scotland, Mexico, Japan, Spain and the United States.
+  </p>
+  <p>
+    His starring roles as Commander Mark and Captain Mark in the hit children’s public television series The Secret City (1986), The Draw Squad (1989), and The New Secret City Adventures, have been enjoyed in six countries. His most recent self-produced public television series, Mark Kistler’s Imagination Station (1996, 1999 and 2008), has aired on over 150 Public Television stations nationwide. This series won a Emmy Award in 2010.
+  </p>
+  <p>
+    Mark has written and illustrated many popular children’s drawing books with Simon & Schuster Publishers, Learn to Draw with Commander Mark, Mark Kistler’s Draw Squad, The Imagination Station, and Drawing in 3-D with Mark Kistler. With Scholastic Publishers, his four book children’s series is titled Dare to Draw in 3-D! His most recent book, “You Can Draw in 30 Days”,  published with Da Capo Press, is his first book oriented more for adults.
+  </p>
+  <p>
+    As a result of his television series and drawing books, Mark Kistler has generated over one million letters and emails containing 3-D drawings from children around the world.
+  </p>
+  <p>
+    Mark deeply believes that learning how to draw in 3-D builds a child’s critical thinking skills while nourishing self-esteem. His positive messages on self-image, goal setting, dream questing, environmental awareness and the power of reading have inspired millions of children to discover their awesome individual potential.
+  </p>
+  
+  <h3 class="text-center">List of Mark's books</h3>
+  
+  <ul>
+    <li>
+      You Can Draw in 30 Days: The Fun, Easy Way to Learn to Draw in One Month or Less <span class="glyphicon glyphicon glyphicon-heart-empty" aria-hidden="true"></span>
+    </li>  
+    <li>
+      Mark Kistler's Imagination Station: Learn How to Drawn in 3-D with Public Television's Favorite Drawing Teacher
+    </li> 
+    <li>
+      Mark Kistler's Draw Squad
+    </li> 
+    <li>
+      Drawing in 3-D
+    </li> 
+    <li>
+      Draw! Draw! Draw! #1 CRAZY CARTOONS with Mark Kistler (Volume 1)
+    </li> 
+    <li>
+      Draw! Draw! Draw! #2 MONSTERS & CREATURES with Mark Kistler (Volume 2)
+    </li> 
+    <li>
+      Draw! Draw! Draw! #3 ROBOTS, GADGETS, & SPACESHIPS (Volume 3)
+    </li> 
+    <li>
+      Draw! Draw! Draw! #4 CARTOON ANIMALS (Volume 4)
+    </li> 
+  </ul>
+  
+  <blockquote class="blockquote-reverse">
+    <p>He’s like Robin Williams with a pencil !!!!</p>
+    <footer>S.R., Illinois</footer>
+  </blockquote>
+  
+  <blockquote class="blockquote-reverse">
+    <p>Dream it, draw it, do it!</p>
+    <footer>Mark Kistler</footer>
+  </blockquote>
+  
+  <h4>
+    To find out more go to the <a href="http://markkistler.com/" target="_blank">Mark's web site</a>
+  </h4>
+</div>
