@@ -1,0 +1,43 @@
+body {
+  background: #5A515C;
+  color: #EA94A1;
+}
+
+.container {
+  width: 700px;
+  margin: 100px auto;
+}
+
+.blockquote-reverse {  
+  margin: 60px auto;
+  border: none;
+}
+
+.blockquote-reverse p {
+  font-size: 40px;
+}
+
+.blockquote-reverse footer {
+  font-size: 20px;
+  color: #989DAA;
+}
+
+.btn {  
+  margin-left: 20px;
+  background: #786E78;
+  border-color: #786E78;  
+  color: #C3C7D6;  
+}
+
+.btn:hover,
+.btn:active,
+.btn:focus {  
+  background: #6C626C;
+  border-color: #6C626C;  
+  color: #C3C7D6;  
+}
+
+.btn:focus,.btn:active:focus,.btn.active:focus,
+.btn.focus,.btn:active.focus,.btn.active.focus {
+    outline: none;
+}

@@ -1,0 +1,9 @@
+<div class="container text-center">
+  <blockquote class="blockquote-reverse">
+    <p class="text-center"></p>
+    <footer></footer>
+  </blockquote>  
+  <button id="btnRefresh" class="btn pull-right" title="New quote"><span class="glyphicon glyphicon-refresh" aria-hidden="true"></span></button>
+  <a id="btnTweet" class="btn pull-right" title="Tweet this quote!"
+     target="_blank" href="#"><span class="fa fa-twitter" aria-hidden="true"></span></a>
+</div>
