@@ -17,7 +17,16 @@ Source code for codepen experiments that I have done
 
 ## 3. Random Quote Machine
 
-[Random Quote Machine](http://codepen.io/sufflavus/full/aNErgQ) is based on - [Bootstrap 3.3.6](https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css) 
+[Random Quote Machine](http://codepen.io/sufflavus/full/aNErgQ) is based on 
+- [Bootstrap 3.3.6](https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css) 
 - [Font Awesome 4.5.0](https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css) 
 - [jQuery 2.2.2](//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js) 
 - [Quotes on design JSON REST API](http://quotesondesign.com/api-v4-0/)
+
+## 4. Local Weather
+
+[Local Weather](http://codepen.io/sufflavus/full/QNQjPV/) is based on 
+- [Bootstrap 3.3.6](https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css) 
+- [jQuery 2.2.2](//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js) 
+- [ipinfo.io JSON API](http://ipinfo.io/)
+- [OpenWeatherMap JSON API](http://openweathermap.org/current#current_JSON)

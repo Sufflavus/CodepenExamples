@@ -1,0 +1,45 @@
+body {
+  background: #40C381;
+  color: #ffffff;
+}
+
+.container {
+  width: 500px;
+  margin: 100px auto;
+}
+
+.app-name {
+  font-size: 56px;  
+}
+
+.app-name span {
+  font-size: 60px;  
+  font-weight:bold;
+  color: #FFC301;
+}
+
+.description {
+  text-transform: capitalize;
+  color: #b8f6d5;
+}
+
+.btn {  
+  margin-top: 30px;  
+  background: #39AF73;
+  border-color: #39AF73;  
+  color: #FFFFFF;
+  font-weight: bold;
+}
+
+.btn:hover,
+.btn:active,
+.btn:focus {  
+  background: #309460;
+  border-color: #309460;  
+  color: #FFFFFF;  
+}
+
+.btn:focus,.btn:active:focus,.btn.active:focus,
+.btn.focus,.btn:active.focus,.btn.active.focus {
+    outline: none;
+}

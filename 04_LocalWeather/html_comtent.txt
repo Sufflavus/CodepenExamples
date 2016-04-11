@@ -1,0 +1,13 @@
+<div class="container text-center">
+  <div class="app-name text-center"><span>W</span>eather <span>A</span>pp</div>  
+  <h1 id="location" class="text-center"></h1>
+  
+  <h2 class="text-center">
+    <img id="img_condition" src=""/>
+    <span id="temperature"></span>
+  </h2>
+  
+  <h2 id="description" class="text-center description"></h2>
+  
+  <button id="btnChangeUnits" class="btn" title="Toggle Units">F >> C</button>  
+</div>
