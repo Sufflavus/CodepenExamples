@@ -1,0 +1,25 @@
+<body class="deep-orange lighten-1">
+  <div class="row">
+    <div class="col s12">
+      <h1 class="logo center z-depth-1" title="Wikipedia Search">WS</h1>
+    </div>    
+  </div>
+  <div class="container z-depth-1 search-panel">
+    <div class="row">
+      <div class="input-field col s12">
+        <input id="search_field" type="text">
+        <label for="search_field">Request</label>    
+      </div>
+    </div>   
+    <button class="waves-effect waves-light btn deep-orange darken-1" id="btn_search">
+      <i class="material-icons left">search</i>
+      Search
+    </button>  
+    <a class="waves-effect waves-light btn deep-orange lighten-1" href="http://en.wikipedia.org/wiki/Special:Random" target="_blanck">
+      <i class="material-icons left">shuffle</i>
+      Random Article
+    </a>  
+  </div>
+  <div id="results" class="search-results invisible">    
+  </div>
+</body>

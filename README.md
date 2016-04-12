@@ -30,3 +30,10 @@ Source code for codepen experiments that I have done
 - [jQuery 2.2.2](//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js) 
 - [ipinfo.io JSON API](http://ipinfo.io/)
 - [OpenWeatherMap JSON API](http://openweathermap.org/current#current_JSON)
+
+## 5. Wikipedia Search 
+
+[Wikipedia Search](http://codepen.io/sufflavus/full/XdZZYV/) is based on 
+- [Materialize](https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css) 
+- [jQuery 2.2.2](//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js) 
+- [Wikipedia's API](http://www.mediawiki.org/wiki/API:Main_page)
