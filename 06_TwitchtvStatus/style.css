@@ -1,0 +1,46 @@
+.content {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.input-field label {
+  color: #9e9e9e;
+}
+/* label focus color */
+.input-field input[type=text]:focus + label {
+  color: #ff80ab;
+}
+/* label underline focus color */
+.input-field input[type=text]:focus {
+  border-bottom: 1px solid #ff80ab;
+  box-shadow: 0 1px 0 0 #ff80ab;
+}
+/* icon prefix focus color */
+.input-field .prefix.active {
+  color: #ff80ab;
+}
+
+.channels {
+  margin: 30px 0;
+  padding-top: 10px;
+}
+
+.tabs .tab a {
+  color: #e040fb;
+}
+
+.tabs .tab a:hover {
+  color: #ce93d8;
+}
+
+.tabs .indicator {
+  background-color: #ea80fc;
+}
+
+.collection .collection-item.avatar {
+  min-height: 65px;
+}
+
+.invisible {
+  display: none;
+}
