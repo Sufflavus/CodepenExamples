@@ -1,0 +1,76 @@
+<body class="grey darken-3">
+  <div class="container">
+    <div class="content z-depth-2 green lighten-2">
+      <div class="row">
+        <div id="result" class="col s12 grey lighten-5 right-align truncate result">0</div>        
+      </div>
+      <div class="row">
+        <div class="col s3">
+          <a class="waves-effect waves-light btn indigo darken-2">AC</a>          
+        </div>
+        <div class="col s6">
+          <h5 class="center-align teal-text text-darken-3">CalculatoR</h5>          
+        </div>
+        <div class="col s3">
+          <a class="waves-effect waves-light btn indigo darken-2">CE</a>
+        </div>        
+      </div>      
+      <div class="row">
+        <div class="col s3">
+          <a class="waves-effect waves-light btn">7</a>
+        </div>
+        <div class="col s3">
+          <a class="waves-effect waves-light btn">8</a>
+        </div>
+        <div class="col s3">
+          <a class="waves-effect waves-light btn">9</a>
+        </div>
+        <div class="col s3">
+          <a class="waves-effect waves-light btn">/</a>
+        </div>
+      </div>   
+      <div class="row">
+        <div class="col s3">
+          <a class="waves-effect waves-light btn">4</a>
+        </div>
+        <div class="col s3">
+          <a class="waves-effect waves-light btn">5</a>
+        </div>
+        <div class="col s3">
+          <a class="waves-effect waves-light btn">6</a>
+        </div>
+        <div class="col s3">
+          <a class="waves-effect waves-light btn">X</a>
+        </div>
+      </div> 
+      <div class="row">
+        <div class="col s3">
+          <a class="waves-effect waves-light btn">1</a>
+        </div>
+        <div class="col s3">
+          <a class="waves-effect waves-light btn">2</a>
+        </div>
+        <div class="col s3">
+          <a class="waves-effect waves-light btn">3</a>
+        </div>
+        <div class="col s3">
+          <a class="waves-effect waves-light btn">-</a>
+        </div>
+      </div> 
+      <div class="row">
+        <div class="col s3">
+          <a class="waves-effect waves-light btn btn-wider">0</a>
+        </div>        
+        <div class="col s3">
+          <a class="waves-effect waves-light btn">.</a>
+        </div>
+        <div class="col s3">
+          <a class="waves-effect waves-light btn">=</a>
+        </div>
+        <div class="col s3">
+          <a class="waves-effect waves-light btn">+</a>
+        </div>
+      </div> 
+    </div>
+  </div>
+</body>
