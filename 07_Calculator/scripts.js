@@ -1,20 +1,12 @@
 (function() {
   var $result = $("#result");
   
-  var operations = {
-    add: "+",
-    subtract: "-",
-    multiply: "X",
-    divide: "/",
-    equal: "="
-  };
-  
   var expression = {
-    left: 0,
-    right: 0,
+    left: "",
+    right: "",
     operation: ""
   };
-  
+    
   $("a").click(function() {
     var text = $(this).text();  
     
@@ -28,82 +20,94 @@
       case "6":
       case "7":
       case "8":
-      case "9":
-        if(!expression.operation) {
-          expression.left = expression.left * 10 + (+text);
-          $result.text(expression.left);
+      case "9": 
+        var newText;
+        if(expression.operation && !expression.right) {
+          newText = text;
         } else {
-          expression.right = expression.right * 10 + (+text);
-          $result.text(expression.right);
-        }
+          newText = $result.text() + text;
+        }        
+        $result.text(newText);
+        break;
+      case ".":          
+        if(expression.operation && !expression.right) {
+          $result.text(text);
+        } else {
+          if($result.text().indexOf(".") < 0) {
+            var newText = $result.text() + text;
+            $result.text(newText);
+          }            
+        }                 
         break;
       case "+": 
       case "-":     
       case "X":  
-      case "/":
+      case "/":        
+        saveInputToExpression();
         if(expression.right) {
-          calculateExpression();
-          $result.text(expression.left);
+          calculateExpression();          
         }
         expression.operation = text;
+        $result.text(expression.left);        
         break;
-      case "=":
+      case "=":        
+        saveInputToExpression();
         if(expression.right) {
           calculateExpression();
           $result.text(expression.left);
         } else {
-          expression = {
-            left: 0,
-            right: 0,
-            operation: ""
-          };
+          setDefaultExpression();
         }
         break;
       case "AC":
-        expression = {
-          left: 0,
-          right: 0,
-          operation: ""
-        };
+        setDefaultExpression();
+        $result.text(expression.right);
+        break;
       case "CE":
-        if(expression.operation) {          
-          expression.right = expression.right - expression.right % 10;
-          expression.right = expression.right/10;
-          $result.text(expression.right);
-        } else {          
-          expression.left = expression.left - expression.left % 10;
-          expression.left = expression.left/10;
-          $result.text(expression.left);
-        }
+        var newText = $result.text();        
+        $result.text(newText.substring(0, newText.length - 1));        
         break;
       default:
         break;
-    }
-    
-    //$result.text(text);
+    }    
     console.log(text)
   }); 
   
-  function calculateExpression() {    
-    var result = 0;
-    switch (expression.operation) {
-      case operations.add: 
-        result = expression.left + expression.right;
-        break;
-      case operations.subtract: 
-        result = expression.left - expression.right;
-        break;
-      case operations.multiply: 
-        result = expression.left * expression.right;
-        break;
-      case operations.divide: 
-        result = expression.left / expression.right;
-        break;
-    }  
+  function setDefaultExpression() {
     expression = {
-      left: result,
-      right: 0,
+      left: "",
+      right: "",
       operation: ""
     };
+  }
+  
+  function saveInputToExpression() {
+    if(expression.operation) { 
+      expression.right = $result.text();
+    } else {
+      expression.left = $result.text();
+    }
+  }
+  
+  function calculateExpression() {    
+    var result = 0;
+    var operandLeft = Number.parseFloat(expression.left);
+    var operandRight = Number.parseFloat(expression.right);
+    switch (expression.operation) {
+      case "+": 
+        result = operandLeft + operandRight;
+        break;
+      case "-": 
+        result = operandLeft - operandRight;
+        break;
+      case "*": 
+        result = operandLeft * operandRight;
+        break;
+      case "/": 
+        result = operandLeft / operandRight;
+        break;
+    }  
+    setDefaultExpression();
+    expression.left = result;
   }
 })();
