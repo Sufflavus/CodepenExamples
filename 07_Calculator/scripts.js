@@ -6,6 +6,8 @@
     right: "",
     operation: ""
   };
+  
+  var needStartNewNumber = true;
     
   $("a").click(function() {
     var text = $(this).text();  
@@ -21,17 +23,14 @@
       case "7":
       case "8":
       case "9": 
-        var newText;
-        if(expression.operation && !expression.right) {
-          newText = text;
-        } else {
-          newText = $result.text() + text;
-        }        
-        $result.text(newText);
+        var newText = needStartNewNumber ? text : $result.text() + text;     
+        needStartNewNumber = false;
+        $result.text(newText);        
         break;
       case ".":          
-        if(expression.operation && !expression.right) {
-          $result.text(text);
+        if(needStartNewNumber) {
+          $result.text("0" + text);
+          needStartNewNumber = false;
         } else {
           if($result.text().indexOf(".") < 0) {
             var newText = $result.text() + text;
@@ -42,13 +41,14 @@
       case "+": 
       case "-":     
       case "X":  
-      case "/":        
+      case "/":           
         saveInputToExpression();
         if(expression.right) {
           calculateExpression();          
         }
         expression.operation = text;
-        $result.text(expression.left);        
+        $result.text(expression.left);
+        needStartNewNumber = true;
         break;
       case "=":        
         saveInputToExpression();
@@ -58,14 +58,21 @@
         } else {
           setDefaultExpression();
         }
+        needStartNewNumber = true;
         break;
       case "AC":
         setDefaultExpression();
-        $result.text(expression.right);
+        $result.text("0");
+        needStartNewNumber = true;
         break;
       case "CE":
-        var newText = $result.text();        
-        $result.text(newText.substring(0, newText.length - 1));        
+        var newText = $result.text();     
+        if(newText.length <= 1) {
+          $result.text("0");
+          needStartNewNumber = true;
+        } else {
+          $result.text(newText.substring(0, newText.length - 1));
+        }
         break;
       default:
         break;
@@ -100,7 +107,7 @@
       case "-": 
         result = operandLeft - operandRight;
         break;
-      case "*": 
+      case "X": 
         result = operandLeft * operandRight;
         break;
       case "/": 

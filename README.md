@@ -44,3 +44,9 @@ Source code for codepen experiments that I have done
 - [Materialize](https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css) 
 - [jQuery 2.2.2](//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js) 
 - [Twitch.tv's JSONP API](https://github.com/justintv/Twitch-API/blob/master/v3_resources/streams.md#get-streamschannel)
+
+## 7. Calculator
+
+[Calculator](http://codepen.io/sufflavus/full/EKEOOr/) is based on 
+- [Materialize](https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css) 
+- [jQuery 2.2.2](//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js) 
