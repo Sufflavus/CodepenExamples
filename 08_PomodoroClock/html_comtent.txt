@@ -1,0 +1,10 @@
+<body class="brown darken-4">
+  <div class="container">
+    <div class="content">
+      <h1 class="center">Pomodoro Clock</h1>
+      <div class="progress">
+          <div class="determinate" style="width: 70%"></div>
+      </div>
+    </div>
+  </div>
+</body>
