@@ -12,19 +12,25 @@
       </div>
       <div class="row">      
         <div class="col s6 center-align">
-          <button class="range-button">-</button>
+          <button class="button">-</button>
           <span class="time">5</span>
-          <button class="range-button">+</button>
+          <button class="button">+</button>
         </div>
         <div class="col s6 center-align">
-          <button class="range-button">-</button>
+          <button class="button">-</button>
           <span class="time">25</span>
-          <button class="range-button">+</button>
+          <button class="button">+</button>
         </div>
       </div>
+      <div class="circle center-align circle-break">
+        <div class="activity-type">Session</div>
+        <div class="activity-type">25:00</div>
+        <button class="button"><i class="medium material-icons teal-text text-lighten-4">play_arrow</i></button>      
+        <button class="button invisible"><i class="medium material-icons teal-text text-lighten-4">pause</i></button> 
+      </div>      
       <div class="progress">
-          <div class="determinate" style="width: 70%"></div>
-      </div>
+        <div class="determinate" style="width: 70%"></div>
+      </div>        
     </div>
   </div>
 </body>

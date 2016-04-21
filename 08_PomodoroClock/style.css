@@ -3,3 +3,64 @@
   margin: 0 auto;
   color: #ffffff;
 }
+
+h1 {
+  margin: 60px 0;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.button {
+  margin: 0 10px;
+  padding: 0;
+  background: none;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-size: 2rem;
+  outline: none;
+}
+
+.button:focus,
+.button.active {
+  background: none;
+}
+
+.time {
+  font-size: 2rem;
+}
+
+.circle {
+  margin: 20px auto;  
+  width: 300px;
+  height: 300px;
+  padding-top: 20px;  
+}
+
+.circle-session {
+  border: #26a69a 5px solid;  
+}
+
+.circle-break {
+  border: #80cbc4 5px solid;  
+}
+
+.circle-stop {
+  border: #b2dfdb 5px solid;  
+}
+
+.activity-type {
+  margin: 20px;
+  font-size: 3rem;
+}
+
+.invisible {
+  display: none;
+}
+
+.progress {
+  margin: 100px auto;
+  width: 400px;
+}
