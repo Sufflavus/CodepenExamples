@@ -13,19 +13,19 @@
       <div class="row">      
         <div class="col s6 center-align">
           <button class="button" id="btnDecreaseBreak">-</button>
-          <span class="time" id="breakTime">5</span>
+          <span class="time" id="breakLength"></span>
           <button class="button" id="btnIncreaseBreak">+</button>
         </div>
         <div class="col s6 center-align">
           <button class="button" id="btnDecreaseSession">-</button>
-          <span class="time" id="sessionTime">25</span>
+          <span class="time" id="sessionLength"></span>
           <button class="button" id="btnIncreaseSession">+</button>
         </div>
       </div>
-      <div class="circle center-align circle-break">
+      <div class="circle center-align circle-session" id="circle">
         <div class="activity-type" id="sessionLabel">Session</div>
         <div class="activity-type invisible" id="breakLabel">Break</div>
-        <div class="activity-type" id="timeLeft">25:00</div>
+        <div class="activity-type" id="timeLeft"></div>
         <button class="button" id="btnPlay">
           <i class="medium material-icons teal-text text-lighten-4">play_arrow</i>
         </button>      

@@ -50,3 +50,10 @@ Source code for codepen experiments that I have done
 [Calculator](http://codepen.io/sufflavus/full/EKEOOr/) is based on 
 - [Materialize](https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css) 
 - [jQuery 2.2.2](//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js) 
+
+## 8. Pomodoro Clock
+
+[Pomodoro Clock](http://codepen.io/sufflavus/full/pyVVgV/) is based on 
+- [Materialize](https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css) 
+- [jQuery 2.2.2](//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js) 
+- [moment.js 2.13.0](http://momentjs.com/downloads/moment.min.js) 
