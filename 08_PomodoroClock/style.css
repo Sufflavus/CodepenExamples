@@ -21,6 +21,7 @@ h1 {
   cursor: pointer;
   font-size: 2rem;
   outline: none;
+  border-radius: 50%;
 }
 
 .button:focus,
@@ -33,7 +34,7 @@ h1 {
 }
 
 .circle {
-  margin: 20px auto;  
+  margin: 50px auto;  
   width: 300px;
   height: 300px;
   padding-top: 20px;  

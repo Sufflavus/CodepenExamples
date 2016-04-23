@@ -23,7 +23,8 @@
         </div>
       </div>
       <div class="circle center-align circle-break">
-        <div class="activity-type">Session</div>
+        <div class="activity-type" id="sessionLabel">Session</div>
+        <div class="activity-type invisible" id="breakLabel">Break</div>
         <div class="activity-type" id="timeLeft">25:00</div>
         <button class="button" id="btnPlay">
           <i class="medium material-icons teal-text text-lighten-4">play_arrow</i>
@@ -33,7 +34,7 @@
         </button> 
       </div>      
       <div class="progress">
-        <div class="determinate" style="width: 100%"></div>
+        <div class="determinate" id="progressBar" style="width: 100%"></div>
       </div>        
     </div>
   </div>
