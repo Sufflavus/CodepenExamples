@@ -1,0 +1,45 @@
+body {
+  background: #252527;
+}
+
+.content {
+  width: 510px;
+  height: 300px;
+  margin: 100px auto;  
+}
+
+.content .row {
+  margin-bottom: 0;
+  border-collapse: collapse;
+}
+
+.content .s4 {
+  height: 165px;
+  font-size: 100px;  
+  color: #FDFDFD;
+}
+
+.row.bordered {
+  border-bottom: 7px #FDFDFD solid;
+}
+
+.col.bordered {
+  border-right: 7px #FDFDFD solid;
+}
+
+.modal-footer{
+  border-top: 1px solid rgba(0,0,0,0.1);
+}
+
+.lean-overlay {
+  background: #69f0ae;
+}
+
+.modal .modal-footer .modal-action.btn-flat {
+  margin-left: 10px;
+}
+
+.btn-flat {
+  border: 1px solid rgba(0,0,0,0.1);
+  margin-left: 10px;
+}
