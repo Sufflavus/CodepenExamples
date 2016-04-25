@@ -1,34 +1,34 @@
 <div class="content">
   <div class="row bordered">
-    <div class="col s4 bordered center-align">    
+    <div class="col s4 bordered center-align waves-effect waves-green" data-position="0-0">    
       X
     </div>
-    <div class="col s4 bordered center-align">  
+    <div class="col s4 bordered center-align waves-effect waves-green" data-position="0-1">  
       O
     </div>
-    <div class="col s4 center-align green-text text-accent-3">    
+    <div class="col s4 center-align green-text text-accent-3 waves-effect waves-green" data-position="0-2">    
       X
     </div>
   </div>
   <div class="row bordered">
-    <div class="col s4 bordered center-align">  
+    <div class="col s4 bordered center-align waves-effect waves-green" data-position="1-0">  
       O
     </div>
-    <div class="col s4 bordered center-align green-text text-accent-3">       
+    <div class="col s4 bordered center-align green-text text-accent-3 waves-effect waves-green" data-position="1-1">       
       X
     </div>
-    <div class="col s4 center-align">       
+    <div class="col s4 center-align waves-effect waves-green" data-position="1-2">       
       O
     </div>
   </div>
   <div class="row">
-    <div class="col s4 bordered center-align green-text text-accent-3">  
+    <div class="col s4 bordered center-align green-text text-accent-3 waves-effect waves-green" data-position="2-0">  
       X
     </div>
-    <div class="col s4 bordered center-align">       
+    <div class="col s4 bordered center-align waves-effect waves-green" data-position="2-1">       
       O
     </div>
-    <div class="col s4 center-align">       
+    <div class="col s4 center-align waves-effect waves-green" data-position="2-2">       
       X
     </div>
   </div>
@@ -39,7 +39,7 @@
     <h1 class="center-align">X  or  O?</h1>      
   </div>
   <div class="modal-footer">
-    <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">O</a>
-    <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">X</a>
+    <button id="btnO" class="modal-action modal-close waves-effect waves-green btn-flat">O</button>
+    <button id="btnX" class="modal-action modal-close waves-effect waves-green btn-flat">X</button>
   </div>
 </div>
