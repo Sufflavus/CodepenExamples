@@ -66,12 +66,22 @@
         board.putMarker(position, stranger.myMarker);
         drawMarker(position, stranger.myMarker);
         
+        if(stranger.hasWon(stranger.myMarker)) {
+          alert(stranger.myMarker);
+          return;
+        }
+        
         var aiMove = ai.getNextMove();
         board.putMarker(aiMove, ai.myMarker);
         drawMarker(aiMove, ai.myMarker);
+        
+        if(ai.hasWon(ai.myMarker)) {
+          alert(ai.myMarker);
+          return;
+        }
       }
     }
-    
+           
     function drawMarker(position, marker) {
       $('.s4[data-position="' + position[0] + '-' + position[1] + '"]').text(marker);
     }
@@ -80,7 +90,13 @@
   function Player() {
     var self = this;
     self.myMarker = markerType.none; 
-    self.opponentMarker = markerType.none;     
+    self.opponentMarker = markerType.none;   
+           
+    var winningPatterns = [
+      0x111000000, 0x000111000, 0x000000111, // rows
+      0x100100100, 0x010010010, 0x001001001, // cols
+      0x100010001, 0x001010100               // diagonals
+    ];
     
     self.setMarker = function(marker) {
       var self = this;
@@ -88,6 +104,26 @@
       self.myMarker = marker;      
       self.opponentMarker = opponentMarker;
     };
+    
+    /** Returns true if thePlayer wins */
+    self.hasWon = function(playerMarker) {
+      var pattern = 0x000000000;  // 9-bit pattern for the 9 cells
+      for (var row = 0; row < 3; ++row) {
+        for (var col = 0; col < col; ++col) {
+          if (self.board.getMarker([row, col]) == playerMarker) {
+            pattern |= (1 << (row * 3 + col));
+          }
+        }
+      }
+      for (var i = 0, length = winningPatterns.length; i < length; i++) {
+        var winningPattern = winningPatterns[i];
+        if ((pattern & winningPattern) == winningPattern) {
+          debugger;
+          return true;
+        }
+      }
+      return false;
+    };       
   }
       
   function Stranger() {
@@ -108,16 +144,60 @@
     self.board = board;    
 
     self.getNextMove = function() {
-      var result = minimax(2, self.myMarker);
+      debugger;
+      var result = minimax(2, self.myMarker, -Number.MAX_VALUE, Number.MAX_VALUE);
       return [result[1], result[2]];   // row, col
     }
+    
+    function minimax1(depth, marker, alpha, beta) {
+      // Generate possible next moves in a list of int[2] of {row, col}.
+      var nextMoves = generateMoves();
+ 
+      // mySeed is maximizing; while oppSeed is minimizing
+      var score;
+      var bestRow = -1;
+      var bestCol = -1;
+ 
+      if (!nextMoves.length || depth == 0) {
+         // Gameover or depth reached, evaluate score
+         score = evaluate();
+         return [score, bestRow, bestCol];
+      } else {
+         for (var i = 0, length = nextMoves.length; i < length; i++) {
+          var move = nextMoves[0];
+            // try this move for the current "player"
+            self.board.putMarker(move, marker);
+            if (marker == self.myMarker) {  // mySeed (computer) is maximizing player
+               score = minimax(depth - 1, self.opponentMarker, alpha, beta)[0];
+               if (score > alpha) {
+                  alpha = score;
+                  bestRow = move[0];
+                  bestCol = move[1];
+               }
+            } else {  // oppSeed is minimizing player
+               score = minimax(depth - 1, self.myMarker, alpha, beta)[0];
+               if (score < beta) {
+                  beta = score;
+                  bestRow = move[0];
+                  bestCol = move[1];
+               }
+            }
+            // undo move
+            self.board.putMarker(move, markerType.none);
+            // cut-off
+            if (alpha >= beta) break;
+         }
+        debugger;
+         return [(marker == self.myMarker) ? alpha : beta, bestRow, bestCol];
+      }
+   }
 
     function minimax(depth, marker) {
       // Generate possible next moves in a List of int[2] of {row, col}.
       var nextMoves = generateMoves();
 
       // mySeed is maximizing; while oppSeed is minimizing
-      var bestScore = marker == self.myMarker ? Number.MIN_VALUE : Number.MAX_VALUE;
+      var bestScore = marker == self.myMarker ? -Number.MAX_VALUE : Number.MAX_VALUE;
       var currentScore;
       var bestRow = -1;
       var bestCol = -1;
@@ -163,8 +243,8 @@
       }
 
       // Search for empty cells and add to the List
-      for (var row = 0; row < 3; ++row) {
-        for (var col = 0; col < 3; ++col) {
+      for (var row = 0; row < 3; row++) {
+        for (var col = 0; col < 3; col++) {
           if (self.board.getMarker([row, col]) == markerType.none) {
             nextMoves.push([row, col]);
           }
@@ -264,6 +344,7 @@
       for (var i = 0, length = winningPatterns.length; i < length; i++) {
         var winningPattern = winningPatterns[i];
         if ((pattern & winningPattern) == winningPattern) {
+          debugger;
           return true;
         }
       }
