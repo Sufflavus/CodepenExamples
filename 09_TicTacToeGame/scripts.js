@@ -52,6 +52,7 @@
     var stranger = new Stranger();
     var ai = new Ai(board);
     var firstPlayer = markerType.x;
+    var winnerHighlightClass = "green-text text-accent-3";
     
     var winningPatterns = [
       //0x111000000, 0x000111000, 0x000000111, // rows
@@ -61,6 +62,17 @@
       //0x100010001, 0x001010100               // diagonals
       273, 84
     ];
+    
+    var winCombinationByPattern = {
+      448: [[0, 0], [0, 1], [0, 2]],
+      56: [[1, 0], [1, 1], [1, 2]],
+      7: [[2, 0], [2, 1], [2, 2]],
+      292: [[0, 0], [1, 0], [2, 0]],
+      146: [[0, 1], [1, 1], [2, 1]],
+      73: [[0, 2], [1, 2], [2, 2]],
+      273: [[0, 0], [1, 1], [2, 2]],
+      84: [[2, 0], [1, 1], [0, 2]]
+    }
     
     self.setStrangerMarker = function(marker) {
       stranger.setMarker(marker);
@@ -79,8 +91,10 @@
         board.putMarker(position, stranger.myMarker);
         drawMarker(position, stranger.myMarker);
         
-        if(hasWon(stranger.myMarker)) {
+        var isWin = checkIfWin(stranger.myMarker);
+        if(isWin.hasWon) {
           alert(stranger.myMarker);
+          highlightWin(isWin.winCombination);
           return;
         }
         
@@ -88,8 +102,10 @@
         board.putMarker(aiMove, ai.myMarker);
         drawMarker(aiMove, ai.myMarker);
         
-        if(hasWon(ai.myMarker)) {
+        isWin = checkIfWin(ai.myMarker);
+        if(isWin.hasWon) {
           alert(ai.myMarker);
+          highlightWin(isWin.winCombination);
           return;
         }
       }
@@ -99,8 +115,15 @@
       $('.s4[data-position="' + position[0] + '-' + position[1] + '"]').text(marker);
     }
     
+    function highlightWin(winCombination) {
+      for(var i = 0; i < winCombination.length; i++) {
+        var coors = winCombination[i].join("-");
+        $('.s4[data-position="' + coors + '"]').addClass(winnerHighlightClass).fadeOut(500).fadeIn(500);
+      }
+    }
+    
     /** Returns true if thePlayer wins */
-    function hasWon(playerMarker) {
+    function checkIfWin(playerMarker) {
       var pattern = 0;  // 9-bit pattern for the 9 cells
       for (var row = 0; row < board.rowsCount; row++) {
         for (var col = 0; col < board.colsCount; col++) {
@@ -113,10 +136,13 @@
       for (var i = 0, length = winningPatterns.length; i < length; i++) {
         var winningPattern = winningPatterns[i];
         if ((pattern & winningPattern) == winningPattern) {
-          return true;
+          return {
+            hasWon: true,
+            winCombination: winCombinationByPattern[winningPattern]
+          };
         }
       }
-      return false;
+      return { hasWon: false };
     }; 
   } 
   
