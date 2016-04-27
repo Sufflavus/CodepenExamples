@@ -1,6 +1,5 @@
 (function() {
-    //http://www3.ntu.edu.sg/home/ehchua/programming/java/javagame_tictactoe_ai.html
-  //https://github.com/aglemann/tic-tac-toe
+        //http://www3.ntu.edu.sg/home/ehchua/programming/java/javagame_tictactoe_ai.html
   var userRole = "X";
   
   var markerType = {
@@ -20,14 +19,14 @@
   
   $("#btnX").click(function() {
     userRole = "X";    
-    game.setStrangerMarker(markerType.x);
     clearField();
+    game.setStrangerMarker(markerType.x);    
   });
   
   $("#btnO").click(function() {
     userRole = "O";    
-    game.setStrangerMarker(markerType.o);
     clearField();
+    game.setStrangerMarker(markerType.o);    
   });
   
   $(".s4").click(function() {
@@ -52,21 +51,35 @@
     var board = new Board();
     var stranger = new Stranger();
     var ai = new Ai(board);
+    var firstPlayer = markerType.x;
+    
+    var winningPatterns = [
+      //0x111000000, 0x000111000, 0x000000111, // rows
+      448, 56, 7,
+      //0x100100100, 0x010010010, 0x001001001, // cols
+      292, 146, 73,
+      //0x100010001, 0x001010100               // diagonals
+      273, 84
+    ];
     
     self.setStrangerMarker = function(marker) {
       stranger.setMarker(marker);
-      debugger;
       var aiMarker = marker == markerType.o ? markerType.x : markerType.o;
       ai.setMarker(aiMarker);
+      
+      if(aiMarker === firstPlayer) {
+        var aiMove = ai.getNextMove();
+        board.putMarker(aiMove, ai.myMarker);
+        drawMarker(aiMove, ai.myMarker);
+      }
     }
     
     self.onStrangerMove = function(position) {
-      debugger
       if (board.getMarker(position) == markerType.none) {
         board.putMarker(position, stranger.myMarker);
         drawMarker(position, stranger.myMarker);
         
-        if(stranger.hasWon(stranger.myMarker)) {
+        if(hasWon(stranger.myMarker)) {
           alert(stranger.myMarker);
           return;
         }
@@ -75,7 +88,7 @@
         board.putMarker(aiMove, ai.myMarker);
         drawMarker(aiMove, ai.myMarker);
         
-        if(ai.hasWon(ai.myMarker)) {
+        if(hasWon(ai.myMarker)) {
           alert(ai.myMarker);
           return;
         }
@@ -85,71 +98,59 @@
     function drawMarker(position, marker) {
       $('.s4[data-position="' + position[0] + '-' + position[1] + '"]').text(marker);
     }
+    
+    /** Returns true if thePlayer wins */
+    function hasWon(playerMarker) {
+      var pattern = 0;  // 9-bit pattern for the 9 cells
+      for (var row = 0; row < board.rowsCount; row++) {
+        for (var col = 0; col < board.colsCount; col++) {
+          if (board.getMarker([row, col]) == playerMarker) {
+            pattern |= (1 << (row * board.colsCount + col));
+          }
+        }
+      }
+      
+      for (var i = 0, length = winningPatterns.length; i < length; i++) {
+        var winningPattern = winningPatterns[i];
+        if ((pattern & winningPattern) == winningPattern) {
+          return true;
+        }
+      }
+      return false;
+    }; 
   } 
   
   function Player() {
     var self = this;
     self.myMarker = markerType.none; 
     self.opponentMarker = markerType.none;   
-           
-    var winningPatterns = [
-      0x111000000, 0x000111000, 0x000000111, // rows
-      0x100100100, 0x010010010, 0x001001001, // cols
-      0x100010001, 0x001010100               // diagonals
-    ];
-    
+                  
     self.setMarker = function(marker) {
       var self = this;
       var opponentMarker = marker == markerType.o ? markerType.x : markerType.o;
       self.myMarker = marker;      
       self.opponentMarker = opponentMarker;
-    };
-    
-    /** Returns true if thePlayer wins */
-    self.hasWon = function(playerMarker) {
-      var pattern = 0x000000000;  // 9-bit pattern for the 9 cells
-      for (var row = 0; row < 3; ++row) {
-        for (var col = 0; col < col; ++col) {
-          if (self.board.getMarker([row, col]) == playerMarker) {
-            pattern |= (1 << (row * 3 + col));
-          }
-        }
-      }
-      for (var i = 0, length = winningPatterns.length; i < length; i++) {
-        var winningPattern = winningPatterns[i];
-        if ((pattern & winningPattern) == winningPattern) {
-          debugger;
-          return true;
-        }
-      }
-      return false;
-    };       
+    };             
   }
       
   function Stranger() {
     var self = this;
     var proto = new Player();
-    $.extend(self, proto);
-    //Player.call(self);    
+    $.extend(self, proto); 
   }
-  
-  //Stranger.prototype = Object.create(Player.prototype);
-  //Stranger.prototype.constructor = Player;
   
   function Ai(board) {
     var self = this;
-    //Player.call(self); 
     var proto = new Player();
     $.extend(self, proto);
     self.board = board;    
 
     self.getNextMove = function() {
-      debugger;
       var result = minimax(2, self.myMarker, -Number.MAX_VALUE, Number.MAX_VALUE);
       return [result[1], result[2]];   // row, col
     }
     
-    function minimax1(depth, marker, alpha, beta) {
+    function minimax(depth, marker, alpha, beta) {
       // Generate possible next moves in a list of int[2] of {row, col}.
       var nextMoves = generateMoves();
  
@@ -164,7 +165,7 @@
          return [score, bestRow, bestCol];
       } else {
          for (var i = 0, length = nextMoves.length; i < length; i++) {
-          var move = nextMoves[0];
+          var move = nextMoves[i];
             // try this move for the current "player"
             self.board.putMarker(move, marker);
             if (marker == self.myMarker) {  // mySeed (computer) is maximizing player
@@ -185,52 +186,13 @@
             // undo move
             self.board.putMarker(move, markerType.none);
             // cut-off
-            if (alpha >= beta) break;
+            if (alpha >= beta) {
+              break;
+            }
          }
-        debugger;
          return [(marker == self.myMarker) ? alpha : beta, bestRow, bestCol];
       }
    }
-
-    function minimax(depth, marker) {
-      // Generate possible next moves in a List of int[2] of {row, col}.
-      var nextMoves = generateMoves();
-
-      // mySeed is maximizing; while oppSeed is minimizing
-      var bestScore = marker == self.myMarker ? -Number.MAX_VALUE : Number.MAX_VALUE;
-      var currentScore;
-      var bestRow = -1;
-      var bestCol = -1;
-
-      if (nextMoves.length == 0 || depth == 0) {
-        // Gameover or depth reached, evaluate score
-        bestScore = evaluate();
-      } else {
-        for (var i = 0, length = nextMoves.length; i < length; i++) {
-          var move = nextMoves[i];
-          // Try this move for the current "player"
-          self.board.putMarker(move, marker);           
-          if (marker == self.myMarker) {  // mySeed (computer) is maximizing player
-            currentScore = minimax(depth - 1, self.opponentMarker)[0];
-            if (currentScore > bestScore) {
-              bestScore = currentScore;
-              bestRow = move[0];
-              bestCol = move[1];
-            }
-          } else {  // oppSeed is minimizing player
-            currentScore = minimax(depth - 1, self.myMarker)[0];
-            if (currentScore < bestScore) {
-              bestScore = currentScore;
-              bestRow = move[0];
-              bestCol = move[1];
-            }
-          }
-          // Undo move
-          self.board.putMarker(move, markerType.none);           
-        }
-      }
-      return [bestScore, bestRow, bestCol];
-    }
 
     /** Find all valid next moves.
         Return List of moves in int[2] of {row, col} or empty list if gameover */
@@ -238,13 +200,13 @@
       var nextMoves = [];
 
       // If gameover, i.e., no next move
-      if (hasWon(self.myMarker) || hasWon(self.opponentMarker)) {
+      /* if (self.hasWon(self.myMarker) || self.hasWon(self.opponentMarker)) {
         return nextMoves;   // return empty list
-      }
+      } */
 
       // Search for empty cells and add to the List
-      for (var row = 0; row < 3; row++) {
-        for (var col = 0; col < 3; col++) {
+      for (var row = 0; row < board.rowsCount; row++) {
+        for (var col = 0; col < board.colsCount; col++) {
           if (self.board.getMarker([row, col]) == markerType.none) {
             nextMoves.push([row, col]);
           }
@@ -323,52 +285,23 @@
         }
       }
       return score;
-    }
-
-    var winningPatterns = [
-      0x111000000, 0x000111000, 0x000000111, // rows
-      0x100100100, 0x010010010, 0x001001001, // cols
-      0x100010001, 0x001010100               // diagonals
-    ];
-
-    /** Returns true if thePlayer wins */
-    function hasWon(playerMarker) {
-      var pattern = 0x000000000;  // 9-bit pattern for the 9 cells
-      for (var row = 0; row < 3; ++row) {
-        for (var col = 0; col < col; ++col) {
-          if (self.board.getMarker([row, col]) == playerMarker) {
-            pattern |= (1 << (row * 3 + col));
-          }
-        }
-      }
-      for (var i = 0, length = winningPatterns.length; i < length; i++) {
-        var winningPattern = winningPatterns[i];
-        if ((pattern & winningPattern) == winningPattern) {
-          debugger;
-          return true;
-        }
-      }
-      return false;
-    }
+    }    
   }
   
-  //Ai.prototype = Object.create(Player.prototype);
-  //Ai.prototype.constructor = Player;
-  
   function Board() {
-    var cells = new Array(3);
+    var rowsCount = 3;
+    var colsCount = 3;
+    var cells = new Array(rowsCount);
        
-    for(var row = 0; row < 3; row++) {
-      cells[row] = new Array(3);
-      for(var col = 0; col < 3; col++) {
+    for(var row = 0; row < rowsCount; row++) {
+      cells[row] = new Array(colsCount);
+      for(var col = 0; col < colsCount; col++) {
         cells[row][col] = markerType.none;
       }
     }
     
     function putMarker(position, marker) {
-      cells[position[0]][position[1]] = marker;
-      //console.log(position);
-      //console.log(marker);      
+      cells[position[0]][position[1]] = marker;  
     }
     
     function getMarker(position) {
@@ -376,7 +309,8 @@
     }    
         
     return {
-      cells: cells,
+      rowsCount: rowsCount,
+      colsCount: colsCount,
       putMarker: putMarker,
       getMarker: getMarker
     };
