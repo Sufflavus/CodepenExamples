@@ -1,0 +1,39 @@
+<div class="wrapper z-depth-3">
+  <div class="control-panel blue lighten-4 blue-text text-darken-4">
+    <h2 class="center-align">Simon</h2>
+    <div class="row">
+      <div class="col s4 center-align">
+        <div class="counter center-align">00</div>
+      </div>
+      <div class="col s4 center-align">
+        <div class="btn-round z-depth-1 red waves-effect waves-light"></div>
+      </div>
+      <div class="col s4 center-align">
+        <div class="btn-round z-depth-1 lime accent-1 waves-effect waves-light"></div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col s4 center-align">count</div>
+      <div class="col s4 center-align">start</div>
+      <div class="col s4 center-align">strict</div>
+    </div>
+    <div class="center-align">
+      <div class="switch">
+        <label class="blue-text text-darken-4">
+          Off
+          <input type="checkbox">
+          <span class="lever"></span>
+          On
+        </label>
+    </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col s6 segment top-left green accent-3"></div>
+    <div class="col s6 segment top-right red accent-2"></div>
+  </div>
+  <div class="row">
+    <div class="col s6 segment bottom-left lime accent-2"></div>
+    <div class="col s6 segment bottom-right light-blue accent-2"></div>
+  </div>  
+</div>
