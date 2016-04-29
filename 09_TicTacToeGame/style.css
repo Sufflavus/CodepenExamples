@@ -17,6 +17,7 @@ body {
   height: 165px;
   font-size: 100px;  
   color: #FDFDFD;
+  cursor: pointer;  
 }
 
 .row.bordered {
@@ -27,7 +28,7 @@ body {
   border-right: 7px #FDFDFD solid;
 }
 
-.modal-footer{
+.modal-footer {
   border-top: 1px solid rgba(0,0,0,0.1);
 }
 
@@ -41,5 +42,9 @@ body {
 
 .btn-flat {
   border: 1px solid rgba(0,0,0,0.1);
-  margin-left: 10px;
+  margin: 10px;
+}
+
+.modal-content h1 {
+  margin: 20px;
 }
