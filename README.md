@@ -64,3 +64,9 @@ Source code for codepen experiments that I have done
 - [Materialize](https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css) 
 - [jQuery 2.2.2](//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js) 
 - [Case Study on Tic-Tac-Toe Part 2: With AI](http://www3.ntu.edu.sg/home/ehchua/programming/java/javagame_tictactoe_ai.html) 
+
+## 10. Simon Game
+
+[Simon Game](http://codepen.io/sufflavus/full/MyPLVB/) is based on 
+- [Materialize](https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css) 
+- [jQuery 2.2.2](//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js) 

@@ -7,7 +7,7 @@
   var game = new Game();  
     
   var errorAudio = new Audio("http://www.oringz.com/oringz-uploads/sounds-972-thats-nasty.mp3");
-  var winAudio = new Audio("http://www.oringz.com/oringz-uploads/sounds-727-good-morning.mp3");
+  var winAudio = new Audio("http://www.oringz.com/oringz-uploads/sounds-727-good-morning.mp3");  
   
   var segments = {
     red: $("#redSegment"),
@@ -40,10 +40,14 @@
   initSegments();
   initSegmentAudios();
   
+  winAudio.onplay = function(){
+      $score.text("***");
+  };
+  
+  winAudio.onended = game.restart;
+  
   $btnStart.click(function() {   
-    game.restart();
-    var score = game.getScore();
-    $score.text(score >= 10 ? score : "0" + score);    
+    game.restart();        
   });
   
   $btnStrict.click(function() {
@@ -61,7 +65,7 @@
     }
         
     $("button").prop("disabled", function(i, v) { return !v; });
-  });
+  });   
   
   function initSegments() {
     for (var key in segments) {
@@ -106,9 +110,22 @@
     var sequence = [];
     var isStrict = false;
     var score = 0;
-    var delay = 1000;
+    var initialDelay = 1000;
+    var delay = initialDelay;
     var minNumber = 0;
     var maxNumber = 3;
+    var strangerSequence = [];
+    var winScore = 3;
+    var increaseScores = [5, 9, 13];
+    var delayDecrement = 200;
+    var waitingTimeout;
+    
+    var players = {
+      ai: "ai",
+      stranger: "stranger"
+    };
+    
+    var activePlayer = players.ai;
         
     function toggleStrict() {
       isStrict = !isStrict;
@@ -119,54 +136,126 @@
     }
     
     function restart() {
-      score = 0;
-      isStrict = false;
+      score = 0;      
       sequence = [];
-      var nextNumber = getNextNumber();      
-      sequence.push(nextNumber);
+      delay = initialDelay;
+      removeWaitingTimeout();
+      
+      activePlayer = players.ai;
+      increaseSequence();
+      showScore();
       play();
     }
     
     function turnOff() {
       score = 0;
+      delay = initialDelay;
       isStrict = false;
+      sequence = [];
+      removeWaitingTimeout();
     }
     
     function play() {   
-      $(".segment").prop("disabled", true);
-      
+      $(".segment").prop("disabled", true);      
       var index = 0;
-      var number = sequence[index];
+      var color = sequence[index];
       
       setTimeout(function() { 
-        playAudio(number, index);          
-      }, delay * index); 
+        playAudio(color, index);          
+      }, delay); 
       
-      function playAudio(number, index) {
-        var name = segmentName[number];
-        var audio = segmentAudio[name];        
-        audio.play();  
+      function playAudio(name, index) {            
+        var audio = segmentAudio[name];    
         
-        audio.addEventListener('ended', function () {
+        if(!audio) {
+          return;
+        }
+        
+        audio.addEventListener('ended', onAudioEnd);
+        audio.play();
+        
+        function onAudioEnd() {  
+          audio.removeEventListener('ended', onAudioEnd);
+
           if(index == sequence.length - 1) {
             $(".segment").prop("disabled", false);
+            activePlayer = players.stranger;
+            strangerSequence = sequence.slice();
+            setWaitingTimeout();
             return;
           }
-          
-          var nextNumber = sequence[index + 1];
+
+          var nextColor = sequence[index + 1];
           setTimeout(function() { 
-            playAudio(nextNumber, index + 1);          
+            playAudio(nextColor, index + 1);          
           }, delay); 
-        });
+        }     
+      }           
+    }
+    
+    function setWaitingTimeout() {
+      waitingTimeout = setTimeout(function() { 
+        errorAudio.play();
+        if(isStrict) {
+          restart();
+        } else {
+          play();
+        }        
+      }, delay*3); 
+    }
+    
+    function removeWaitingTimeout() {
+        clearTimeout(waitingTimeout);
+    }
+    
+    function onUserMove(colorName) {      
+      if(activePlayer == players.stranger) {
+        removeWaitingTimeout();
+        var expected = strangerSequence.shift();        
+        if(expected === colorName) {
+          segmentAudio[colorName].play();    
+        } else {
+          errorAudio.play();
+          if(isStrict) {
+            restart();
+          } else {
+            play();
+          } 
+          return;
+        }
+        
+        if(!strangerSequence.length) {
+          if(score == winScore) {
+            activePlayer = players.ai;
+            winAudio.play();
+            return;
+          }
+          activePlayer = players.ai;
+          increaseSequence();
+          showScore();
+          setTimeout(play, delay);           
+        } else {
+          setWaitingTimeout();
+        }
+      }      
+    }
+    
+    function increaseSequence() {
+      score++;
+      var nextColor = getNextColor();      
+      sequence.push(nextColor);     
+      if(increaseScores.indexOf(score) >=0) {
+        delay -= delayDecrement;
       }
     }
     
-    function onUserMove(colorName) {
-      console.log(colorName)
+    function getNextColor() {      
+      var number = Math.floor(Math.random() * (maxNumber - minNumber + 1)) + minNumber;
+      return segmentName[number];
     }
     
-    function getNextNumber() {      
-      return Math.floor(Math.random() * (maxNumber - minNumber + 1)) + minNumber;
+    function showScore() {
+      $score.text(score >= 10 ? score : "0" + score); 
     }
     
     return {
