@@ -29,11 +29,11 @@
     </div>
   </div>
   <div class="row">
-    <div class="col s6 segment top-left green accent-3"></div>
-    <div class="col s6 segment top-right red accent-2"></div>
+    <div id="greenSegment" class="col s6 segment top-left green"></div>
+    <div id="redSegment" class="col s6 segment top-right red"></div>
   </div>
   <div class="row">
-    <div class="col s6 segment bottom-left lime accent-2"></div>
-    <div class="col s6 segment bottom-right light-blue accent-2"></div>
+    <div id="yellowSegment" class="col s6 segment bottom-left lime"></div>
+    <div id="blueSegment" class="col s6 segment bottom-right light-blue"></div>
   </div>  
 </div>
