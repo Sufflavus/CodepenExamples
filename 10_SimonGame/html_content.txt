@@ -30,7 +30,7 @@
   </div>
   <div class="row">
     <div id="greenSegment" class="col s6 segment top-left green"></div>
-    <div id="redSegment" class="col s6 segment top-right red"></div>
+    <div id="redSegment" class="col s6 segment top-right red darken-3"></div>
   </div>
   <div class="row">
     <div id="yellowSegment" class="col s6 segment bottom-left lime"></div>

@@ -3,6 +3,7 @@
   var $score = $("#score");
   var $switchCheckbox = $("#switchCheckbox");
   var $btnStart = $("#btnStart");
+  var $segments = $(".segment");
   
   var game = new Game();  
     
@@ -32,7 +33,7 @@
   
   var segmentHighlightClass = {
     red: "accent-2",
-    blue: "accent-2",
+    blue: "accent-1",
     yellow: "accent-2",
     green: "accent-3"
   };
@@ -40,8 +41,9 @@
   initSegments();
   initSegmentAudios();
   
-  winAudio.onplay = function(){
-      $score.text("***");
+  winAudio.onplay = function() {
+    $segments.removeClass("clickable");  
+    $score.text("***");
   };
   
   winAudio.onended = game.restart;
@@ -75,10 +77,12 @@
       
       var $segment = segments[key];         
       $segment.click(function(colorName) {
-        return function() {
-          game.onUserMove(colorName);
+        return function() {           
+          if($segments.hasClass("clickable")) {
+            game.onUserMove(colorName);
+          }          
         };        
-      } (key));
+      } (key, $segment));
     }      
   }
   
@@ -115,11 +119,11 @@
     var minNumber = 0;
     var maxNumber = 3;
     var strangerSequence = [];
-    var winScore = 3;
+    var winScore = 20;
     var increaseScores = [5, 9, 13];
     var delayDecrement = 200;
     var waitingTimeout;
-    
+        
     var players = {
       ai: "ai",
       stranger: "stranger"
@@ -130,33 +134,32 @@
     function toggleStrict() {
       isStrict = !isStrict;
     }
-    
-    function getScore() {
-      return score;
-    }
-    
+            
     function restart() {
+      removeWaitingTimeout();
+      activePlayer = players.ai;
       score = 0;      
       sequence = [];
-      delay = initialDelay;
-      removeWaitingTimeout();
+      delay = initialDelay;          
       
-      activePlayer = players.ai;
       increaseSequence();
       showScore();
       play();
     }
     
     function turnOff() {
+      removeWaitingTimeout();
+      activePlayer = players.ai;
+      $segments.removeClass("clickable");  
       score = 0;
       delay = initialDelay;
       isStrict = false;
-      sequence = [];
-      removeWaitingTimeout();
+      sequence = [];      
     }
     
     function play() {   
-      $(".segment").prop("disabled", true);      
+      activePlayer = players.ai;
+      $segments.removeClass("clickable");      
       var index = 0;
       var color = sequence[index];
       
@@ -178,7 +181,7 @@
           audio.removeEventListener('ended', onAudioEnd);
 
           if(index == sequence.length - 1) {
-            $(".segment").prop("disabled", false);
+            $segments.addClass("clickable");
             activePlayer = players.stranger;
             strangerSequence = sequence.slice();
             setWaitingTimeout();
@@ -196,30 +199,34 @@
     function setWaitingTimeout() {
       waitingTimeout = setTimeout(function() { 
         errorAudio.play();
-        if(isStrict) {
-          restart();
+        activePlayer = players.ai;    
+        $segments.removeClass("clickable");
+        if(isStrict) {            
+          setTimeout(restart, delay);
         } else {
-          play();
-        }        
-      }, delay*3); 
+          setTimeout(play, delay);
+        } 
+      }, delay*4); 
     }
     
     function removeWaitingTimeout() {
         clearTimeout(waitingTimeout);
     }
     
-    function onUserMove(colorName) {      
-      if(activePlayer == players.stranger) {
+    function onUserMove(colorName) {        
+      if(activePlayer === players.stranger) {
         removeWaitingTimeout();
         var expected = strangerSequence.shift();        
         if(expected === colorName) {
           segmentAudio[colorName].play();    
-        } else {
+        } else {           
+          activePlayer = players.ai;    
+          $segments.removeClass("clickable");
           errorAudio.play();
-          if(isStrict) {
-            restart();
+          if(isStrict) {            
+            setTimeout(restart, delay);
           } else {
-            play();
+            setTimeout(play, delay);
           } 
           return;
         }
@@ -260,8 +267,7 @@
     
     return {
       restart: restart,
-      onUserMove: onUserMove,
-      getScore: getScore,
+      onUserMove: onUserMove,      
       toggleStrict: toggleStrict,
       turnOff: turnOff
     };

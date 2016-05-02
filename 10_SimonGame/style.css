@@ -15,7 +15,10 @@ body {
 .segment {
   width: 50%;
   height: 205px;
-  border: #006A82 10px solid;    
+  border: #006A82 10px solid;   
+}
+
+.clickable {
   cursor: pointer;
 }
 
