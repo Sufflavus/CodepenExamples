@@ -1,0 +1,12 @@
+body {
+  background-color: #4F5060;
+}
+
+.content {
+  margin: 40px auto;
+  width: 1000px;
+}
+
+svg {  
+  background: #fff;
+}
