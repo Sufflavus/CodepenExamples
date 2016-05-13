@@ -17,7 +17,36 @@
       return;
     } else {
       console.log(data);
-      ds = data;
+      var dataSet = data.data;
+      var minValue = 0;
+      var maxValue = dataSet[0][1];
+      var minYear = new Date(data.from_date).getYear() + 1900;
+      var maxYear = new Date(data.to_date).getYear() + 1900;
+      
+      dataSet.forEach(function(item) {
+        var value = item[1];        
+        maxValue = value > maxValue  ? value : maxValue;
+      });
+      
+      /* console.log(minValue)
+      console.log(maxValue)
+      
+      console.log(minYear)
+      console.log(maxYear) */
+      
+      var x = d3.scale.linear()
+        .range([maxValue, minValue]);
+
+      var y = d3.scale.linear()
+        .range([maxYear, minYear]);
+
+      var xAxis = d3.svg.axis()
+        .scale(x)
+        .orient("bottom");
+
+      var yAxis = d3.svg.axis()
+        .scale(y)
+        .orient("left");
     }
 
     //buildLine();
