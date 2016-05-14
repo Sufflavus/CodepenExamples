@@ -10,3 +10,9 @@ body {
 svg {  
   background: #fff;
 }
+
+.title {
+  text-anchor: middle;
+  fill: #2B7772;
+  font: 40px sans-serif;    
+}
