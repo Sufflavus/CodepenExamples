@@ -1,12 +1,12 @@
 //http://chimera.labs.oreilly.com/books/1230000000345/index.html
 //https://bl.ocks.org/mbostock/7441121
 
-(function(){
+(function() {
   var canvasWidth = 1050;
   var canvasHeight = 650;
   
   var chartWidth = 1000;
-  var chartHeight = 680;
+  var chartHeight = 550;
   
   var dataUrl = "https://raw.githubusercontent.com/FreeCodeCamp/ProjectReferenceData/master/GDP-data.json";
   
@@ -25,6 +25,7 @@
     } else {
       //console.log(data);
       var name = data.name;
+      var description = data.description;
       var dataSet = data.data; 
       
       var minYear = new Date(data.from_date).getYear() + 1900;
@@ -69,8 +70,47 @@
           height: chartHeight,
           transform: "translate(0, 70)"
         });
+      
+      var descriptionText = svg.append("text")        
+        .attr({
+          class: "description",          
+          x: canvasWidth/2,
+          y: canvasHeight - 50,
+          dy: 20
+        })
+        //.call(wrap, canvasWidth);
+        .text(description);
+      
+      wrap(descriptionText, canvasWidth);
     }
 
     //buildLine(); #6FB88F
   });
+  
+  //code is from here https://github.com/d3/d3/issues/1642
+  function wrap(text, width) {
+    text.each(function() {
+      debugger
+      var text = d3.select(this),
+          words = text.text().split(/\s+/).reverse(),
+          word,
+          line = [],
+          lineNumber = 0,
+          lineHeight = 20,
+          x = text.attr("x"),
+          y = text.attr("y"),
+          dy = parseFloat(text.attr("dy")),
+          tspan = text.text(null).append("tspan").attr("x", x).attr("y", y).attr("dy", dy);
+      while (word = words.pop()) {
+        line.push(word);
+        tspan.text(line.join(" "));
+        if (tspan.node().getComputedTextLength() > width) {
+          line.pop();
+          tspan.text(line.join(" "));
+          line = [word];
+          tspan = text.append("tspan").attr("x", x).attr("y", y).attr("dy", ++lineNumber * lineHeight + dy).text(word);
+        }
+      }
+    });
+  }
 })();
