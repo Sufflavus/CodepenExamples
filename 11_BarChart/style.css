@@ -16,3 +16,30 @@ svg {
   fill: #2B7772;
   font: 40px sans-serif;    
 }
+
+.description {
+  text-anchor: middle;
+  fill: #2B7772;
+  font: 13px sans-serif;  
+}
+
+.axis text {
+  font: 15px sans-serif;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.bar {
+  fill: #6FB88F;
+  stroke-width: 0.1;  
+  stroke: #C3DEE4;
+}
+
+.bar:hover {
+  fill: #248038;  
+}
