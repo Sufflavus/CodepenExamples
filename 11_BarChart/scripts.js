@@ -1,6 +1,3 @@
-//http://chimera.labs.oreilly.com/books/1230000000345/index.html
-//https://bl.ocks.org/mbostock/7441121
-
 (function() {
   var canvasWidth = 1050;
   var canvasHeight = 650;
@@ -8,8 +5,18 @@
   var chartWidth = 900;
   var chartHeight = 470;
   
+  var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+  
+  var numberFormat = d3.format("$,.2f");
+  
+  var tooltip = d3.select("#tooltip");
+  var tooltipValue = d3.select("#value");
+  var tooltipYear = d3.select("#year");
+  var tooltipMonth = d3.select("#month");
+    
   var dataUrl = "https://raw.githubusercontent.com/FreeCodeCamp/ProjectReferenceData/master/GDP-data.json";
   
+  // chart container
   var svg = d3.select("div")
     .append("svg")
     .attr({
@@ -18,13 +25,11 @@
     })
     .append("g");
   
+  // get data
   d3.json(dataUrl, function(error, data) {
-    if(error) {
-      //console.log(error);
+    if(error) {      
       return;
-    } else {
-      //console.log(data);
-      var name = data.name;
+    } else {            
       var description = data.description;
       
       var dataSet = data.data.map(function(item) {
@@ -50,13 +55,7 @@
           x: canvasWidth/2,
           y: 50
         })
-        .text(name);
-      
-      /* console.log(minValue)
-      console.log(maxValue)
-      
-      console.log(minYear)
-      console.log(maxYear) */
+        .text("Gross Domestic Product");      
       
       var x = d3.time.scale()
 	      .domain([minDate, maxDate])
@@ -81,6 +80,7 @@
           transform: "translate(80, 70)"
         });
       
+      // add x axis
       chart.append("g")
         .attr({
           class: "axis",
@@ -88,12 +88,21 @@
         }) 
         .call(xAxis);
 
+      // add y axis
       chart.append("g")
         .attr({
           class: "axis"                 
         })
         .call(yAxis);
       
+      // add y axis name
+      svg.append("text")        
+        .attr({                     
+          transform: "translate(100,275) rotate(270)"
+        })        
+        .text("Gross Domestic Product, USA");
+      
+      // add bars
       chart.selectAll(".bar")
         .data(dataSet) 
         .enter()
@@ -104,26 +113,45 @@
           y: function(d) { return y(d.value); },
           height: function(d) { return chartHeight - y(d.value); },
           width: chartWidth / dataSetLength
+        })
+        .on("mouseover", function(d) {
+          d3.select(this).attr({ class: "bar hovered" });
+        
+          tooltipValue.text(numberFormat(d.value));        
+          tooltipYear.text(d.date.getFullYear());        
+          tooltipMonth.text(months[d.date.getMonth()]);
+
+          tooltip.transition()
+            .duration(500)
+            .style("opacity", 0.8);
+
+          tooltip.style("left", (d3.event.pageX + 10) + "px")
+            .style("top", (d3.event.pageY - 50) + "px");
+        })
+        .on("mouseout", function(d) {
+          d3.select(this).attr({ class: "bar" });
+        
+          tooltip.transition()
+            .duration(500)
+            .style("opacity", 0);
         });
       
+      // add chart description
       var descriptionText = svg.append("text")        
         .attr({
           class: "description",          
           x: canvasWidth/2,
           y: canvasHeight - 60,
           dy: 20
-        })
-        //.call(wrap, canvasWidth);
+        })        
         .text(description);
       
-      wrap(descriptionText, canvasWidth);
+      wrapWords(descriptionText, canvasWidth);
     }
-
-    //buildLine(); #6FB88F
   });
-  
-  //code is from here https://github.com/d3/d3/issues/1642
-  function wrap(text, width) {
+     
+  // this code came from here https://github.com/d3/d3/issues/1642
+  function wrapWords(text, width) {
     text.each(function() {      
       var text = d3.select(this),
           words = text.text().split(/\s+/).reverse(),

@@ -11,26 +11,30 @@ svg {
   background: #fff;
 }
 
-.title {
-  text-anchor: middle;
+text {
   fill: #2B7772;
-  font: 40px sans-serif;    
+  font-family: sans-serif;
+  font-size: 15px;
+}
+
+.title {
+  text-anchor: middle;  
+  font-size: 40px;    
 }
 
 .description {
-  text-anchor: middle;
-  fill: #2B7772;
-  font: 13px sans-serif;  
+  text-anchor: middle;  
+  font-size: 13px;  
 }
 
-.axis text {
-  font: 15px sans-serif;
+.axis text {  
+  font-size: 15px;
 }
 
 .axis path,
 .axis line {
   fill: none;
-  stroke: #000;
+  stroke: #2B7772;
   shape-rendering: crispEdges;
 }
 
@@ -40,6 +44,22 @@ svg {
   stroke: #C3DEE4;
 }
 
-.bar:hover {
+.bar.hovered {
   fill: #248038;  
 }
+
+.tooltip {
+  position: absolute;
+  display: inline-block;
+  opacity: 0;  
+  padding: 10px;  
+  background: #248038;  
+  color: #fff;
+  border-radius: 10px;  
+  font: 15px sans-serif;
+}
+
+.header {
+  font-size: 18px;
+  font-weight: bold;    
+} 

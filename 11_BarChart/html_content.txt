@@ -1,2 +1,11 @@
 <div class="content">
 </div>
+
+<div id="tooltip" class="tooltip">
+  <div class="header"><span id="value"></span> Billion</div>
+  <div class="date">
+    <span id="year"></span>
+    -
+    <span id="month"></span>
+  </div>
+</div>        
