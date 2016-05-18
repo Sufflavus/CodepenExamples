@@ -1,0 +1,84 @@
+body {
+  background: #7FB347;
+  color: #333;
+  font: 13px sans-serif;
+}
+
+.content {
+  width: 800px;  
+  margin: 50px auto;
+  background: #B3DE81;
+  /* #B3DE81 #A7DB5E */  
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
+  /* background: #9DCE59; */
+}
+
+text {
+  fill: #333;
+  font-family: sans-serif;
+  font-size: 15px;
+}
+
+.title {
+  text-anchor: middle;  
+  font-size: 30px; 
+}
+
+.subtitle {
+  text-anchor: middle;  
+  font-size: 25px; 
+}
+
+.sub-subtitle {
+  text-anchor: middle;  
+  font-size: 20px; 
+}
+
+.axis text {  
+  font-size: 15px;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #333;
+  shape-rendering: crispEdges;
+}
+
+.dot {
+  fill: #1793AC;
+}
+
+.dot:hover {
+  stroke: #4A3F53;
+  stroke-width: 2px;
+}
+
+.doping {
+  fill: #D03425;
+}
+
+.label {
+  font-size: 10px;
+}
+
+.tooltip {
+  position: absolute;
+  display: inline-block;
+  width: 180px;
+  text-align: center;
+  opacity: 0;     
+  background: #4B9100;  
+  color: #fff;  
+  font: 15px sans-serif;
+}
+
+.tooltip div {
+  margin: 10px;
+}
+
+a,
+a:visited,
+a:active {
+  color: #333;
+}

@@ -17,7 +17,7 @@
   var dataUrl = "https://raw.githubusercontent.com/FreeCodeCamp/ProjectReferenceData/master/GDP-data.json";
   
   // chart container
-  var svg = d3.select("div")
+  var svg = d3.select("div.content")
     .append("svg")
     .attr({
       width: canvasWidth,
@@ -132,7 +132,7 @@
           d3.select(this).attr({ class: "bar" });
         
           tooltip.transition()
-            .duration(500)
+            .duration(1000)
             .style("opacity", 0);
         });
       

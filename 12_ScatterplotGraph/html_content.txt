@@ -1,0 +1,19 @@
+<div class="content">  
+</div>
+
+<div id="tooltip" class="tooltip">
+  <div id="name"></div> 
+  <div>
+    Year: <span id="year"></span>, 
+    Time: <span id="time"></span>
+  </div>
+  <div id="doping"></div>
+</div>     
+
+<div>
+  Sources: </br>
+  <a href="https://en.wikipedia.org/wiki/Alpe_d%27Huez" target="_blank">Alpe d'Huez</a></br>
+  <a href="http://www.fillarifoorumi.fi/forum/showthread.php?38129-Ammattilaispy%F6r%E4ilij%F6iden-nousutietoja-%28aika-km-h-VAM-W-W-kg-etc-%29&p=2041608#post2041608" target="_blank">ALPE D'HUEZ, ALL-TIME TOP 200 LIST</a></br>
+  <a href="https://alex-cycle.blogspot.com/2015/07/alpe-dhuez-tdf-fastest-ascent-times.html" target="_blank">Alpe d'Huez: TDF Fastest Ascent Times 1982-2015</a></br>
+  <a href="http://www.dopeology.org/" target="_blank">Dopeology</a>
+</div>
