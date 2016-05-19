@@ -1,0 +1,85 @@
+body {
+  background-color: #8FAFC4;
+  color: #333;
+  font: 13px sans-serif;
+}
+
+.content {
+  width: 1250px;
+  height: 710px;
+  background-color: #ffffff;
+  margin: 40px auto;
+  box-shadow: 0 2px 10px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);  
+}
+
+text {
+  fill: #333;
+  font-family: sans-serif;
+  font-size: 15px;
+}
+
+.title {
+  text-anchor: middle;  
+  font-size: 30px; 
+  font-weight: bold;
+}
+
+.subtitle {
+  text-anchor: middle;  
+  font-size: 23px; 
+}
+
+.description {
+  text-anchor: middle;  
+  font-size: 13px; 
+}
+
+.axis text {  
+  font-size: 11px;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #333;
+  shape-rendering: crispEdges;
+}
+
+.y-axis path,
+.y-axis line {
+  stroke: #ffffff;
+}
+
+.tile:hover {
+  stroke: #333;
+  stroke-width: 1px;
+}
+
+text.axis-title {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.legend text {
+  font-size: 10px;
+}
+
+.tooltip {
+  position: absolute;
+  display: inline-block;
+  width: 150px;
+  text-align: center;
+  opacity: 0;     
+  background: #00293C;  
+  color: #fff;  
+  font: 13px sans-serif;
+}
+
+.tooltip div {
+  margin: 5px;
+}
+
+.tooltip-title {
+  font-weight: bold;
+  font-size: 15px;
+}

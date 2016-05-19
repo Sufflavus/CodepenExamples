@@ -80,3 +80,8 @@ Source code for codepen experiments that I have done
 
 [Scatterplot Graph](http://codepen.io/sufflavus/full/RamLEJ/) is based on 
 - [d3.js v3](https://d3js.org/d3.v3.min.js) 
+
+## 13. Heat Map
+
+[Scatterplot Graph](http://codepen.io/sufflavus/full/oxRJRb/) is based on 
+- [d3.js v3](https://d3js.org/d3.v3.min.js) 
