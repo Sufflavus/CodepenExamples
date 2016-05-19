@@ -1,0 +1,36 @@
+body {
+  background: #ffffff;
+  margin: 0;
+  padding: 0;
+}
+
+.content {
+  background: #9EC7F3;
+  height: 800px;
+  margin: 0 auto;
+}
+
+svg {
+  background: #9EC7F3;
+}
+
+.sphere {
+  fill: #9EC7F3;
+}
+
+.land {
+  fill: #6AB086;
+}
+
+.boundary {
+  fill: none;
+  stroke: #fff;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+  vector-effect: non-scaling-stroke;
+}
+
+.overlay {
+  fill: none;
+  pointer-events: all;
+}

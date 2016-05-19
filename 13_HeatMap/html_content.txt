@@ -3,9 +3,9 @@
 <div id="tooltip" class="tooltip">
   <div id="date" class="tooltip-title"></div> 
   <div class="tooltip-title">
-    <span id="temperature"></span> ℃
+    <span id="temperature"></span> &#176;C
   </div>
   <div>
-    <span id="variance"></span> ℃
+    <span id="variance"></span> &#176;C
   </div>
 </div> 
