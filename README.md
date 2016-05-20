@@ -83,7 +83,7 @@ Source code for [codepen experiments](http://codepen.io/sufflavus/pens/public/) 
 
 ## 13. Heat Map
 
-[Scatterplot Graph](http://codepen.io/sufflavus/full/oxRJRb/) is based on 
+[Heat Map](http://codepen.io/sufflavus/full/oxRJRb/) is based on 
 - [d3.js v3](https://d3js.org/d3.v3.min.js) 
 
 ## 14. Meteorite Landing
@@ -91,3 +91,14 @@ Source code for [codepen experiments](http://codepen.io/sufflavus/pens/public/) 
 [Map Data Across the Globe. Meteorite landing (zoom)](http://codepen.io/sufflavus/full/pyXNwY/) is based on 
 - [d3.js v3](https://d3js.org/d3.v3.min.js) 
 - [topojson v1](http://d3js.org/topojson.v1.min.js)
+
+## 15. Markdown Previewer
+
+[Markdown Previewer](http://codepen.io/sufflavus/full/LNKmMP/) is based on 
+- [jQuery 2.2.2](//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js) 
+- [Bootstrap 3.3.6](https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css) 
+- [React v15.0.2](https://cdnjs.cloudflare.com/ajax/libs/react/15.0.2/react.min.js) 
+- [ReactDOM v15.0.2](https://cdnjs.cloudflare.com/ajax/libs/react/15.0.2/react-dom.js)
+- [marked 0.3.5](https://cdnjs.cloudflare.com/ajax/libs/marked/0.3.5/marked.min.js)
+- [Sass](http://sass-lang.com/)
+- [Babel](https://babeljs.io/)
