@@ -1,0 +1,7 @@
+<div class="content">   
+  <h2 class="center-align">
+    Leaderboard
+  </h2>
+  <div id="container" class="content">    
+  </div>
+</div>

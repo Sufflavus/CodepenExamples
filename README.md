@@ -102,3 +102,13 @@ Source code for [codepen experiments](http://codepen.io/sufflavus/pens/public/) 
 - [marked 0.3.5](https://cdnjs.cloudflare.com/ajax/libs/marked/0.3.5/marked.min.js)
 - [Sass](http://sass-lang.com/)
 - [Babel](https://babeljs.io/)
+
+## 16. Camper Leaderboard
+
+[Camper Leaderboard](http://codepen.io/sufflavus/full/RazqBE/) is based on 
+- [jQuery 2.2.2](//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js) 
+- [Materialize](https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css) 
+- [React v15.0.2](https://cdnjs.cloudflare.com/ajax/libs/react/15.0.2/react.min.js) 
+- [ReactDOM v15.0.2](https://cdnjs.cloudflare.com/ajax/libs/react/15.0.2/react-dom.js)- 
+- [Sass](http://sass-lang.com/)
+- [Babel](https://babeljs.io/)
