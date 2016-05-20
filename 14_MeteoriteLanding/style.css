@@ -30,7 +30,33 @@ svg {
   vector-effect: non-scaling-stroke;
 }
 
-.overlay {
-  fill: none;
-  pointer-events: all;
+circle {
+  opacity: 0.5;
+  fill: #7E142E;
+  stroke: #7E142E;
+  stroke-width: 0;
+}
+
+.hovered {
+  stroke: #7E142E;
+  stroke-width: 2px;
+}
+
+.tooltip {
+  position: absolute;
+  display: inline-block;
+  width: auto;  
+  padding: 0 10px;
+  opacity: 0;     
+  background: #283031;  
+  color: #fff;  
+  font: 15px sans-serif;
+}
+
+.tooltip .title {
+  font-weight: bold;
+}
+
+.tooltip div {
+  margin: 10px 0;
 }

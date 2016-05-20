@@ -1,1 +1,36 @@
 <div class="content"></div>
+
+<div id="tooltip" class="tooltip">
+  <div>
+    <span class="title">Name: </span>
+    <span id="name"></span>
+  </div> 
+  <div>
+    <span class="title">Recclass: </span>
+    <span id="recclass"></span>
+  </div> 
+  <div>
+    <span class="title">Mass: </span>
+    <span id="mass"></span>
+  </div> 
+  <div>
+    <span class="title">Year: </span>
+    <span id="year"></span>
+  </div> 
+  <div>
+    <span class="title">Fall: </span>
+    <span id="fall"></span>
+  </div> 
+  <div>
+    <span class="title">Nametype: </span>
+    <span id="nametype"></span>
+  </div> 
+  <div>
+    <span class="title">Long: </span>
+    <span id="long"></span>
+  </div> 
+  <div>
+    <span class="title">Lat: </span>
+    <span id="lat"></span>
+  </div> 
+</div> 
