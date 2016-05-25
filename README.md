@@ -23,6 +23,8 @@ Source code for [codepen experiments](http://codepen.io/sufflavus/pens/public/) 
 - [jQuery 2.2.2](//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js) 
 - [Quotes on design JSON REST API](http://quotesondesign.com/api-v4-0/)
 
+![03_RandomQuoteMachine](https://github.com/Sufflavus/CodepenExamples/blob/master/images/03_RandomQuoteMachine.png)
+
 ## 4. Local Weather
 
 [Local Weather](http://codepen.io/sufflavus/full/QNQjPV/) is based on 
@@ -31,12 +33,16 @@ Source code for [codepen experiments](http://codepen.io/sufflavus/pens/public/) 
 - [ipinfo.io JSON API](http://ipinfo.io/)
 - [OpenWeatherMap JSON API](http://openweathermap.org/current#current_JSON)
 
+![04_LocalWeather](https://github.com/Sufflavus/CodepenExamples/blob/master/images/04_LocalWeather.png)
+
 ## 5. Wikipedia Search 
 
 [Wikipedia Search](http://codepen.io/sufflavus/full/XdZZYV/) is based on 
 - [Materialize](https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css) 
 - [jQuery 2.2.2](//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js) 
 - [Wikipedia's API](http://www.mediawiki.org/wiki/API:Main_page)
+
+![05_WikipediaSearch](https://github.com/Sufflavus/CodepenExamples/blob/master/images/05_WikipediaSearch.png)
 
 ## 6. Twitch.tv Status
 
@@ -45,11 +51,15 @@ Source code for [codepen experiments](http://codepen.io/sufflavus/pens/public/) 
 - [jQuery 2.2.2](//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js) 
 - [Twitch.tv's JSONP API](https://github.com/justintv/Twitch-API/blob/master/v3_resources/streams.md#get-streamschannel)
 
+![06_TwitchtvStatus](https://github.com/Sufflavus/CodepenExamples/blob/master/images/06_TwitchtvStatus.png)
+
 ## 7. Calculator
 
 [Calculator](http://codepen.io/sufflavus/full/EKEOOr/) is based on 
 - [Materialize](https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css) 
 - [jQuery 2.2.2](//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js) 
+
+![07_Calculator](https://github.com/Sufflavus/CodepenExamples/blob/master/images/07_Calculator.png)
 
 ## 8. Pomodoro Clock
 
@@ -58,6 +68,8 @@ Source code for [codepen experiments](http://codepen.io/sufflavus/pens/public/) 
 - [jQuery 2.2.2](//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js) 
 - [moment.js 2.13.0](http://momentjs.com/downloads/moment.min.js) 
 
+![08_PomodoroClock](https://github.com/Sufflavus/CodepenExamples/blob/master/images/08_PomodoroClock.png)
+
 ## 9. Tic Tac Toe Game
 
 [Tic Tac Toe Game](http://codepen.io/sufflavus/full/RaBqje/) is based on 
@@ -65,32 +77,44 @@ Source code for [codepen experiments](http://codepen.io/sufflavus/pens/public/) 
 - [jQuery 2.2.2](//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js) 
 - [Case Study on Tic-Tac-Toe Part 2: With AI](http://www3.ntu.edu.sg/home/ehchua/programming/java/javagame_tictactoe_ai.html) 
 
+![09_TicTacToeGame](https://github.com/Sufflavus/CodepenExamples/blob/master/images/09_TicTacToeGame.png)
+
 ## 10. Simon Game
 
 [Simon Game](http://codepen.io/sufflavus/full/MyPLVB/) is based on 
 - [Materialize](https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css) 
 - [jQuery 2.2.2](//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js) 
 
+![10_SimonGame](https://github.com/Sufflavus/CodepenExamples/blob/master/images/10_SimonGame.png)
+
 ## 11. Bar Chart
 
 [Bar Chart](http://codepen.io/sufflavus/full/EKMgBN/) is based on 
 - [d3.js v3](https://d3js.org/d3.v3.min.js) 
+
+![11_BarChart](https://github.com/Sufflavus/CodepenExamples/blob/master/images/11_BarChart.png)
 
 ## 12. Scatterplot Graph
 
 [Scatterplot Graph](http://codepen.io/sufflavus/full/RamLEJ/) is based on 
 - [d3.js v3](https://d3js.org/d3.v3.min.js) 
 
+![12_ScatterplotGraph](https://github.com/Sufflavus/CodepenExamples/blob/master/images/12_ScatterplotGraph.png)
+
 ## 13. Heat Map
 
 [Heat Map](http://codepen.io/sufflavus/full/oxRJRb/) is based on 
 - [d3.js v3](https://d3js.org/d3.v3.min.js) 
+
+![13_HeatMap](https://github.com/Sufflavus/CodepenExamples/blob/master/images/13_HeatMap.png)
 
 ## 14. Meteorite Landing
 
 [Map Data Across the Globe. Meteorite landing (zoom)](http://codepen.io/sufflavus/full/pyXNwY/) is based on 
 - [d3.js v3](https://d3js.org/d3.v3.min.js) 
 - [topojson v1](http://d3js.org/topojson.v1.min.js)
+
+![14_MeteoriteLanding](https://github.com/Sufflavus/CodepenExamples/blob/master/images/14_MeteoriteLanding.png)
 
 ## 15. Markdown Previewer
 
@@ -103,6 +127,8 @@ Source code for [codepen experiments](http://codepen.io/sufflavus/pens/public/) 
 - [Sass](http://sass-lang.com/)
 - [Babel](https://babeljs.io/)
 
+![15_MarkdownPreviewer](https://github.com/Sufflavus/CodepenExamples/blob/master/images/15_MarkdownPreviewer.png)
+
 ## 16. Camper Leaderboard
 
 [Camper Leaderboard](http://codepen.io/sufflavus/full/RazqBE/) is based on 
@@ -112,6 +138,8 @@ Source code for [codepen experiments](http://codepen.io/sufflavus/pens/public/) 
 - [ReactDOM v15.0.2](https://cdnjs.cloudflare.com/ajax/libs/react/15.0.2/react-dom.js)
 - [Sass](http://sass-lang.com/)
 - [Babel](https://babeljs.io/)
+
+![16_CamperLeaderboard](https://github.com/Sufflavus/CodepenExamples/blob/master/images/16_CamperLeaderboard.png)
 
 ## 17. Recipe Box
 
@@ -123,6 +151,10 @@ Source code for [codepen experiments](http://codepen.io/sufflavus/pens/public/) 
 - [Sass](http://sass-lang.com/)
 - [Babel](https://babeljs.io/)
 
+![17_RecipeBox_1](https://github.com/Sufflavus/CodepenExamples/blob/master/images/17_RecipeBox_1.png)
+![17_RecipeBox_2](https://github.com/Sufflavus/CodepenExamples/blob/master/images/17_RecipeBox_2.png)
+![17_RecipeBox_3](https://github.com/Sufflavus/CodepenExamples/blob/master/images/17_RecipeBox_3.png)
+
 ## 18. Game of Life
 
 [Game of Life](http://codepen.io/sufflavus/full/grVeEE/) is based on 
@@ -132,4 +164,6 @@ Source code for [codepen experiments](http://codepen.io/sufflavus/pens/public/) 
 - [ReactDOM v15.0.2](https://cdnjs.cloudflare.com/ajax/libs/react/15.0.2/react-dom.js)
 - [Sass](http://sass-lang.com/)
 - [Babel](https://babeljs.io/)
-- [Conway Game of Life cellular automaton](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life)
+- [Conway's Game of Life](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life)
+
+![18_GameOfLife](https://github.com/Sufflavus/CodepenExamples/blob/master/images/18_GameOfLife.png)
