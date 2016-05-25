@@ -3,25 +3,25 @@ $board-color: #4D648C
 body 
   background-color: #2F1B28
   font-family: sans-serif
+  color: #fff
 
 .content
-  width: 840px  
+  width: 790px  
   margin: 50px auto  
   
 .board-wrapper  
   padding: 10px
-  width: 840px
+  width: 790px
   background: $board-color  
   box-shadow: 0 2px 10px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12)
   
 .board
-  width: 840px
-  height: 600px    
+  width: 770px
+  height: 550px    
     
 .generation-info   
   font-size: 20px  
-  padding-bottom: 10px
-  color: #fff
+  padding-bottom: 10px  
   
 .cell
   width: 11px
@@ -38,3 +38,22 @@ body
   
 .old
   background: #5BC7AA
+  
+.button-wrapper
+  margin: 20px
+  .btn
+    margin: 0 10px  
+  label
+    color: #fff
+  .radio-wrapper
+    display: inline-block
+    margin-right: 40px    
+  .radio-wrapper:last-child
+    margin-right: 0
+  
+.footer
+  margin: 30px 0 10px 0
+  color: #9A9A9A
+  a
+    color: #9A9A9A
+    text-decoration: underline

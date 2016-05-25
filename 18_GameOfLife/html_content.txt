@@ -1,2 +1,13 @@
-<div class="content" id="container">  
+<div class="content">  
+  <h1 class="center-align">
+    Game of Life
+  </h1>
+  <div id="container">  
+  </div>
+  <div class="center-align footer">
+    <div>
+      Feel free to add cells while it's running. The cells in light blue are younger, dark blue are older. Enjoy!
+    </div>
+    <a href="https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life" target="_blank">About Game of Life</a>
+  </div>
 </div>

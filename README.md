@@ -122,3 +122,14 @@ Source code for [codepen experiments](http://codepen.io/sufflavus/pens/public/) 
 - [ReactDOM v15.0.2](https://cdnjs.cloudflare.com/ajax/libs/react/15.0.2/react-dom.js)
 - [Sass](http://sass-lang.com/)
 - [Babel](https://babeljs.io/)
+
+## 18. Game of Life
+
+[Game of Life](http://codepen.io/sufflavus/full/grVeEE/) is based on 
+- [jQuery 2.2.2](//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js) 
+- [Materialize](https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css) 
+- [React v15.0.2](https://cdnjs.cloudflare.com/ajax/libs/react/15.0.2/react.min.js) 
+- [ReactDOM v15.0.2](https://cdnjs.cloudflare.com/ajax/libs/react/15.0.2/react-dom.js)
+- [Sass](http://sass-lang.com/)
+- [Babel](https://babeljs.io/)
+- [Conway Game of Life cellular automaton](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life)
