@@ -1,0 +1,36 @@
+body {
+  background-color: #65A4AC;  
+}
+
+.content {
+  width: 1250px;
+  height: 910px;
+  background-color: #C2DDE4;
+  margin: 40px auto;
+  box-shadow: 0 2px 10px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);  
+  position: relative;
+}
+
+text {
+  fill: #003B45;
+  font-family: sans-serif;  
+}
+
+.title {
+  text-anchor: middle;  
+  font-size: 40px; 
+}
+
+.node {
+  border: #003B45;
+  border-width: 1px;  
+  display: inline-block;
+  position: absolute;
+  cursor: pointer;
+}
+
+.link {
+  stroke: #003B45;
+  stroke-opacity: 0.6;
+  stroke-width: 1px;
+}
