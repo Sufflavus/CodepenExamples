@@ -29,125 +29,125 @@
   d3.json(dataUrl, function(error, data) {
     if(error) {      
       return;
-    } else {            
-      var description = data.description;
-      
-      var dataSet = data.data.map(function(item) {
-        return {
-          date: new Date(item[0]),
-          value: item[1]
-        };
-      }); 
-      
-      var dataSetLength = dataSet.length;
-      
-      var minDate = new Date(data.from_date);
-      var maxDate = new Date(data.to_date);
-      
-      var minValue = 0;   
-      var maxValue = d3.max(dataSet, function(item) {
-        return item.value;
-      }); 
-            
-      var title = svg.append("text")        
-        .attr({
-          class: "title",
-          x: canvasWidth/2,
-          y: 50
-        })
-        .text("Gross Domestic Product");      
-      
-      var x = d3.time.scale()
-	      .domain([minDate, maxDate])
-        .range([0, chartWidth]);
+    } 
+    
+    var description = data.description;
 
-      var y = d3.scale.linear()
-        .domain([minValue, maxValue])
-        .range([chartHeight, 0]);
+    var dataSet = data.data.map(function(item) {
+      return {
+        date: new Date(item[0]),
+        value: item[1]
+      };
+    }); 
 
-      var xAxis = d3.svg.axis()
-        .scale(x)
-        .orient("bottom");
+    var dataSetLength = dataSet.length;
 
-      var yAxis = d3.svg.axis()
-        .scale(y)
-        .orient("left");
-      
-      var chart = svg.append("g")        
-        .attr({
-          width: chartWidth,
-          height: chartHeight,
-          transform: "translate(80, 70)"
-        });
-      
-      // add x axis
-      chart.append("g")
-        .attr({
-          class: "axis",
-          transform: "translate(0," + chartHeight + ")"        
-        }) 
-        .call(xAxis);
+    var minDate = new Date(data.from_date);
+    var maxDate = new Date(data.to_date);
 
-      // add y axis
-      chart.append("g")
-        .attr({
-          class: "axis"                 
-        })
-        .call(yAxis);
-      
-      // add y axis name
-      svg.append("text")        
-        .attr({                     
-          transform: "translate(100,275) rotate(270)"
-        })        
-        .text("Gross Domestic Product, USA");
-      
-      // add bars
-      chart.selectAll(".bar")
-        .data(dataSet) 
-        .enter()
-        .append("rect")
-        .attr({
-          class: "bar",
-          x: function(d) { return x(d.date); },
-          y: function(d) { return y(d.value); },
-          height: function(d) { return chartHeight - y(d.value); },
-          width: chartWidth / dataSetLength
-        })
-        .on("mouseover", function(d) {
-          d3.select(this).attr({ class: "bar hovered" });
-        
-          tooltipValue.text(numberFormat(d.value));        
-          tooltipYear.text(d.date.getFullYear());        
-          tooltipMonth.text(months[d.date.getMonth()]);
+    var minValue = 0;   
+    var maxValue = d3.max(dataSet, function(item) {
+      return item.value;
+    }); 
 
-          tooltip.transition()
-            .duration(500)
-            .style("opacity", 0.8);
+    var title = svg.append("text")        
+      .attr({
+        class: "title",
+        x: canvasWidth/2,
+        y: 50
+      })
+      .text("Gross Domestic Product");      
 
-          tooltip.style("left", (d3.event.pageX + 10) + "px")
-            .style("top", (d3.event.pageY - 50) + "px");
-        })
-        .on("mouseout", function(d) {
-          d3.select(this).attr({ class: "bar" });
-        
-          tooltip.transition()
-            .duration(1000)
-            .style("opacity", 0);
-        });
-      
-      // add chart description
-      var descriptionText = svg.append("text")        
-        .attr({
-          class: "description",          
-          x: canvasWidth/2,
-          y: canvasHeight - 60,
-          dy: 20
-        })        
-        .text(description);
-      
-      wrapWords(descriptionText, canvasWidth);
-    }
+    var x = d3.time.scale()
+      .domain([minDate, maxDate])
+      .range([0, chartWidth]);
+
+    var y = d3.scale.linear()
+      .domain([minValue, maxValue])
+      .range([chartHeight, 0]);
+
+    var xAxis = d3.svg.axis()
+      .scale(x)
+      .orient("bottom");
+
+    var yAxis = d3.svg.axis()
+      .scale(y)
+      .orient("left");
+
+    var chart = svg.append("g")        
+      .attr({
+        width: chartWidth,
+        height: chartHeight,
+        transform: "translate(80, 70)"
+      });
+
+    // add x axis
+    chart.append("g")
+      .attr({
+        class: "axis",
+        transform: "translate(0," + chartHeight + ")"        
+      }) 
+      .call(xAxis);
+
+    // add y axis
+    chart.append("g")
+      .attr({
+        class: "axis"                 
+      })
+      .call(yAxis);
+
+    // add y axis name
+    svg.append("text")        
+      .attr({                     
+        transform: "translate(100,275) rotate(270)"
+      })        
+      .text("Gross Domestic Product, USA");
+
+    // add bars
+    chart.selectAll(".bar")
+      .data(dataSet) 
+      .enter()
+      .append("rect")
+      .attr({
+        class: "bar",
+        x: function(d) { return x(d.date); },
+        y: function(d) { return y(d.value); },
+        height: function(d) { return chartHeight - y(d.value); },
+        width: chartWidth / dataSetLength
+      })
+      .on("mouseover", function(d) {
+        d3.select(this).attr({ class: "bar hovered" });
+
+        tooltipValue.text(numberFormat(d.value));        
+        tooltipYear.text(d.date.getFullYear());        
+        tooltipMonth.text(months[d.date.getMonth()]);
+
+        tooltip.transition()
+          .duration(500)
+          .style("opacity", 0.8);
+
+        tooltip.style("left", (d3.event.pageX + 10) + "px")
+          .style("top", (d3.event.pageY - 50) + "px");
+      })
+      .on("mouseout", function(d) {
+        d3.select(this).attr({ class: "bar" });
+
+        tooltip.transition()
+          .duration(1000)
+          .style("opacity", 0);
+      });
+
+    // add chart description
+    var descriptionText = svg.append("text")        
+      .attr({
+        class: "description",          
+        x: canvasWidth/2,
+        y: canvasHeight - 60,
+        dy: 20
+      })        
+      .text(description);
+
+    wrapWords(descriptionText, canvasWidth);
   });
      
   // this code came from here https://github.com/d3/d3/issues/1642
