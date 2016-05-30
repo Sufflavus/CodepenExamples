@@ -8,3 +8,25 @@ h1, h3
   
 h3
   font-weight: normal
+  
+.row
+  margin: 0
+  padding: 0 
+  height: 20px
+  
+.cell  
+  width: 20px
+  height: 20px
+  display: inline-block
+  
+.wall
+  background: #1D1F20
+  
+.room, 
+.corridor
+  background: #ffffff
+
+.em
+  width: 20px
+  height: 20px
+  vertical-align: top
