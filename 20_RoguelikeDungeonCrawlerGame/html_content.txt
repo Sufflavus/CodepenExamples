@@ -1,8 +1,4 @@
 <h1>Roguelike Dungeon Crawler Game</h1>
 <h3>Kill the boss in dungeon 4</h3>
-<i class="em em-sunglasses"></i>
-<i class="em em-gun"></i>
-<i class="em em-ambulance"></i>
-<i class="em em-japanese_ogre"></i>
-<i class="em em-paw_prints"></i>
-<i class="em em-feet"></i><i class="em em-door"></i>
+
+<div id="container"></div>

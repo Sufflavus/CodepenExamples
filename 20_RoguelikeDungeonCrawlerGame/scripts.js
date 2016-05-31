@@ -1,8 +1,3 @@
-// http://afeld.github.io/emoji-css/
-//http://gamedevelopment.tutsplus.com/tutorials/create-a-procedurally-generated-dungeon-cave-system--gamedev-10099
-//http://bigbadwofl.me/random-dungeon-generator/
-// https://jsfiddle.net/Lt3fsdau/4/
-
 var cellType = {
   wall: 0,
   room: 1,
@@ -13,6 +8,37 @@ var cellType = {
   health: 6,
   weapon: 7,
   door: 8
+};
+
+var cellClassNameByType = {
+  0: "cell wall",
+  1: "cell room",
+  2: "cell corridor",
+  3: "cell room",
+  4: "cell room",
+  5: "cell room",
+  6: "cell room",
+  7: "cell room",
+  8: "cell room",
+};
+
+var iconClassNameByType = { 
+  0: "em",
+  1: "em",
+  2: "em",
+  3: "em em-sunglasses",
+  4: "em em-japanese_ogre",
+  5: "em em-smiling_imp",
+  6: "em em-green_apple",
+  7: "em em-gun",
+  8: "em em-door",
+};
+
+var keyboardCode = {
+  left: 37,
+  up: 38,
+  right: 39,
+  down: 40
 };
 
 class Helper {
@@ -114,33 +140,33 @@ class DungeonGenerator {
     room1.connectedWith.push(room2);
     room2.connectedWith.push(room1);
     
-    var pointA = {
+    var point1 = {
       x: Helper.getRandomInt(room1.x1 - 1, room1.x0 + 1),
       y: Helper.getRandomInt(room1.y1 - 1, room1.y0 + 1)
     };
 
-    var pointB = {
+    var point2 = {
       x: Helper.getRandomInt(room2.x1 - 1, room2.x0 + 1),
       y: Helper.getRandomInt(room2.y1 - 1, room2.y0 + 1)
     };
 
-    while ((pointB.x != pointA.x) || (pointB.y != pointA.y)) {
-      if (pointB.x != pointA.x) {
-        if (pointB.x > pointA.x) {
-          pointB.x--;
+    while ((point2.x != point1.x) || (point2.y != point1.y)) {
+      if (point2.x != point1.x) {
+        if (point2.x > point1.x) {
+          point2.x--;
         } else {
-          pointB.x++;
+          point2.x++;
         }
-      } else if (pointB.y != pointA.y) {
-        if (pointB.y > pointA.y) {
-          pointB.y--;
+      } else if (point2.y != point1.y) {
+        if (point2.y > point1.y) {
+          point2.y--;
         }
         else {
-          pointB.y++;
+          point2.y++;
         }
       }
 
-      this.map[pointB.x][pointB.y] = cellType.corridor;
+      this.map[point2.x][point2.y] = cellType.corridor;
     }
   }
   
@@ -276,8 +302,46 @@ class Game {
     this.boss = null;
     
     this.dungeonNumber = 1;   
-     this.player = new Player();
+    this.player = new Player();
     this._setInitialState();        
+  }
+  
+  movePlayer(direction) {       
+    var x = this.player.coordinates.x;
+    var y = this.player.coordinates.y;
+    switch (direction) {
+      case keyboardCode.right:
+        x++;
+        break;
+      case keyboardCode.left:
+        x--;
+        break;
+      case keyboardCode.up:
+        y++;
+        break;
+      case keyboardCode.down:
+        y--;
+        break;
+    }
+    
+    if(x < 0) {
+      x = 0;
+    } else if(x >= this.size.n) {
+      x = this.size.n - 1;
+    }
+    
+    if(y < 0) {
+      y = 0;
+    } else if(y >= this.size.m) {
+      y = this.size.m - 1;
+    }
+    
+    if(this.map[x][y] == cellType.room || this.map[x][y] == cellType.corridor) {
+      this.map[this.player.coordinates.x][this.player.coordinates.y] = cellType.room; // ? corridor
+      this.player.coordinates.x = x;
+      this.player.coordinates.y = y;
+      this.map[this.player.coordinates.x][this.player.coordinates.y] = cellType.player;
+    }
   }
   
   _setInitialState() {
@@ -345,18 +409,8 @@ class Game {
   
   _createBoss() {
     let boss = new Boss();   
-    
-    while(true) {          
-      let coordinates = this._findAvailablePointInRoom();
-      let x = coordinates.x;
-      let y = coordinates.y;  
-      if(this._isCellCanBeOccupied({ x: x + 1, y: y }) && 
-         this._isCellCanBeOccupied({ x: x + 1, y: y + 1 }) &&
-         this._isCellCanBeOccupied({ x: x, y: y + 1 })) {
-        boss.coordinates = coordinates;
-        return boss;
-      }
-    }
+    boss.coordinates = this._findAvailablePointInRoom();
+    return boss;
   }  
   
   _createHealthItem() {
@@ -407,54 +461,143 @@ class Game {
   }
 }
 
-var game = new Game();
-var $board = $("#board");
-game.map.forEach(row => {
-  var $row = $("<div/>", {        
-    class: "row"
-  }).appendTo($board);
-
-  row.forEach(cell => {
-    var className = "cell";
-    if(cell === cellType.wall) {
-      className = className + " wall";
-    } else if(cell === cellType.room) {
-      className = className + " room";
-    } else if(cell === cellType.corridor) {
-      className = className + " corridor";
-    } else {
-      className = className + " room";
-    }
-    var $cell = $("<div/>", {
-      class: className
-    }).appendTo($row);
+class GameCamera {
+  constructor(mapSize, cameraSize) {
+    this.mapSize = mapSize;   
+    this.cameraSize = cameraSize;
     
-    var itemClass = "em";
-    if(cell === cellType.player) {
-      itemClass = itemClass + " em-sunglasses";
-    } else if(cell === cellType.enemy) {
-      itemClass = itemClass + " em-japanese_ogre";
-    } else if(cell === cellType.boss) {
-      itemClass = itemClass + " em-japanese_ogre";
-    } else if(cell === cellType.health) {
-      itemClass = itemClass + " em-ambulance";
-    } else if(cell === cellType.weapon) {
-      itemClass = itemClass + " em-gun";
-    } else if(cell === cellType.door) {
-      itemClass = itemClass + " em-door";
+    this.cameraRectangle = {
+      x0: 0,
+      y0: 0,
+      x1: this.cameraSize.n,
+      y1: this.cameraSize.m
+    };
+  }
+  
+  focusOnPlayer(coordinates) {
+    var x = parseInt(coordinates.x - this.cameraSize.n/2);
+    var y = parseInt(coordinates.y - this.cameraSize.m/2);
+    
+    if(x < 0){
+      x = 0;
+    } else if (x > this.mapSize.n - this.cameraSize.n) {
+      x = this.mapSize.n - this.cameraSize.n;
     }
-    var $i = $("<i/>", {
-      class: itemClass
-    }).appendTo($cell);    
-  });  
-})
+    
+    if(y < 0) {
+      y = 0;
+    } else if (y > this.mapSize.m - this.cameraSize.m) {
+      y = this.mapSize.m - this.cameraSize.m;
+    }
+    
+    this.cameraRectangle = {
+      x0: x,
+      y0: y,
+      x1: x + this.cameraSize.n,
+      y1: y + this.cameraSize.m
+    };
+  }
+}
 
-//console.log(g.map)
+var Cell = React.createClass({  
+  render: function() {
+    return (
+      <div id={this.props.id} className={cellClassNameByType[this.props.type]}>
+        <i className={iconClassNameByType[this.props.type]}/>
+      </div>
+    );
+  }
+});
 
-/* var d = new DungeonGenerator();
-for(var i = 0; i < 10; i++) {  
-  var start = new Date().getTime();
-  d.generate();
-  var end = new Date().getTime();
-  console.log(end-start);
-} */
+var Row = React.createClass({  
+  render: function() {
+    var cells = this.props.cells.map(cell => (
+      <Cell type={cell}/>
+    ));
+    return (
+      <div id={this.props.id} className="row">
+        {cells}
+      </div>
+    );
+  }
+});
+
+var Board = React.createClass({    
+  render: function() {    
+    var rows = this.props.rows.map(row => (
+      <Row cells={row}/>
+    ));
+    return (
+      <div>
+        {rows}
+      </div>
+    );
+  }
+});
+
+var Field = React.createClass({  
+  getInitialState: function() {             
+    var game = new Game();
+    var cameraSize = { n: 30, m: 30 };    
+    var camera = new GameCamera(game.size, cameraSize);    
+    camera.focusOnPlayer(game.player.coordinates);
+
+    return { 
+      game: game,
+      map: game.map,
+      camera: camera
+    };
+  },
+  componentDidMount: function() {
+    $(document.body).on("keydown", this.handleKeyDown);
+    $(document.body).focus();
+  },
+  handleKeyDown: function(e) {
+    console.log(e.keyCode)  
+    if(e.keyCode < keyboardCode.left || e.keyCode > keyboardCode.down) {
+      return;
+    }
+    e.preventDefault();
+    var game = this.state.game;    
+    game.movePlayer(e.keyCode);
+    this.state.camera.focusOnPlayer(game.player.coordinates);  
+    this.setState({ 
+      map: game.map
+    }); 
+  },
+  render: function() {
+    var map = this.state.map;
+    var mapInCamera = [];
+    var cameraRectangle = this.state.camera.cameraRectangle;
+    var i = 0;
+    for(var x = cameraRectangle.x0; x < cameraRectangle.x1; x++) {
+      mapInCamera[i] = [];
+      let j = 0;
+      for(var y = cameraRectangle.y0; y < cameraRectangle.y1; y++) {
+        mapInCamera[i][j] = map[x][y];
+        j++;
+      }
+      i++;
+    }
+    
+    var rows = [];
+    for (var i = 0, m = this.state.camera.cameraSize.m; i < m; i++) {
+      rows[i] = [];
+      for (var j = 0, n = this.state.camera.cameraSize.n; j < n; j++) {
+        rows[i][j] = mapInCamera[j][n - i - 1];
+      }
+    }
+    debugger;
+    return (
+      <div className="camera">
+        <Board rows={rows}>            
+        </Board>               
+      </div>
+    );
+  }
+});
+
+ReactDOM.render(
+  <Field />,
+  document.getElementById("container")
+);
