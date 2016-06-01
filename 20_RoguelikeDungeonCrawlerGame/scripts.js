@@ -1,37 +1,34 @@
 var cellType = {
   wall: 0,
-  room: 1,
-  corridor: 2,
-  player: 3,
-  enemy: 4,
-  boss: 5,
-  health: 6,
-  weapon: 7,
-  door: 8
+  room: 1,  
+  player: 2,
+  enemy: 3,
+  boss: 4,
+  health: 5,
+  weapon: 6,
+  door: 7
 };
 
 var cellClassNameByType = {
   0: "cell wall",
-  1: "cell room",
-  2: "cell corridor",
+  1: "cell room",  
+  2: "cell room",
   3: "cell room",
   4: "cell room",
   5: "cell room",
   6: "cell room",
   7: "cell room",
-  8: "cell room",
 };
 
 var iconClassNameByType = { 
   0: "em",
-  1: "em",
-  2: "em",
-  3: "em em-sunglasses",
-  4: "em em-japanese_ogre",
-  5: "em em-smiling_imp",
-  6: "em em-green_apple",
-  7: "em em-gun",
-  8: "em em-door",
+  1: "em",  
+  2: "em em-sunglasses",
+  3: "em em-japanese_ogre",
+  4: "em em-smiling_imp",
+  5: "em em-green_apple",
+  6: "em em-gun",
+  7: "em em-door",
 };
 
 var keyboardCode = {
@@ -166,7 +163,7 @@ class DungeonGenerator {
         }
       }
 
-      this.map[point2.x][point2.y] = cellType.corridor;
+      this.map[point2.x][point2.y] = cellType.room;
     }
   }
   
@@ -293,7 +290,9 @@ class Game {
       healthItemsCount: 10,
       weaponsCount: 1,
       doorsCount: 1      
-    };      
+    };     
+    
+    this.entitiesOnMap = [];
     
     this.enemies = [];    
     this.healthItems = [];
@@ -336,8 +335,8 @@ class Game {
       y = this.size.m - 1;
     }
     
-    if(this.map[x][y] == cellType.room || this.map[x][y] == cellType.corridor) {
-      this.map[this.player.coordinates.x][this.player.coordinates.y] = cellType.room; // ? corridor
+    if(this.map[x][y] == cellType.room) {
+      this.map[this.player.coordinates.x][this.player.coordinates.y] = cellType.room;
       this.player.coordinates.x = x;
       this.player.coordinates.y = y;
       this.map[this.player.coordinates.x][this.player.coordinates.y] = cellType.player;
@@ -352,8 +351,35 @@ class Game {
     this._addHealthItems();
     this._addWeapons();
     this._addDoors();
+    this._putEntitiesOnMap();
     this.player.coordinates = this._findAvailablePointInRoom();
     this.map[this.player.coordinates.x][this.player.coordinates.y] = cellType.player;
+  }
+  
+  _putEntitiesOnMap() {    
+    for(let i = 0; i < this.mapSize.n; i++) {
+      this.entitiesOnMap[i] = [];
+      for(let j = 0; j < this.mapSize.m; j++) {
+        this.entitiesOnMap[i][j] = null;
+      }
+    }
+    
+    this.enemies.forEach(entity => {
+      this.entitiesOnMap[entity.coordinates.x][entity.coordinates.y] = entity;
+    });    
+    this.healthItems.forEach(entity => {
+      this.entitiesOnMap[entity.coordinates.x][entity.coordinates.y] = entity;
+    });    
+    this.weapons.forEach(entity => {
+      this.entitiesOnMap[entity.coordinates.x][entity.coordinates.y] = entity;
+    });    
+    this.doors.forEach(entity => {
+      this.entitiesOnMap[entity.coordinates.x][entity.coordinates.y] = entity;
+    });   
+    
+    if(this.boss) {
+      this.entitiesOnMap[this.boss.coordinates.x][this.boss.coordinates.y] = this.boss;
+    }    
   }
   
   _addEnemies() {
@@ -367,10 +393,7 @@ class Game {
     // add boss if it is the last one dungeon
     if(this.dungeonNumber === this.dungeonsCount) {
       this.boss = _createBoss();
-      this.map[boss.coordinates.x][boss.coordinates.y] = cellType.boss;      
-      this.map[boss.coordinates.x + 1][boss.coordinates.y] = cellType.boss;
-      this.map[boss.coordinates.x + 1][boss.coordinates.y + 1] = cellType.boss;
-      this.map[boss.coordinates.x][boss.coordinates.y + 1] = cellType.boss;
+      this.map[boss.coordinates.x][boss.coordinates.y] = cellType.boss;       
     }
   } 
   
@@ -587,7 +610,7 @@ var Field = React.createClass({
         rows[i][j] = mapInCamera[j][n - i - 1];
       }
     }
-    debugger;
+
     return (
       <div className="camera">
         <Board rows={rows}>            
