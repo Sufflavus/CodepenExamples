@@ -38,6 +38,16 @@ var keyboardCode = {
   down: 40
 };
 
+var weaponType = {
+  0: "stick",
+  1: "knife",
+  2: "sword",
+  3: "gun",
+  4: "laser"
+};
+  
+  //stick, javelin/knife, sword, gun, laser 
+
 class Helper {
   static getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -357,9 +367,9 @@ class Game {
   }
   
   _putEntitiesOnMap() {    
-    for(let i = 0; i < this.mapSize.n; i++) {
+    for(let i = 0; i < this.size.n; i++) {
       this.entitiesOnMap[i] = [];
-      for(let j = 0; j < this.mapSize.m; j++) {
+      for(let j = 0; j < this.size.m; j++) {
         this.entitiesOnMap[i][j] = null;
       }
     }
@@ -612,14 +622,23 @@ var Field = React.createClass({
     }
 
     return (
-      <div className="camera">
-        <Board rows={rows}>            
-        </Board>               
+      <div>
+        <div className="score-panel">
+          <span className="score-item">Health: 100</span>
+          <span className="score-item">Weapon: stick</span>
+          <span className="score-item">Level: 0</span>
+          <span className="score-item">XP: 40</span>
+          <span className="score-item">Dungeon: 1</span>
+        </div>
+        <div className="camera">
+          <Board rows={rows}>            
+          </Board>               
+        </div>
       </div>
     );
   }
 });
-
+//stick, javelin/knife, sword, gun, laser 
 ReactDOM.render(
   <Field />,
   document.getElementById("container")
