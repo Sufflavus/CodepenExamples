@@ -45,8 +45,6 @@ var weaponType = {
   3: "gun",
   4: "laser"
 };
-  
-  //stick, javelin/knife, sword, gun, laser 
 
 class Helper {
   static getRandomInt(min, max) {
@@ -544,8 +542,8 @@ var Cell = React.createClass({
 
 var Row = React.createClass({  
   render: function() {
-    var cells = this.props.cells.map(cell => (
-      <Cell type={cell}/>
+    var cells = this.props.cells.map((cell, index) => (
+      <Cell type={cell} key={index}/>
     ));
     return (
       <div id={this.props.id} className="row">
@@ -557,8 +555,8 @@ var Row = React.createClass({
 
 var Board = React.createClass({    
   render: function() {    
-    var rows = this.props.rows.map(row => (
-      <Row cells={row}/>
+    var rows = this.props.rows.map((row, index) => (
+      <Row cells={row} key={index}/>
     ));
     return (
       <div>
@@ -566,6 +564,19 @@ var Board = React.createClass({
       </div>
     );
   }
+});
+
+var ScorePanel = React.createClass({
+  render: function() {
+    return (
+    <div className="score-panel">
+      <span className="score-item">Health: 100</span>
+      <span className="score-item">Weapon: stick</span>
+      <span className="score-item">Level: 0</span>
+      <span className="score-item">XP: 40</span>
+      <span className="score-item">Dungeon: 1</span>
+    </div>
+  )}
 });
 
 var Field = React.createClass({  
@@ -623,13 +634,7 @@ var Field = React.createClass({
 
     return (
       <div>
-        <div className="score-panel">
-          <span className="score-item">Health: 100</span>
-          <span className="score-item">Weapon: stick</span>
-          <span className="score-item">Level: 0</span>
-          <span className="score-item">XP: 40</span>
-          <span className="score-item">Dungeon: 1</span>
-        </div>
+        <ScorePanel />
         <div className="camera">
           <Board rows={rows}>            
           </Board>               
