@@ -239,7 +239,7 @@ class Player {
     this.health = 100;
     this.weapon = 1;
     this.xp = 0;
-  }
+  }  
 }
 
 class Enemy {
@@ -313,7 +313,23 @@ class Game {
     this._setInitialState();        
   }
   
-  movePlayer(direction) {       
+  movePlayer(direction) {     
+    var coordinates = this._getNewUserCoordinates(direction);
+    var x = coordinates.x;
+    var y = coordinates.y;    
+
+    if(this.map[x][y] == cellType.room) {
+      this._doMoveUser(coordinates);
+    } else if(this.map[x][y] == cellType.health) {      
+      var healtItem = this.entitiesOnMap[x][y];
+      this.player.health += healtItem.value;
+      this.entitiesOnMap[x][y] = null;
+      this._doMoveUser(coordinates);
+    }
+    console.log("health: " + this.player.health)
+  }
+  
+  _getNewUserCoordinates(direction) {
     var x = this.player.coordinates.x;
     var y = this.player.coordinates.y;
     switch (direction) {
@@ -343,12 +359,17 @@ class Game {
       y = this.size.m - 1;
     }
     
-    if(this.map[x][y] == cellType.room) {
-      this.map[this.player.coordinates.x][this.player.coordinates.y] = cellType.room;
-      this.player.coordinates.x = x;
-      this.player.coordinates.y = y;
-      this.map[this.player.coordinates.x][this.player.coordinates.y] = cellType.player;
-    }
+    return {
+      x: x,
+      y: y
+    };
+  }
+  
+  _doMoveUser(newCoordinates) {
+    this.map[this.player.coordinates.x][this.player.coordinates.y] = cellType.room;
+    this.player.coordinates.x = newCoordinates.x;
+    this.player.coordinates.y = newCoordinates.y;
+    this.map[newCoordinates.x][newCoordinates.y] = cellType.player;
   }
   
   _setInitialState() {
@@ -569,13 +590,13 @@ var Board = React.createClass({
 var ScorePanel = React.createClass({
   render: function() {
     return (
-    <div className="score-panel">
-      <span className="score-item">Health: 100</span>
-      <span className="score-item">Weapon: stick</span>
-      <span className="score-item">Level: 0</span>
-      <span className="score-item">XP: 40</span>
-      <span className="score-item">Dungeon: 1</span>
-    </div>
+      <div className="score-panel">
+        <span className="score-item">Health: <span>{this.props.health}</span></span>
+        <span className="score-item">Weapon: stick</span>
+        <span className="score-item">Level: 0</span>
+        <span className="score-item">XP: 40</span>
+        <span className="score-item">Dungeon: 1</span>
+      </div>
   )}
 });
 
@@ -585,16 +606,21 @@ var Field = React.createClass({
     var cameraSize = { n: 30, m: 30 };    
     var camera = new GameCamera(game.size, cameraSize);    
     camera.focusOnPlayer(game.player.coordinates);
+    
+    var score = {
+      health: 100
+    };
 
     return { 
       game: game,
       map: game.map,
-      camera: camera
+      camera: camera,
+      score: score
     };
   },
   componentDidMount: function() {
     $(document.body).on("keydown", this.handleKeyDown);
-    $(document.body).focus();
+    //$(document.body).focus();
   },
   handleKeyDown: function(e) {
     console.log(e.keyCode)  
@@ -606,7 +632,10 @@ var Field = React.createClass({
     game.movePlayer(e.keyCode);
     this.state.camera.focusOnPlayer(game.player.coordinates);  
     this.setState({ 
-      map: game.map
+      map: game.map,
+      score: {
+        health: game.player.health
+      }
     }); 
   },
   render: function() {
@@ -634,7 +663,7 @@ var Field = React.createClass({
 
     return (
       <div>
-        <ScorePanel />
+        <ScorePanel health={this.state.score.health}/>
         <div className="camera">
           <Board rows={rows}>            
           </Board>               
