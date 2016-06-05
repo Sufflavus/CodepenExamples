@@ -592,10 +592,10 @@ var ScorePanel = React.createClass({
     return (
       <div className="score-panel">
         <span className="score-item">Health: <span>{this.props.health}</span></span>
-        <span className="score-item">Weapon: stick</span>
-        <span className="score-item">Level: 0</span>
-        <span className="score-item">XP: 40</span>
-        <span className="score-item">Dungeon: 1</span>
+        <span className="score-item">Weapon: <span>{this.props.weapon}</span></span>
+        <span className="score-item">Level: <span>{this.props.level}</span></span>
+        <span className="score-item">XP: <span>{this.props.experience}</span></span>
+        <span className="score-item">Dungeon:  <span>{this.props.dungeon}</span></span>
       </div>
   )}
 });
@@ -608,7 +608,11 @@ var Field = React.createClass({
     camera.focusOnPlayer(game.player.coordinates);
     
     var score = {
-      health: 100
+      health: 100,      
+      weapon: "stick",
+      level: 0,
+      experience: 40,
+      dungeon: 1,
     };
 
     return { 
@@ -663,7 +667,13 @@ var Field = React.createClass({
 
     return (
       <div>
-        <ScorePanel health={this.state.score.health}/>
+        <ScorePanel 
+          health={this.state.score.health}
+          weapon={this.state.score.weapon}
+          level={this.state.score.level}
+          experience={this.state.score.experience}
+          dungeon={this.state.score.dungeon}>
+        </ScorePanel>
         <div className="camera">
           <Board rows={rows}>            
           </Board>               
