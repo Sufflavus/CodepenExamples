@@ -1,3 +1,5 @@
+/* This project has not been finished yet */
+
 var cellType = {
   wall: 0,
   room: 1,  
@@ -237,7 +239,7 @@ class Player {
   _setInitialState() {
     this.level = 0;
     this.health = 100;
-    this.weapon = 1;
+    this.weapon = new Weapon(0);
     this.xp = 0;
   }  
 }
@@ -268,7 +270,8 @@ class HealthItem {
 class Weapon {
   constructor(dungeonNumber) {    
     this.value = dungeonNumber*10;  
-    this.name = "name";
+    this.type = dungeonNumber;
+    this.name = weaponType[this.type];
     this.coordinates = { x: -1, y: -1 };
   }
 }
@@ -280,8 +283,7 @@ class Door {
 }
 
 class Game {
-  constructor() {
-    this.dungeonNumber = 1;
+  constructor() {    
     this.dungeonsCount = 4;
     this.dungeonGenerator = new DungeonGenerator(); 
     
@@ -308,9 +310,8 @@ class Game {
     this.doors = [];
     this.boss = null;
     
-    this.dungeonNumber = 1;   
     this.player = new Player();
-    this._setInitialState();        
+    this._generateField();        
   }
   
   movePlayer(direction) {     
@@ -325,8 +326,16 @@ class Game {
       this.player.health += healtItem.value;
       this.entitiesOnMap[x][y] = null;
       this._doMoveUser(coordinates);
-    }
-    console.log("health: " + this.player.health)
+    } else if(this.map[x][y] == cellType.weapon) {      
+      var weapon = this.entitiesOnMap[x][y];
+      this.player.weapon = weapon;
+      this.entitiesOnMap[x][y] = null;
+      this._doMoveUser(coordinates);
+    } else if(this.map[x][y] == cellType.door) {       
+      this.settings.dungeonNumber++;
+      this._generateField();
+    }    
+    //console.log("health: " + this.player.health)
   }
   
   _getNewUserCoordinates(direction) {
@@ -372,7 +381,7 @@ class Game {
     this.map[newCoordinates.x][newCoordinates.y] = cellType.player;
   }
   
-  _setInitialState() {
+  _generateField() {
     this.dungeonGenerator.generate();
     this.map = this.dungeonGenerator.map;  
     this.rooms = this.dungeonGenerator.rooms;
@@ -384,7 +393,7 @@ class Game {
     this.player.coordinates = this._findAvailablePointInRoom();
     this.map[this.player.coordinates.x][this.player.coordinates.y] = cellType.player;
   }
-  
+     
   _putEntitiesOnMap() {    
     for(let i = 0; i < this.size.n; i++) {
       this.entitiesOnMap[i] = [];
@@ -420,9 +429,9 @@ class Game {
     }
     
     // add boss if it is the last one dungeon
-    if(this.dungeonNumber === this.dungeonsCount) {
-      this.boss = _createBoss();
-      this.map[boss.coordinates.x][boss.coordinates.y] = cellType.boss;       
+    if(this.settings.dungeonNumber === this.dungeonsCount) {
+      this.boss = this._createBoss();
+      this.map[this.boss.coordinates.x][this.boss.coordinates.y] = cellType.boss;       
     }
   } 
   
@@ -446,6 +455,11 @@ class Game {
   
   _addDoors() {
     this.doors = [];
+    
+    if(this.settings.dungeonNumber === this.dungeonsCount) {
+      return;
+    }
+    
     for(let i = 0; i < this.settings.doorsCount; i++) {      
       let door = this._createDoor();
       this.doors.push(door);
@@ -454,7 +468,7 @@ class Game {
   }
   
   _createEnemy() {
-    let enemy = new Enemy(this.dungeonNumber);
+    let enemy = new Enemy(this.settings.dungeonNumber);
     enemy.coordinates = this._findAvailablePointInRoom();
     return enemy;  
   }
@@ -472,7 +486,7 @@ class Game {
   }
   
   _createWeapon() {
-    let weapon = new Weapon();
+    let weapon = new Weapon(this.settings.dungeonNumber);
     weapon.coordinates = this._findAvailablePointInRoom();
     return weapon;  
   }
@@ -580,7 +594,7 @@ var Board = React.createClass({
       <Row cells={row} key={index}/>
     ));
     return (
-      <div>
+      <div className="camera">
         {rows}
       </div>
     );
@@ -609,7 +623,7 @@ var Field = React.createClass({
     
     var score = {
       health: 100,      
-      weapon: "stick",
+      weapon: game.player.weapon.name,
       level: 0,
       experience: 40,
       dungeon: 1,
@@ -627,7 +641,7 @@ var Field = React.createClass({
     //$(document.body).focus();
   },
   handleKeyDown: function(e) {
-    console.log(e.keyCode)  
+    //console.log(e.keyCode)  
     if(e.keyCode < keyboardCode.left || e.keyCode > keyboardCode.down) {
       return;
     }
@@ -635,10 +649,15 @@ var Field = React.createClass({
     var game = this.state.game;    
     game.movePlayer(e.keyCode);
     this.state.camera.focusOnPlayer(game.player.coordinates);  
+    //console.log(game.player.weapon)
     this.setState({ 
       map: game.map,
       score: {
-        health: game.player.health
+        health: game.player.health,
+        weapon: game.player.weapon.name,
+        level: 0,
+        experience: 40,
+        dungeon: game.settings.dungeonNumber,
       }
     }); 
   },
@@ -674,15 +693,12 @@ var Field = React.createClass({
           experience={this.state.score.experience}
           dungeon={this.state.score.dungeon}>
         </ScorePanel>
-        <div className="camera">
-          <Board rows={rows}>            
-          </Board>               
-        </div>
+        <Board rows={rows} />         
       </div>
     );
   }
 });
-//stick, javelin/knife, sword, gun, laser 
+
 ReactDOM.render(
   <Field />,
   document.getElementById("container")
