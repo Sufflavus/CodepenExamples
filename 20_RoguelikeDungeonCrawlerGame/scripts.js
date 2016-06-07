@@ -94,7 +94,8 @@ class DungeonGenerator {
   }
   
   _generateRooms() {
-    var timeout = 200;
+    this.rooms = [];
+    const timeout = 200;
     var start = new Date().getTime();
     
     for (let i = 0; i < this.roomsCount; i++) {
@@ -178,22 +179,22 @@ class DungeonGenerator {
   }
   
   _findClosestRoom(room) {
-    var middle = {
+    let middle = {
       x: room.x0 + ((room.x1 - room.x0) / 2),
       y: room.y0 + ((room.y1 - room.y0) / 2)
     };
-    var closestRoom = null;
-    var closestDistance = 1000;
-    for (var i = 0; i < this.roomsCount; i++) {
-      var check = this.rooms[i];
+    let closestRoom = null;
+    let closestDistance = 1000;
+    for (let i = 0; i < this.roomsCount; i++) {
+      let check = this.rooms[i];
       if (check == room || room.connectedWith.indexOf(check) >= 0) {
         continue;
       }
-      var checkMiddle = {
+      let checkMiddle = {
         x: check.x0 + ((check.x1 - check.x0) / 2),
         y: check.y0 + ((check.y1 - check.y0) / 2)
       };
-      var distance = Math.sqrt(Math.pow(middle.x - checkMiddle.x, 2) + Math.pow(middle.y - checkMiddle.y, 2));
+      let distance = Math.sqrt(Math.pow(middle.x - checkMiddle.x, 2) + Math.pow(middle.y - checkMiddle.y, 2));
       if (distance < closestDistance) {
         closestDistance = distance;
         closestRoom = check;
@@ -219,7 +220,7 @@ class DungeonGenerator {
   
   _isRoomsIntersect(room) {
     for (let i = 0; i < this.rooms.length; i++) {          
-      var roomForCheck = this.rooms[i];
+      let roomForCheck = this.rooms[i];
       if (!((room.x1 + 1 < roomForCheck.x0) || (room.x0 > roomForCheck.x1 + 1) || 
             (room.y1 + 1 < roomForCheck.y0) || (room.y0 > roomForCheck.y1 + 1))) {
         return true;
@@ -236,11 +237,41 @@ class Player {
     this.coordinates = { x: -1, y: -1 };
   }
   
+  fightWith(enemy) {    
+    var userPower = ((this.level*100 + this.experience)/10)*this.weapon.type;
+    var enemyPower = enemy.level;
+    
+    //var demage = Math.abs(userPower - enemyPower)*10;
+        
+    this.health -= enemyPower*10; 
+    enemy.health -= userPower*10;
+    
+    /* if(userPower < enemyPower) {
+      this.health -= enemyPower*10;      
+    } else {
+      enemy.health -= userPower*10;
+    } */
+    console.log("user: ", this.health)
+    console.log("emeny: ", enemy.health)
+        
+    if(this.health >= 0) {      
+      this.experience += enemy.level*10;
+      if(this.experience >= 100) {
+        this.level++;
+        this.experience -= 100;
+      }      
+    }    
+  }
+  
+  isAlife() {
+    this.health >= 0;
+  }
+  
   _setInitialState() {
     this.level = 0;
     this.health = 100;
     this.weapon = new Weapon(0);
-    this.xp = 0;
+    this.experience = 40;
   }  
 }
 
@@ -249,7 +280,11 @@ class Enemy {
     this.level = dungeonNumber * Helper.getRandomInt(5, 10);
     this.health = this.level * 5;
     this.coordinates = { x: -1, y: -1 };
-  }   
+  } 
+  
+  isAlife() {
+    return this.health >= 0;
+  }
 }
 
 class Boss {
@@ -257,6 +292,10 @@ class Boss {
     this.level = 60;
     this.health = 300;  
     this.coordinates = { x: -1, y: -1 };
+  }
+  
+  isAlife() {
+    this.health >= 0;
   }
 }
 
@@ -268,9 +307,9 @@ class HealthItem {
 }
 
 class Weapon {
-  constructor(dungeonNumber) {    
-    this.value = dungeonNumber*10;  
-    this.type = dungeonNumber;
+  constructor(type) {    
+    this.value = type*10;  
+    this.type = type;
     this.name = weaponType[this.type];
     this.coordinates = { x: -1, y: -1 };
   }
@@ -315,9 +354,9 @@ class Game {
   }
   
   movePlayer(direction) {     
-    var coordinates = this._getNewUserCoordinates(direction);
-    var x = coordinates.x;
-    var y = coordinates.y;    
+    let coordinates = this._getNewUserCoordinates(direction);
+    let x = coordinates.x;
+    let y = coordinates.y;    
 
     if(this.map[x][y] == cellType.room) {
       this._doMoveUser(coordinates);
@@ -334,13 +373,20 @@ class Game {
     } else if(this.map[x][y] == cellType.door) {       
       this.settings.dungeonNumber++;
       this._generateField();
-    }    
-    //console.log("health: " + this.player.health)
+    } else if(this.map[x][y] == cellType.enemy) {       
+      var enemy = this.entitiesOnMap[x][y];
+      this.player.fightWith(enemy);
+      console.log(enemy)
+      if(!enemy.isAlife()) {
+        this.entitiesOnMap[x][y] = null;
+        this._doMoveUser(coordinates);
+      }
+    }        
   }
   
   _getNewUserCoordinates(direction) {
-    var x = this.player.coordinates.x;
-    var y = this.player.coordinates.y;
+    let x = this.player.coordinates.x;
+    let y = this.player.coordinates.y;
     switch (direction) {
       case keyboardCode.right:
         x++;
@@ -456,6 +502,7 @@ class Game {
   _addDoors() {
     this.doors = [];
     
+    // do not add door if it is the last one dungeon
     if(this.settings.dungeonNumber === this.dungeonsCount) {
       return;
     }
@@ -486,7 +533,7 @@ class Game {
   }
   
   _createWeapon() {
-    let weapon = new Weapon(this.settings.dungeonNumber);
+    let weapon = new Weapon(this.player.weapon.type++);
     weapon.coordinates = this._findAvailablePointInRoom();
     return weapon;  
   }
@@ -541,8 +588,8 @@ class GameCamera {
   }
   
   focusOnPlayer(coordinates) {
-    var x = parseInt(coordinates.x - this.cameraSize.n/2);
-    var y = parseInt(coordinates.y - this.cameraSize.m/2);
+    let x = parseInt(coordinates.x - this.cameraSize.n/2);
+    let y = parseInt(coordinates.y - this.cameraSize.m/2);
     
     if(x < 0){
       x = 0;
@@ -622,11 +669,11 @@ var Field = React.createClass({
     camera.focusOnPlayer(game.player.coordinates);
     
     var score = {
-      health: 100,      
+      health: game.player.health,
       weapon: game.player.weapon.name,
-      level: 0,
-      experience: 40,
-      dungeon: 1,
+      level: game.player.level,
+      experience: game.player.experience,
+      dungeon: game.settings.dungeonNumber,
     };
 
     return { 
@@ -640,23 +687,21 @@ var Field = React.createClass({
     $(document.body).on("keydown", this.handleKeyDown);
     //$(document.body).focus();
   },
-  handleKeyDown: function(e) {
-    //console.log(e.keyCode)  
+  handleKeyDown: function(e) {    
     if(e.keyCode < keyboardCode.left || e.keyCode > keyboardCode.down) {
       return;
     }
     e.preventDefault();
     var game = this.state.game;    
     game.movePlayer(e.keyCode);
-    this.state.camera.focusOnPlayer(game.player.coordinates);  
-    //console.log(game.player.weapon)
+    this.state.camera.focusOnPlayer(game.player.coordinates);      
     this.setState({ 
       map: game.map,
       score: {
         health: game.player.health,
         weapon: game.player.weapon.name,
-        level: 0,
-        experience: 40,
+        level: game.player.level,
+        experience: game.player.experience,
         dungeon: game.settings.dungeonNumber,
       }
     }); 
