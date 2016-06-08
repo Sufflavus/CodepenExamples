@@ -2,3 +2,13 @@
 <h3>Kill the boss in dungeon 4</h3>
 
 <div id="container"></div>
+
+<div class="overlay"></div>
+
+<h1 class="message win-message">
+  You are WIN!!!
+</h1>
+
+<h1 class="message lose-message">
+  You are Lost :(
+</h1>

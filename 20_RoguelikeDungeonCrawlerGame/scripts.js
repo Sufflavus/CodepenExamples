@@ -238,13 +238,14 @@ class Player {
   }
   
   fightWith(enemy) {    
-    var userPower = ((this.level*100 + this.experience)/10)*this.weapon.type;
+    var userPower = ((this.level*100 + this.experience)/10)*(this.weapon.type + 1);
     var enemyPower = enemy.level;
-    
+    console.log(this.weapon.type)
+
     //var demage = Math.abs(userPower - enemyPower)*10;
         
-    this.health -= enemyPower*10; 
-    enemy.health -= userPower*10;
+    this.health -= enemyPower*2; 
+    enemy.health -= userPower;
     
     /* if(userPower < enemyPower) {
       this.health -= enemyPower*10;      
@@ -255,7 +256,7 @@ class Player {
     console.log("emeny: ", enemy.health)
         
     if(this.health >= 0) {      
-      this.experience += enemy.level*10;
+      this.experience += enemy.level*2;
       if(this.experience >= 100) {
         this.level++;
         this.experience -= 100;
@@ -368,6 +369,8 @@ class Game {
     } else if(this.map[x][y] == cellType.weapon) {      
       var weapon = this.entitiesOnMap[x][y];
       this.player.weapon = weapon;
+      console.log(weapon)
+      console.log(this.player.weapon)
       this.entitiesOnMap[x][y] = null;
       this._doMoveUser(coordinates);
     } else if(this.map[x][y] == cellType.door) {       
@@ -533,7 +536,8 @@ class Game {
   }
   
   _createWeapon() {
-    let weapon = new Weapon(this.player.weapon.type++);
+    console.log(this.player.weapon.type)
+    let weapon = new Weapon(this.player.weapon.type + 1);
     weapon.coordinates = this._findAvailablePointInRoom();
     return weapon;  
   }
