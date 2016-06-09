@@ -181,6 +181,7 @@ Source code for [codepen experiments](http://codepen.io/sufflavus/pens/public/) 
 - [jQuery 2.2.4](https://code.jquery.com/jquery-2.2.4.min.js) 
 - [React 15.1.0](https://fb.me/react-15.1.0.min.js) 
 - [ReactDOM 15.1.0](https://fb.me/react-dom-15.1.0.min.js)
+- [Emoji CSS](https://afeld.github.io/emoji-css/emoji.css)
 - [Sass](http://sass-lang.com/)
 - [Babel](https://babeljs.io/)
 
