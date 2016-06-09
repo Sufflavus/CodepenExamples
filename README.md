@@ -173,4 +173,15 @@ Source code for [codepen experiments](http://codepen.io/sufflavus/pens/public/) 
 - [Babel](https://babeljs.io/)
 - [Conway's Game of Life](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life)
 
-![18_GameOfLife](https://github.com/Sufflavus/CodepenExamples/blob/master/images/19_GameOfLife.png)
+![19_GameOfLife](https://github.com/Sufflavus/CodepenExamples/blob/master/images/19_GameOfLife.png)
+
+## 20. Roguelike Dungeon Crawler Game
+
+[Roguelike Dungeon Crawler Game](http://codepen.io/sufflavus/full/WxeLQe/) is based on 
+- [jQuery 2.2.4](https://code.jquery.com/jquery-2.2.4.min.js) 
+- [React 15.1.0](https://fb.me/react-15.1.0.min.js) 
+- [ReactDOM 15.1.0](https://fb.me/react-dom-15.1.0.min.js)
+- [Sass](http://sass-lang.com/)
+- [Babel](https://babeljs.io/)
+
+![20_RoguelikeDungeonCrawlerGame](https://github.com/Sufflavus/CodepenExamples/blob/master/images/20_RoguelikeDungeonCrawlerGame.png)

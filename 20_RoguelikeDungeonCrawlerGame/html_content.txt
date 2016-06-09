@@ -3,12 +3,12 @@
 
 <div id="container"></div>
 
-<div class="overlay"></div>
+<div class="overlay" id="overlay"></div>
 
-<h1 class="message win-message">
-  You are WIN!!!
+<h1 class="message win-message" id="winMessage">
+  You WIN!!!
 </h1>
 
-<h1 class="message lose-message">
-  You are Lost :(
+<h1 class="message lose-message" id="loseMessage">
+  You died :(
 </h1>

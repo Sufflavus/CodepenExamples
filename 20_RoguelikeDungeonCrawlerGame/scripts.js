@@ -667,6 +667,9 @@ var ScorePanel = React.createClass({
 
 var Field = React.createClass({  
   getInitialState: function() {             
+    return this.initGameDefaultState();
+  },
+  initGameDefaultState: function() {
     var game = new Game();
     var cameraSize = { n: 30, m: 30 };    
     var camera = new GameCamera(game.size, cameraSize);    
@@ -692,7 +695,9 @@ var Field = React.createClass({
     //$(document.body).focus();
   },
   handleKeyDown: function(e) {    
-    if(e.keyCode < keyboardCode.left || e.keyCode > keyboardCode.down) {
+    if(e.keyCode < keyboardCode.left || e.keyCode > keyboardCode.down ||
+      this.state.game.player.health < 0 || 
+      this.state.game.boss && this.state.game.boss.health < 0) {
       return;
     }
     e.preventDefault();
@@ -709,6 +714,35 @@ var Field = React.createClass({
         dungeon: game.settings.dungeonNumber,
       }
     }); 
+    if(game.player.health < 0) {
+      var self = this;
+      $("#overlay").fadeIn("fast", function() {
+        $("#loseMessage")
+          .slideToggle("slow", "swing")
+          .delay(3000)
+          .fadeOut("fast", function() {
+            $("#overlay").fadeOut("fast", function() {
+              var state = self.initGameDefaultState();
+              self.state.camera.focusOnPlayer(game.player.coordinates);      
+              self.setState(state);
+            });
+        })
+      });
+    } else if(game.boss && game.boss.health < 0) {
+      var self = this;
+      $("#overlay").fadeIn("fast", function() {
+        $("#winMessage")
+          .slideToggle("slow", "swing")
+          .delay(3000)
+          .fadeOut("fast", function() {
+            $("#overlay").fadeOut("fast",  function() {
+              var state = self.initGameDefaultState();
+              self.state.camera.focusOnPlayer(game.player.coordinates);      
+              self.setState(state);
+            });
+        })
+      });
+    }
   },
   render: function() {
     var map = this.state.map;
