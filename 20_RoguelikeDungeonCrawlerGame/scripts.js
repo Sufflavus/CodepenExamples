@@ -48,9 +48,45 @@ var weaponType = {
   4: "laser"
 };
 
+var $overlay = $("#overlay");
+var $loseMessage = $("#loseMessage");
+var $winMessage = $("#winMessage");
+
 class Helper {
   static getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
+  }  
+}
+
+class Message {
+  static showLose() {
+    var deferred = $.Deferred();
+    $overlay.fadeIn("fast", function() {
+      $loseMessage
+        .slideToggle("slow", "swing")
+        .delay(3000)
+        .fadeOut("fast", function() {
+          $overlay.fadeOut("fast", function() {
+            deferred.resolve();
+          });
+        })
+      });
+    return deferred.promise();
+  }
+  
+  static showWin() {
+    var deferred = $.Deferred();        
+    $overlay.fadeIn("fast", function() {
+      $winMessage
+        .slideToggle("slow", "swing")
+        .delay(3000)
+        .fadeOut("fast", function() {
+          $overlay.fadeOut("fast", function() {
+            deferred.resolve();
+          });
+        })
+      });
+    return deferred.promise();
   }
 }
 
@@ -233,27 +269,19 @@ class DungeonGenerator {
 
 class Player {
   constructor() {
-    this._setInitialState();
+    this.level = 0;
+    this.health = 100;
+    this.weapon = new Weapon(0);
+    this.experience = 40;
     this.coordinates = { x: -1, y: -1 };
   }
   
   fightWith(enemy) {    
-    var userPower = ((this.level*100 + this.experience)/10)*(this.weapon.type + 1);
+    var userPower = ((this.level*100 + this.experience)/10)*(this.weapon.value + 1);
     var enemyPower = enemy.level;
-    console.log(this.weapon.type)
-
-    //var demage = Math.abs(userPower - enemyPower)*10;
         
     this.health -= enemyPower*2; 
     enemy.health -= userPower;
-    
-    /* if(userPower < enemyPower) {
-      this.health -= enemyPower*10;      
-    } else {
-      enemy.health -= userPower*10;
-    } */
-    console.log("user: ", this.health)
-    console.log("emeny: ", enemy.health)
         
     if(this.health >= 0) {      
       this.experience += enemy.level*2;
@@ -265,21 +293,14 @@ class Player {
   }
   
   isAlife() {
-    this.health >= 0;
-  }
-  
-  _setInitialState() {
-    this.level = 0;
-    this.health = 100;
-    this.weapon = new Weapon(0);
-    this.experience = 40;
+    return this.health >= 0;
   }  
 }
 
 class Enemy {
   constructor(dungeonNumber) {        
     this.level = dungeonNumber * Helper.getRandomInt(5, 10);
-    this.health = this.level * 5;
+    this.health = this.level * 3;
     this.coordinates = { x: -1, y: -1 };
   } 
   
@@ -291,12 +312,12 @@ class Enemy {
 class Boss {
   constructor() {        
     this.level = 60;
-    this.health = 300;  
+    this.health = 200;  
     this.coordinates = { x: -1, y: -1 };
   }
   
   isAlife() {
-    this.health >= 0;
+    return this.health >= 0;
   }
 }
 
@@ -337,55 +358,77 @@ class Game {
     this.settings = {
       dungeonNumber: 1,
       enemiesCount: 10,
-      healthItemsCount: 10,
+      healthItemsCount: 15,
       weaponsCount: 1,
       doorsCount: 1      
-    };     
-    
-    this.entitiesOnMap = [];
-    
-    this.enemies = [];    
-    this.healthItems = [];
-    this.weapons = [];
-    this.doors = [];
+    };           
+          
+    this.player = new Player();
+    this.entitiesOnMap = [];    
     this.boss = null;
     
-    this.player = new Player();
     this._generateField();        
   }
   
   movePlayer(direction) {     
     let coordinates = this._getNewUserCoordinates(direction);
-    let x = coordinates.x;
-    let y = coordinates.y;    
-
-    if(this.map[x][y] == cellType.room) {
+        
+    switch(this.map[coordinates.x][coordinates.y]) {
+      case cellType.room:
+        onRoom.call(this, coordinates);
+        break;        
+      case cellType.health:
+        onHealth.call(this, coordinates);
+        break;
+      case cellType.weapon:
+        onWeapon.call(this, coordinates);
+        break;        
+      case cellType.door:
+        onDoor.call(this, coordinates);
+        break;
+      case cellType.enemy:
+        onEnemy.call(this, coordinates);
+        break;
+    }
+    
+    function onRoom(coordinates) {
       this._doMoveUser(coordinates);
-    } else if(this.map[x][y] == cellType.health) {      
-      var healtItem = this.entitiesOnMap[x][y];
+    }
+    
+    function onHealth(coordinates) {
+      let x = coordinates.x;
+      let y = coordinates.y; 
+      let healtItem = this.entitiesOnMap[x][y];
       this.player.health += healtItem.value;
       this.entitiesOnMap[x][y] = null;
       this._doMoveUser(coordinates);
-    } else if(this.map[x][y] == cellType.weapon) {      
-      var weapon = this.entitiesOnMap[x][y];
-      this.player.weapon = weapon;
-      console.log(weapon)
-      console.log(this.player.weapon)
+    }
+    
+    function onWeapon(coordinates) {
+      let x = coordinates.x;
+      let y = coordinates.y; 
+      let weapon = this.entitiesOnMap[x][y];
+      this.player.weapon = weapon;      
       this.entitiesOnMap[x][y] = null;
       this._doMoveUser(coordinates);
-    } else if(this.map[x][y] == cellType.door) {       
+    }
+    
+    function onDoor(coordinates) {
       this.settings.dungeonNumber++;
       this._generateField();
-    } else if(this.map[x][y] == cellType.enemy) {       
-      var enemy = this.entitiesOnMap[x][y];
-      this.player.fightWith(enemy);
-      console.log(enemy)
+    }
+    
+    function onEnemy(coordinates) {
+      let x = coordinates.x;
+      let y = coordinates.y; 
+      let enemy = this.entitiesOnMap[x][y];
+      this.player.fightWith(enemy);     
       if(!enemy.isAlife()) {
         this.entitiesOnMap[x][y] = null;
         this._doMoveUser(coordinates);
       }
-    }        
-  }
+    }
+  }    
   
   _getNewUserCoordinates(direction) {
     let x = this.player.coordinates.x;
@@ -434,53 +477,38 @@ class Game {
     this.dungeonGenerator.generate();
     this.map = this.dungeonGenerator.map;  
     this.rooms = this.dungeonGenerator.rooms;
+    this._clearEntitiesOnMap();
     this._addEnemies();
     this._addHealthItems();
     this._addWeapons();
-    this._addDoors();
-    this._putEntitiesOnMap();
+    this._addDoors();    
     this.player.coordinates = this._findAvailablePointInRoom();
     this.map[this.player.coordinates.x][this.player.coordinates.y] = cellType.player;
   }
-     
-  _putEntitiesOnMap() {    
+  
+  _clearEntitiesOnMap() {
     for(let i = 0; i < this.size.n; i++) {
       this.entitiesOnMap[i] = [];
       for(let j = 0; j < this.size.m; j++) {
         this.entitiesOnMap[i][j] = null;
       }
     }
-    
-    this.enemies.forEach(entity => {
-      this.entitiesOnMap[entity.coordinates.x][entity.coordinates.y] = entity;
-    });    
-    this.healthItems.forEach(entity => {
-      this.entitiesOnMap[entity.coordinates.x][entity.coordinates.y] = entity;
-    });    
-    this.weapons.forEach(entity => {
-      this.entitiesOnMap[entity.coordinates.x][entity.coordinates.y] = entity;
-    });    
-    this.doors.forEach(entity => {
-      this.entitiesOnMap[entity.coordinates.x][entity.coordinates.y] = entity;
-    });   
-    
-    if(this.boss) {
-      this.entitiesOnMap[this.boss.coordinates.x][this.boss.coordinates.y] = this.boss;
-    }    
   }
-  
+    
   _addEnemies() {
     this.enemies = [];
     for(let i = 0; i < this.settings.enemiesCount; i++) {      
       let enemy = this._createEnemy();
       this.enemies.push(enemy);
       this.map[enemy.coordinates.x][enemy.coordinates.y] = cellType.enemy;
+      this.entitiesOnMap[enemy.coordinates.x][enemy.coordinates.y] = enemy;
     }
     
     // add boss if it is the last one dungeon
     if(this.settings.dungeonNumber === this.dungeonsCount) {
       this.boss = this._createBoss();
-      this.map[this.boss.coordinates.x][this.boss.coordinates.y] = cellType.boss;       
+      this.map[this.boss.coordinates.x][this.boss.coordinates.y] = cellType.boss; 
+      this.entitiesOnMap[this.boss.coordinates.x][this.boss.coordinates.y] = this.boss;
     }
   } 
   
@@ -490,6 +518,7 @@ class Game {
       let health = this._createHealthItem();
       this.healthItems.push(health);
       this.map[health.coordinates.x][health.coordinates.y] = cellType.health;
+      this.entitiesOnMap[health.coordinates.x][health.coordinates.y] = health;
     }
   }
   
@@ -499,6 +528,7 @@ class Game {
       let weapon = this._createWeapon();
       this.weapons.push(weapon);
       this.map[weapon.coordinates.x][weapon.coordinates.y] = cellType.weapon;
+      this.entitiesOnMap[weapon.coordinates.x][weapon.coordinates.y] = weapon;
     }
   }
   
@@ -514,6 +544,7 @@ class Game {
       let door = this._createDoor();
       this.doors.push(door);
       this.map[door.coordinates.x][door.coordinates.y] = cellType.door;
+      this.entitiesOnMap[door.coordinates.x][door.coordinates.y] = door;
     }
   }
   
@@ -536,7 +567,6 @@ class Game {
   }
   
   _createWeapon() {
-    console.log(this.player.weapon.type)
     let weapon = new Weapon(this.player.weapon.type + 1);
     weapon.coordinates = this._findAvailablePointInRoom();
     return weapon;  
@@ -670,9 +700,9 @@ var Field = React.createClass({
     return this.initGameDefaultState();
   },
   initGameDefaultState: function() {
-    var game = new Game();
-    var cameraSize = { n: 30, m: 30 };    
-    var camera = new GameCamera(game.size, cameraSize);    
+    let game = new Game();
+    let cameraSize = { n: 30, m: 30 };    
+    let camera = new GameCamera(game.size, cameraSize);    
     camera.focusOnPlayer(game.player.coordinates);
     
     var score = {
@@ -701,7 +731,7 @@ var Field = React.createClass({
       return;
     }
     e.preventDefault();
-    var game = this.state.game;    
+    let game = this.state.game;    
     game.movePlayer(e.keyCode);
     this.state.camera.focusOnPlayer(game.player.coordinates);      
     this.setState({ 
@@ -713,56 +743,38 @@ var Field = React.createClass({
         experience: game.player.experience,
         dungeon: game.settings.dungeonNumber,
       }
-    }); 
-    if(game.player.health < 0) {
-      var self = this;
-      $("#overlay").fadeIn("fast", function() {
-        $("#loseMessage")
-          .slideToggle("slow", "swing")
-          .delay(3000)
-          .fadeOut("fast", function() {
-            $("#overlay").fadeOut("fast", function() {
-              var state = self.initGameDefaultState();
-              self.state.camera.focusOnPlayer(game.player.coordinates);      
-              self.setState(state);
-            });
-        })
-      });
-    } else if(game.boss && game.boss.health < 0) {
-      var self = this;
-      $("#overlay").fadeIn("fast", function() {
-        $("#winMessage")
-          .slideToggle("slow", "swing")
-          .delay(3000)
-          .fadeOut("fast", function() {
-            $("#overlay").fadeOut("fast",  function() {
-              var state = self.initGameDefaultState();
-              self.state.camera.focusOnPlayer(game.player.coordinates);      
-              self.setState(state);
-            });
-        })
-      });
+    });     
+    if(!game.player.isAlife()) {
+      Message.showLose().then(this.restartGame);      
+    } else if(game.boss && !game.boss.isAlife()) {
+      Message.showWin().then(this.restartGame);      
     }
   },
+  restartGame: function() {    
+    let state = this.initGameDefaultState();
+    this.state.camera.focusOnPlayer(this.state.game.player.coordinates);      
+    this.setState(state);
+  },
   render: function() {
-    var map = this.state.map;
-    var mapInCamera = [];
-    var cameraRectangle = this.state.camera.cameraRectangle;
-    var i = 0;
-    for(var x = cameraRectangle.x0; x < cameraRectangle.x1; x++) {
+    let map = this.state.map;
+    let camera = this.state.camera;
+    let mapInCamera = [];
+    let cameraRectangle = camera.cameraRectangle;
+    let i = 0;
+    for(let x = cameraRectangle.x0; x < cameraRectangle.x1; x++) {
       mapInCamera[i] = [];
       let j = 0;
-      for(var y = cameraRectangle.y0; y < cameraRectangle.y1; y++) {
+      for(let y = cameraRectangle.y0; y < cameraRectangle.y1; y++) {
         mapInCamera[i][j] = map[x][y];
         j++;
       }
       i++;
     }
     
-    var rows = [];
-    for (var i = 0, m = this.state.camera.cameraSize.m; i < m; i++) {
+    let rows = [];
+    for (let i = 0, m = camera.cameraSize.m; i < m; i++) {
       rows[i] = [];
-      for (var j = 0, n = this.state.camera.cameraSize.n; j < n; j++) {
+      for (let j = 0, n = camera.cameraSize.n; j < n; j++) {
         rows[i][j] = mapInCamera[j][n - i - 1];
       }
     }
