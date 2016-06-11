@@ -1,5 +1,3 @@
-/* This project has not been finished yet */
-
 var cellType = {
   wall: 0,
   room: 1,  
@@ -240,8 +238,8 @@ class DungeonGenerator {
   }   
   
   _createRandomRoom() {
-    let x0 = Helper.getRandomInt(1, this.size.n - this.maxRoomSize);
-    let y0 = Helper.getRandomInt(1, this.size.n - this.maxRoomSize);    
+    let x0 = Helper.getRandomInt(1, this.size.n - this.maxRoomSize - 1);
+    let y0 = Helper.getRandomInt(1, this.size.n - this.maxRoomSize- 1);    
     let width = Helper.getRandomInt(this.minRoomSize, this.maxRoomSize);
     let height = Helper.getRandomInt(this.minRoomSize, this.maxRoomSize);
     
@@ -277,47 +275,52 @@ class Player {
   }
   
   fightWith(enemy) {    
-    var userPower = ((this.level*100 + this.experience)/10)*(this.weapon.value + 1);
-    var enemyPower = enemy.level;
+    let userPower = ((this.level*100 + this.experience)/10)*(this.weapon.value + 1);
+    let enemyPower = enemy.level;
         
     this.health -= enemyPower*2; 
     enemy.health -= userPower;
         
-    if(this.health >= 0) {      
+    if(!enemy.isAlife() && this.isAlife()) {      
       this.experience += enemy.level*2;
       if(this.experience >= 100) {
         this.level++;
         this.experience -= 100;
       }      
-    }    
+      return;
+    }
+    
+    if(!this.isAlife()) {
+      this.health = 0;
+    }
   }
   
   isAlife() {
-    return this.health >= 0;
+    return this.health > 0;
   }  
 }
 
 class Enemy {
   constructor(dungeonNumber) {        
     this.level = dungeonNumber * Helper.getRandomInt(5, 10);
-    this.health = this.level * 3;
+    this.health = this.level * 5;
     this.coordinates = { x: -1, y: -1 };
   } 
   
   isAlife() {
-    return this.health >= 0;
+    return this.health > 0;
   }
 }
 
 class Boss {
   constructor() {        
     this.level = 60;
-    this.health = 200;  
+    this.health = 350;  
     this.coordinates = { x: -1, y: -1 };
   }
   
   isAlife() {
-    return this.health >= 0;
+    return this.health > 0;
   }
 }
 
@@ -375,27 +378,28 @@ class Game {
         
     switch(this.map[coordinates.x][coordinates.y]) {
       case cellType.room:
-        onRoom.call(this, coordinates);
+        onRoomFaced.call(this, coordinates);
         break;        
       case cellType.health:
-        onHealth.call(this, coordinates);
+        onHealthItemFaced.call(this, coordinates);
         break;
       case cellType.weapon:
-        onWeapon.call(this, coordinates);
+        onWeaponFaced.call(this, coordinates);
         break;        
       case cellType.door:
-        onDoor.call(this, coordinates);
+        onDoorFaced.call(this, coordinates);
         break;
       case cellType.enemy:
-        onEnemy.call(this, coordinates);
+      case cellType.boss:
+        onEnemyFaced.call(this, coordinates);
         break;
     }
     
-    function onRoom(coordinates) {
+    function onRoomFaced(coordinates) {
       this._doMoveUser(coordinates);
     }
     
-    function onHealth(coordinates) {
+    function onHealthItemFaced(coordinates) {
       let x = coordinates.x;
       let y = coordinates.y; 
       let healtItem = this.entitiesOnMap[x][y];
@@ -404,7 +408,7 @@ class Game {
       this._doMoveUser(coordinates);
     }
     
-    function onWeapon(coordinates) {
+    function onWeaponFaced(coordinates) {
       let x = coordinates.x;
       let y = coordinates.y; 
       let weapon = this.entitiesOnMap[x][y];
@@ -413,12 +417,12 @@ class Game {
       this._doMoveUser(coordinates);
     }
     
-    function onDoor(coordinates) {
+    function onDoorFaced(coordinates) {
       this.settings.dungeonNumber++;
       this._generateField();
     }
     
-    function onEnemy(coordinates) {
+    function onEnemyFaced(coordinates) {
       let x = coordinates.x;
       let y = coordinates.y; 
       let enemy = this.entitiesOnMap[x][y];
@@ -481,11 +485,10 @@ class Game {
     this._addEnemies();
     this._addHealthItems();
     this._addWeapons();
-    this._addDoors();    
-    this.player.coordinates = this._findAvailablePointInRoom();
-    this.map[this.player.coordinates.x][this.player.coordinates.y] = cellType.player;
+    this._addDoors();        
+    this._putPlayerOnMap();
   }
-  
+     
   _clearEntitiesOnMap() {
     for(let i = 0; i < this.size.n; i++) {
       this.entitiesOnMap[i] = [];
@@ -493,6 +496,11 @@ class Game {
         this.entitiesOnMap[i][j] = null;
       }
     }
+  }
+  
+  _putPlayerOnMap() {
+    this.player.coordinates = this._findAvailablePointInRoom();
+    this.map[this.player.coordinates.x][this.player.coordinates.y] = cellType.player;
   }
     
   _addEnemies() {
@@ -726,8 +734,8 @@ var Field = React.createClass({
   },
   handleKeyDown: function(e) {    
     if(e.keyCode < keyboardCode.left || e.keyCode > keyboardCode.down ||
-      this.state.game.player.health < 0 || 
-      this.state.game.boss && this.state.game.boss.health < 0) {
+      !this.state.game.player.isAlife() || 
+      this.state.game.boss && !this.state.game.boss.isAlife()) {
       return;
     }
     e.preventDefault();
