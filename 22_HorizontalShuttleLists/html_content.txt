@@ -1,0 +1,25 @@
+<div class="content" id="container">  
+  <div class="up-panel" id="upPanel">
+    <div class="panel-stack-content">
+      Select items to 
+      <button type="button" id="btnMoveDown">move them down &#8595;</button>
+    </div>
+    <div class="panel-main-content">    
+      <ul id="topList">        
+      </ul>
+    </div>
+  </div>
+  <div class="splitter" id="splitter">
+    <div class="mover"></div>
+  </div>
+  <div class="bottom-panel" id="bottomPanel">
+    <div class="panel-stack-content" id="btnMoveUp">
+      Select items to 
+      <button type="button">move them up &#8593;</button>
+    </div>
+    <div class="panel-main-content">    
+      <ul id="bottomList">        
+      </ul>
+    </div>
+  </div>
+</div>

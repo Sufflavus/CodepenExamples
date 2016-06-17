@@ -186,3 +186,17 @@ Source code for [codepen experiments](http://codepen.io/sufflavus/pens/public/) 
 - [Babel](https://babeljs.io/)
 
 ![20_RoguelikeDungeonCrawlerGame](https://github.com/Sufflavus/CodepenExamples/blob/master/images/20_RoguelikeDungeonCrawlerGame.png)
+
+## 21. Horizontal Splitter
+
+[Horizontal Splitter](http://codepen.io/sufflavus/full/MeeXoR/) is based on 
+- [jQuery 2.2.4](https://code.jquery.com/jquery-2.2.4.min.js) 
+
+![21_HorizontalSplitter](https://github.com/Sufflavus/CodepenExamples/blob/master/images/21_HorizontalSplitter.png)
+
+## 22. Horizontal Shuttle Lists
+
+[Horizontal Shuttle Lists](http://codepen.io/sufflavus/full/jrrRZL/) is based on 
+- [jQuery 2.2.4](https://code.jquery.com/jquery-2.2.4.min.js) 
+
+![22_HorizontalShuttleLists](https://github.com/Sufflavus/CodepenExamples/blob/master/images/22_HorizontalShuttleLists.png)
