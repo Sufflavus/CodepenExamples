@@ -194,9 +194,16 @@ Source code for [codepen experiments](http://codepen.io/sufflavus/pens/public/) 
 
 ![21_HorizontalSplitter](https://github.com/Sufflavus/CodepenExamples/blob/master/images/21_HorizontalSplitter.png)
 
-## 22. Horizontal Shuttle Lists
+## 22. Horizontal Shuttle Lists (jQuery)
 
-[Horizontal Shuttle Lists](http://codepen.io/sufflavus/full/jrrRZL/) is based on 
+[Horizontal Shuttle Lists (jQuery)](http://codepen.io/sufflavus/full/jrrRZL/) is based on 
 - [jQuery 2.2.4](https://code.jquery.com/jquery-2.2.4.min.js) 
 
 ![22_HorizontalShuttleLists](https://github.com/Sufflavus/CodepenExamples/blob/master/images/22_HorizontalShuttleLists.png)
+
+## 23. Horizontal Shuttle Lists (Angular)
+
+[Horizontal Shuttle Lists (Angular)](http://codepen.io/sufflavus/full/WxoZzM/) is based on 
+
+- [Angular 1.5.5](https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.5/angular.min.js) 
+- [jQuery 2.2.4](https://code.jquery.com/jquery-2.2.4.min.js) 

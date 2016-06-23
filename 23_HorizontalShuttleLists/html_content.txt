@@ -1,0 +1,39 @@
+<div ng-app="demoApp">
+  <div class="content" id="container" ng-controller="ShuttleListsController as controller">  
+    <div class="up-panel" id="upPanel">
+      <div class="panel-stack-content">
+        Select items to 
+        <button type="button" ng-click="controller.moveIntoBottomList();">move them down &#8595;</button>
+      </div>
+      <div class="panel-main-content">    
+        <ul>   
+          <li ng-repeat="item in controller.nodes | filter: { isConnected: true }">
+            <label>
+              <input type="checkbox" ng-model="item.isSelected"/>
+              <span>{{ item.name }}</span>
+            </label>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="splitter" id="splitter" splitter>
+      <div class="mover"></div>
+    </div>
+    <div class="bottom-panel" id="bottomPanel">
+      <div class="panel-stack-content">
+        Select items to 
+        <button type="button" ng-click="controller.moveIntoTopList();">move them up &#8593;</button>
+      </div>
+      <div class="panel-main-content">    
+        <ul>   
+          <li ng-repeat="item in controller.nodes | filter: { isConnected: false }">
+            <label>
+              <input type="checkbox" ng-model="item.isSelected"/>
+              <span>{{ item.name }}</span>
+            </label>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
