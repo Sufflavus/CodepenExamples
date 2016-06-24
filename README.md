@@ -206,4 +206,4 @@ Source code for [codepen experiments](http://codepen.io/sufflavus/pens/public/) 
 [Horizontal Shuttle Lists (Angular)](http://codepen.io/sufflavus/full/WxoZzM/) is based on 
 
 - [Angular 1.5.5](https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.5/angular.min.js) 
-- [jQuery 2.2.4](https://code.jquery.com/jquery-2.2.4.min.js) 
+- [Angular's jqLite](https://docs.angularjs.org/api/ng/function/angular.element)

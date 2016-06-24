@@ -1,67 +1,67 @@
 (function() {
   var demoApp = angular.module("demoApp", []);
-  
+
   demoApp
     .controller("ShuttleListsController", ShuttleListsController)
     .factory("dataService", dataService)
     .factory("nodeFactory", nodeFactory)
     .directive("splitter", ['$document', splitter]);
-        
+
   ShuttleListsController.$inject = ["dataService", "nodeFactory"];
-  
+
   function ShuttleListsController(dataService, nodeFactory) {
-    var scope = this; 
-    scope.nodes = [];    
+    var scope = this;
+    scope.nodes = [];
     scope.moveIntoTopList = moveIntoTopList;
     scope.moveIntoBottomList = moveIntoBottomList;
     scope.moveSplitter = moveSplitter;
-    
+
     activate();
 
     function activate() {
-      getLists();               
+      getLists();
     }
-    
+
     function moveSplitter() {
       console.log("moveSplitter")
     }
-    
-    function moveIntoTopList() { 
+
+    function moveIntoTopList() {
       scope.nodes.forEach(function(item) {
-        if(item.isSelected) {
+        if (item.isSelected) {
           item.isConnected = true;
         }
-      });      
+      });
     }
-    
+
     function moveIntoBottomList() {
       scope.nodes.forEach(function(item) {
-        if(item.isSelected) {
+        if (item.isSelected) {
           item.isConnected = false;
         }
-      });      
+      });
     }
 
     function getLists() {
       dataService.getLists()
-        .then(function(data) {          
+        .then(function(data) {
           var topList = data.topList.map(nodeFactory.createConnectedNode);
-          var bottomList = data.bottomList.map(nodeFactory.createDisconnectedNode);      
+          var bottomList = data.bottomList.map(nodeFactory.createDisconnectedNode);
           scope.nodes = topList.concat(bottomList);
-        });                   
+        });
     }
-  }   
-  
+  }
+
   function dataService($q, $http) {
     return {
-        getLists: getLists
+      getLists: getLists
     };
 
     function getLists() {
       var deferred = $q.defer();
       deferred.resolve(getData());
       return deferred.promise;
-      
+
       function getData() {
         return {
           topList: [
@@ -89,15 +89,15 @@
         };
       }
     }
-  }   
-  
+  }
+
   function nodeFactory() {
-    
+
     return {
       createConnectedNode: createConnectedNode,
       createDisconnectedNode: createDisconnectedNode
     };
-    
+
     function createConnectedNode(name) {
       return {
         isConnected: true,
@@ -108,42 +108,48 @@
 
     function createDisconnectedNode(name) {
       return {
-        isConnected: false,          
+        isConnected: false,
         isSelected: false,
         name: name
       };
     }
   }
-  
+
   function splitter($document) {
-    var $upPanel = $("#upPanel");
+    /* var $upPanel = $("#upPanel");
     var $splitter = $("#splitter");
-    var $container = $("#container");
-    
+    var $container = $("#container"); */
+
     return {
-      link: function(scope, element, attr) {
-        element.on("mousedown", function(e) {    
-          toggleNoSelect();
-          $document.on("mousemove", onMousemove);
-          $document.on("mouseup", onMouseup);    
-        });       
-      }
+      link: init
     };
-    
-    function onMousemove(e) {    
-      var delta = e.pageY - $splitter.offset().top;
-      var upHeight = $upPanel.height();
-      $upPanel.height(upHeight + delta);    
-    }
 
-    function onMouseup() {    
-      $document.off("mousemove", onMousemove);
-      $document.off("mouseup", onMouseup);
-      toggleNoSelect();
-    }
+    function init($scope, $element, attr) {      
+      var siblings = $element.parent().children();
+      var $container = angular.element($element.parent());
+      var $upPanel = angular.element(siblings[0]);      
+      
+      $element.on("mousedown", function(e) {
+        toggleNoSelect();
+        $document.on("mousemove", onMousemove);
+        $document.on("mouseup", onMouseup);
+      });
 
-    function toggleNoSelect() {
-      $container.toggleClass("noselect");    
+      function onMousemove(e) {
+        var delta = e.pageY - $element[0].offsetTop;
+        var upHeight = $upPanel[0].clientHeight;        
+        $upPanel.css("height", (upHeight + delta) + "px");
+      }
+
+      function onMouseup() {
+        $document.off("mousemove", onMousemove);
+        $document.off("mouseup", onMouseup);
+        toggleNoSelect();
+      }
+
+      function toggleNoSelect() {
+        $container.toggleClass("noselect");
+      }
     }
   }
 })();
