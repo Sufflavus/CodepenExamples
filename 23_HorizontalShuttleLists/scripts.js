@@ -116,9 +116,6 @@
   }
 
   function splitter($document) {
-    /* var $upPanel = $("#upPanel");
-    var $splitter = $("#splitter");
-    var $container = $("#container"); */
 
     return {
       link: init

@@ -1,6 +1,6 @@
 <div ng-app="demoApp">
-  <div class="content" id="container" ng-controller="ShuttleListsController as controller">  
-    <div class="up-panel" id="upPanel">
+  <div class="content" ng-controller="ShuttleListsController as controller">  
+    <div class="up-panel">
       <div class="panel-stack-content">
         Select items to 
         <button type="button" ng-click="controller.moveIntoBottomList();">move them down &#8595;</button>
@@ -16,10 +16,10 @@
         </ul>
       </div>
     </div>
-    <div class="splitter" id="splitter" splitter>
+    <div class="splitter" splitter>
       <div class="mover"></div>
     </div>
-    <div class="bottom-panel" id="bottomPanel">
+    <div class="bottom-panel">
       <div class="panel-stack-content">
         Select items to 
         <button type="button" ng-click="controller.moveIntoTopList();">move them up &#8593;</button>
