@@ -1,0 +1,11 @@
+<header>
+  <h1>Ministry Of Truth</h1>
+  <h4 class="slogan">Freedom is slavery</h4>  
+</header>
+
+<div class="content">
+  <div class="row">  
+    <div class="col s3">This div is 6-columns wide</div>
+    <div class="col s9">This div is 6-columns wide</div>
+  </div>
+</div>
