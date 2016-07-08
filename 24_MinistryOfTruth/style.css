@@ -1,13 +1,13 @@
 body {
   background: #292D35;
   font-family: GillSans, Calibri, Trebuchet, sans-serif;
+  color: #ffffff;
 }
 
 header {
   margin: 50px 0;
-  padding: 40px;
-  background: #3F4652;  
-  color: #ffffff;  
+  padding: 30px;
+  background: #3F4652;      
   text-align: center;
 }
 
@@ -18,4 +18,66 @@ header {
 .content {
   margin: 50px auto;
   width: 1000px;
+}
+
+.input-field label {
+  color: #787b80;
+}
+.input-field input[type=text] {
+  border-bottom-color: #787b80;
+}
+/* label focus color */
+.input-field input[type=text]:focus + label {
+  color: #ffffff;
+}
+/* label underline focus color */
+.input-field input[type=text]:focus {
+  border-bottom: 1px solid #ffffff;
+  box-shadow: 0 1px 0 0 #ffffff;
+}
+/* icon prefix focus color */
+.input-field .prefix {
+  color: #787b80;
+}
+
+.input-field .prefix.active {
+  color: #ffffff;
+}
+
+.pagination {
+  margin: 40px 0;
+}
+
+.pagination li.active {
+  background-color: #3F4652;
+}
+
+.pagination li a {
+  color: #787b80;
+}
+
+.pagination li.disabled a {
+  color: #3E4249;
+}
+
+.divider {
+  background-color: #787b80;
+}
+
+.month {
+  padding: 30px;
+  font-style: italic;  
+}
+
+.article-title {
+  
+}
+
+.article-text {
+  font-size: 20px;
+}
+
+.article-date {
+  font-size: 18px;
+  color: #787b80;
 }
