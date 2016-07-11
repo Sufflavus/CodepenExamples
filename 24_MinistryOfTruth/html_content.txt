@@ -1,110 +1,121 @@
-<header>
-  <h1>Ministry Of Truth</h1>
-  <h4 class="slogan">Lies Are Truth</h4>
-</header>
+<div ng-app="truthfulApp">
 
-<div class="content">
-  <div class="row search-panel">
-    <div class="input-field col s12">
-      <i class="material-icons prefix">search</i>
-      <input id="search_field" type="text">
-      <label for="search_field">Search</label>
+  <header>
+    <h1>Ministry Of Truth</h1>
+    <h4 class="slogan">2 + 2 = 5</h4>
+  </header>
+
+  <div class="content">
+    <div class="row search-panel">
+      <div class="input-field col s12">
+        <i class="material-icons prefix">search</i>
+        <input id="search_field" type="text">
+        <label for="search_field">Search</label>
+      </div>
     </div>
-  </div>
-  <ul class="pagination">
-    <li class="disabled">
-      <a href="#!">
-        <i class="material-icons">chevron_left</i>
-      </a>
-    </li>
-    <li class="active">
-      <a href="#!">1980</a>
-    </li>
-    <li class="waves-effect">
-      <a href="#!">1981</a>
-    </li>
-    <li class="waves-effect">
-      <a href="#!">1982</a>
-    </li>
-    <li class="waves-effect">
-      <a href="#!">1983</a>
-    </li>
-    <li class="waves-effect">
-      <a href="#!">1984</a>
-    </li>
-    <li class="waves-effect">
-      <a href="#!">
-        <i class="material-icons">chevron_right</i>
-      </a>
-    </li>
-  </ul>
-  
-  <h4 class="month">December</h4>
-  <div class="divider"></div>
-  
-  <div class="section">
-    <h5 class="article-title">Title</h5>
-    <p class="article-text">Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text </p>
-    <div class="card-action right-align article-date">
-      Date
+    <ul class="pagination right-align ">
+      <li class="disabled">
+        <a href="#!">
+          <i class="material-icons">chevron_left</i>
+        </a>
+      </li>
+      <li class="active">
+        <a href="#!">1980</a>
+      </li>
+      <li class="waves-effect">
+        <a href="#!">1981</a>
+      </li>
+      <li class="waves-effect">
+        <a href="#!">1982</a>
+      </li>
+      <li class="waves-effect">
+        <a href="#!">1983</a>
+      </li>
+      <li class="waves-effect">
+        <a href="#!">1984</a>
+      </li>
+      <li class="waves-effect">
+        <a href="#!">
+          <i class="material-icons">chevron_right</i>
+        </a>
+      </li>
+    </ul>
+
+    <div class="divider"></div>
+    <h4 class="month">December</h4>
+    <div class="divider"></div>
+
+    <div class="section">
+      <h5 class="article-title">Title</h5>
+      <p class="article-text">Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text
+        Text Text Text </p>
+      <div class="card-action right-align article-date">
+        Date
+      </div>
     </div>
-  </div>
-  <div class="divider"></div>
-  
-  <div class="section">
-    <h5 class="article-title">Title</h5>
-    <p class="article-text">Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text </p>
-    <div class="card-action right-align article-date">
-      Date
+    <div class="divider"></div>
+
+    <div class="section">
+      <h5 class="article-title">Title</h5>
+      <p class="article-text">Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text
+        Text Text Text </p>
+      <div class="card-action right-align article-date">
+        Date
+      </div>
     </div>
-  </div>
-  <div class="divider"></div>
-  
-  <div class="section">
-    <h5 class="article-title">Title</h5>
-    <p class="article-text">Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text </p>
-    <div class="card-action right-align article-date">
-      Date
+    <div class="divider"></div>
+
+    <div class="section">
+      <h5 class="article-title">Title</h5>
+      <p class="article-text">Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text
+        Text Text Text </p>
+      <div class="card-action right-align article-date">
+        Date
+      </div>
     </div>
-  </div>
-  <div class="divider"></div>
-  
-  <div class="section">
-    <h5 class="article-title">Title</h5>
-    <p class="article-text">Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text </p>
-    <div class="card-action right-align article-date">
-      Date
+    <div class="divider"></div>
+
+    <div class="section">
+      <h5 class="article-title">Title</h5>
+      <p class="article-text">Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text
+        Text Text Text </p>
+      <div class="card-action right-align article-date">
+        Date
+      </div>
     </div>
-  </div>
-  <div class="divider"></div>
-  
-  <div class="section">
-    <h5 class="article-title">Title</h5>
-    <p class="article-text">Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text </p>
-    <div class="card-action right-align article-date">
-      Date
+    <div class="divider"></div>
+
+    <div class="section">
+      <h5 class="article-title">Title</h5>
+      <p class="article-text">Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text
+        Text Text Text </p>
+      <div class="card-action right-align article-date">
+        Date
+      </div>
     </div>
-  </div>
-  <div class="divider"></div>
-  
-  <h4 class="month">November</h4>
-  <div class="divider"></div>
-  
-  <div class="section">
-    <h5 class="article-title">Title</h5>
-    <p class="article-text">Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text </p>
-    <div class="card-action right-align article-date">
-      Date
+    <div class="divider"></div>
+
+    <h4 class="month">November</h4>
+    <div class="divider"></div>
+
+    <div class="section">
+      <h5 class="article-title">Title</h5>
+      <p class="article-text">Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text
+        Text Text Text </p>
+      <div class="card-action right-align article-date">
+        Date
+      </div>
     </div>
-  </div>
-  <div class="divider"></div>
-  
-  <div class="section">
-    <h5 class="article-title">Title</h5>
-    <p class="article-text">Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text </p>
-    <div class="card-action right-align article-date">
-      Date
+    <div class="divider"></div>
+
+    <div class="section">
+      <h5 class="article-title">Title</h5>
+      <p class="article-text">Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text
+        Text Text Text </p>
+      <div class="card-action right-align article-date">
+        Date
+      </div>
     </div>
+    <div class="divider"></div>
   </div>
-  <div class="divider"></div>
 </div>
