@@ -65,7 +65,7 @@
       articlesByYears.sort(function(a, b) {
         return a.year - b.year;
       });
-      
+
       return articlesByYears;
     }
 
@@ -95,8 +95,19 @@
 
   function dataService($q, $http) {
     return {
+      getYears: getYears,
       getArticleList: getArticleList
     };
+
+    function getYears() {
+      var deferred = $q.defer();
+      var years = [];
+      for (var i = 1890; i < 1985; i++) {
+        years.push(i);
+      }
+      deferred.resolve(years);
+      return deferred.promise;
+    }
 
     function getArticleList() {
       var deferred = $q.defer();
