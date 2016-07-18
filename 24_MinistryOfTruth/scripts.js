@@ -9,11 +9,13 @@
 
   function ArticleListController(dataService, articleFactory) {
     var scope = this;
+    scope.years = [];
     scope.articlesByYears = [];
 
     activate();
 
     function activate() {
+      getYearsList();
       getArticleList();
     }
 
@@ -22,6 +24,13 @@
         .then(function(data) {
           scope.articlesByYears = articleFactory.createYearlyArticleGroups(data);
           console.log(scope.articlesByYears);
+        });
+    }
+    
+    function getYearsList() {
+      dataService.getYearList()
+        .then(function(data) {
+          scope.years = data;
         });
     }
   }
@@ -95,11 +104,11 @@
 
   function dataService($q, $http) {
     return {
-      getYears: getYears,
+      getYearList: getYearList,
       getArticleList: getArticleList
     };
 
-    function getYears() {
+    function getYearList() {
       var deferred = $q.defer();
       var years = [];
       for (var i = 1890; i < 1985; i++) {
