@@ -5,7 +5,7 @@
     <h4 class="slogan">2 + 2 = 5</h4>
   </header>
 
-  <div class="content">
+  <div class="content" ng-controller="ArticleListController as listController">
     <div class="row search-panel">
       <div class="input-field col s12">
         <i class="material-icons prefix">search</i>
@@ -13,26 +13,14 @@
         <label for="search_field">Search</label>
       </div>
     </div>
-    <ul class="pagination right-align ">
+    <ul class="pagination right-align">
       <li class="disabled">
         <a href="#!">
           <i class="material-icons">chevron_left</i>
         </a>
       </li>
-      <li class="active">
-        <a href="#!">1980</a>
-      </li>
-      <li class="waves-effect">
-        <a href="#!">1981</a>
-      </li>
-      <li class="waves-effect">
-        <a href="#!">1982</a>
-      </li>
-      <li class="waves-effect">
-        <a href="#!">1983</a>
-      </li>
-      <li class="waves-effect">
-        <a href="#!">1984</a>
+      <li class="waves-effect" ng-repeat="year in listController.years">
+        <a href="#!">{{ year }}</a>
       </li>
       <li class="waves-effect">
         <a href="#!">
