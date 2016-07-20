@@ -3,11 +3,12 @@
   truthfulApp
     .controller("ArticleListController", ArticleListController)
     .factory("dataService", dataService)
-    .factory("articleFactory", articleFactory);
+    .factory("articleFactory", articleFactory)
+    .factory("yearFactory", yearFactory);
 
-  ArticleListController.$inject = ["dataService", "articleFactory"];
+  ArticleListController.$inject = ["dataService", "articleFactory", "yearFactory"];
 
-  function ArticleListController(dataService, articleFactory) {
+  function ArticleListController(dataService, articleFactory, yearFactory) {
     var scope = this;
     scope.years = [];
     scope.articlesByYears = [];
@@ -30,7 +31,10 @@
     function getYearsList() {
       dataService.getYearList()
         .then(function(data) {
-          scope.years = data;
+          scope.years = data.map(yearFactory.createYear);
+          if(scope.years.length) {
+            scope.years[0].isSelected = true;
+          }
         });
     }
   }
@@ -99,6 +103,19 @@
       });
 
       return result;
+    }
+  }
+  
+  function yearFactory() {
+    return {
+      createYear: createYear
+    };
+    
+    function createYear(data) {
+      return {
+        name: data,
+        isSelected: false
+      };
     }
   }
 
