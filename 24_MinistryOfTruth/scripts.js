@@ -31,10 +31,11 @@
     function getYearsList() {
       dataService.getYearList()
         .then(function(data) {
-          scope.years = data.map(yearFactory.createYear);
-          if(scope.years.length) {
-            scope.years[0].isSelected = true;
+          var years = data.map(yearFactory.createYear);
+          if(years.length) {
+            years[years.length - 1].isSelected = true;
           }
+          scope.years = years;
         });
     }
   }
