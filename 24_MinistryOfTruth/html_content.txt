@@ -19,7 +19,7 @@
           <i class="material-icons">chevron_left</i>
         </a>
       </li>
-      <li class="waves-effect" ng-repeat="year in listController.years" ng-class="active: isSelected">
+      <li ng-repeat="year in listController.years" ng-class="year.isSelected ? 'active' : waves-effect">
         <a href="#!">{{ year.name }}</a>
       </li>
       <li class="waves-effect">
