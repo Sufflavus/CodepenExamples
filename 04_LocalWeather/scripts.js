@@ -5,22 +5,31 @@
   };
   
   var localWeather = {};
-  
+    
   showLocalWeather();
   bindClickButtonEvent();
   
   function showLocalWeather() {
-    $.getJSON("http://ipinfo.io/json").then(function(ipInfo) {          
+    $.getJSON("//ipinfo.io/json").then(function(ipInfo) {       
       var location = getLocation(ipInfo);
       $("#location").text(location.city + ", " + location.country);   
-      var getWeatherUrl = createGetWeatherUrl(location.latitude, location.longitude);      
-      return $.getJSON(getWeatherUrl);
-    }).then(function(weatherInfo){      
+      var getWeatherUrl = createGetWeatherUrl(location.latitude, location.longitude);   
+      
+      return $.ajax({
+        url: getWeatherUrl,
+        dataType: "jsonp"
+      });      
+    }).then(function(weatherInfo) {   
+      console.log(weatherInfo)
       var weather = getWeather(weatherInfo);
-      $("#img_condition").attr("src", weather.icon);
-      $("#description").text(weather.description);
-      $("#temperature").text(roundTemp(weather.temp) + " " + weather.units);
       localWeather = weather;
+      
+      var skycons = new Skycons({"color": "white"});
+      skycons.add(document.getElementById("img_condition"), weather.icon);
+      skycons.play();
+      
+      $("#description").text(weather.description);
+      $("#temperature").text(roundTemp(weather.temp) + " " + weather.units);            
     });
   }  
   
@@ -40,8 +49,8 @@
     }); 
   }    
   
-  function createGetWeatherUrl(latitude, longitude) {
-    return "http://api.openweathermap.org/data/2.5/weather?lat=" + latitude + "&lon=" + longitude + "&units=imperial&appid=8a8d136ffe83a12dbbfe14d5fc9a3964";
+  function createGetWeatherUrl(latitude, longitude) {    
+    return "//api.darksky.net/forecast/8007dc52232ebc5f498c70b6ffe19da6/" + latitude + "," + longitude + "?units=si";    
   }
   
   function getLocation(ipInfo) {
@@ -54,13 +63,12 @@
     };
   }
   
-  function getWeather(weatherInfo) {
-    var icon = weatherInfo.weather[0].icon;
+  function getWeather(weatherInfo) {      
     return {
-      icon: "http://openweathermap.org/img/w/" + icon + ".png",
-      temp: weatherInfo.main.temp,
+      icon: weatherInfo.currently.icon,
+      temp: convertCelsiusToFahrenheit(weatherInfo.currently.temperature),
       units: tempUnits.fahrenheit,
-      description: weatherInfo.weather[0].description,
+      description: weatherInfo.currently.summary,
     };
   }
   

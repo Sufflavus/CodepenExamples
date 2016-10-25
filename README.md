@@ -31,7 +31,8 @@ Source code for [codepen experiments](http://codepen.io/sufflavus/pens/public/) 
 - [Bootstrap 3.3.6](https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css) 
 - [jQuery 2.2.2](//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js) 
 - [ipinfo.io JSON API](http://ipinfo.io/)
-- [OpenWeatherMap JSON API](http://openweathermap.org/current#current_JSON)
+- [Dark Sky API](https://darksky.net/dev/)
+- [Skycons](http://darkskyapp.github.io/skycons/)
 
 ![04_LocalWeather](https://github.com/Sufflavus/CodepenExamples/blob/master/images/04_LocalWeather.png)
 

@@ -23,7 +23,10 @@ body {
   color: #b8f6d5;
 }
 
-.btn {  
+.btn,
+.btn:hover,
+.btn:active,
+.btn:focus{  
   margin-top: 30px;  
   background: #39AF73;
   border-color: #39AF73;  
@@ -31,15 +34,11 @@ body {
   font-weight: bold;
 }
 
-.btn:hover,
-.btn:active,
-.btn:focus {  
-  background: #309460;
-  border-color: #309460;  
-  color: #FFFFFF;  
-}
-
 .btn:focus,.btn:active:focus,.btn.active:focus,
 .btn.focus,.btn:active.focus,.btn.active.focus {
     outline: none;
+}
+
+canvas {
+  margin: 20px 0;
 }
