@@ -1,6 +1,5 @@
 (function($){
-  //var navOffset = $('#navbar').height();
-  var navOffset = 50;
+  var navOffset = $('#navbar').height();  
 
   $(".navbar li a").click(function(event) {
       event.preventDefault();

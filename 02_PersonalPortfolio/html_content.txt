@@ -30,12 +30,12 @@
           <!-- col 1 -->
           <div class="col-sm-6 col-md-4">
             <div class="thumbnail">
-              <img src="https://s15.postimg.org/jf6py4yrv/GeekData.png" alt="GeekData image">
+              <img src="//s15.postimg.org/jf6py4yrv/GeekData.png" alt="GeekData image">
               <div class="caption text-center">
                 <h3>GeekData</h3>
                 <p class="project-info">Visualization of technologies, courses and geeks</p>
                 <p>
-                  <a href="http://geekdata.io/" target="_blank" class="btn btn-circle" role="button"><span class="glyphicon glyphicon-link" aria-hidden="true"></span></a>
+                  <a href="//geekdata.io/" target="_blank" class="btn btn-circle" role="button"><span class="glyphicon glyphicon-link" aria-hidden="true"></span></a>
                 </p>
               </div>
             </div>
@@ -44,7 +44,7 @@
           <!-- col 2 -->
           <div class="col-sm-6 col-md-4">
             <div class="thumbnail">
-              <img src="http://s24.postimg.org/jptmcodg5/tumblr_nj32za_Oz_TC1sh2zxyo1_500.jpg" alt="Lorem image">
+              <img src="//s24.postimg.org/jptmcodg5/tumblr_nj32za_Oz_TC1sh2zxyo1_500.jpg" alt="Lorem image">
               <div class="caption text-center">
                 <h3>Lorem Impus</h3>
                 <p class="project-info">Lorem ipsum dolor sit amet, consectetur adipiscing elit </p>
@@ -58,7 +58,7 @@
           <!-- col 3 -->
           <div class="col-sm-6 col-md-4">
             <div class="thumbnail">
-              <img src="http://s29.postimg.org/qpcbdgkhz/tumblr_n1tnr4q_EFZ1t01g56o1_500.jpg" alt="Lorem image">
+              <img src="//s29.postimg.org/qpcbdgkhz/tumblr_n1tnr4q_EFZ1t01g56o1_500.jpg" alt="Lorem image">
               <div class="caption text-center">
                 <h3>Lorem Impus</h3>
                 <p class="project-info">Lorem ipsum dolor sit amet, consectetur adipiscing elit </p>
@@ -77,7 +77,7 @@
           <!-- col 1 -->
           <div class="col-sm-6 col-md-4">
             <div class="thumbnail">
-              <img src="http://s29.postimg.org/ybpa2chc7/bee_bounty_6_x_6_acrylic_painting_of_a_honey_bee.jpg" alt="Lorem image">
+              <img src="//s29.postimg.org/ybpa2chc7/bee_bounty_6_x_6_acrylic_painting_of_a_honey_bee.jpg" alt="Lorem image">
               <div class="caption text-center">
                 <h3>Lorem Impus</h3>
                 <p class="project-info">Lorem ipsum dolor sit amet, consectetur adipiscing elit </p>
@@ -91,7 +91,7 @@
           <!-- col 2 -->
           <div class="col-sm-6 col-md-4">
             <div class="thumbnail">
-              <img src="http://s17.postimg.org/6mm54p6bj/images_q_tbn_ANd9_Gc_Qm2_C74_EYTSUHBWp_O83zm_Ee_Hlo7cq_K.jpg" alt="Lorem image">
+              <img src="//s17.postimg.org/6mm54p6bj/images_q_tbn_ANd9_Gc_Qm2_C74_EYTSUHBWp_O83zm_Ee_Hlo7cq_K.jpg" alt="Lorem image">
               <div class="caption text-center">
                 <h3>Lorem Impus</h3>
                 <p class="project-info">Lorem ipsum dolor sit amet, consectetur adipiscing elit </p>
@@ -105,7 +105,7 @@
           <!-- col 3 -->
           <div class="col-sm-6 col-md-4">
             <div class="thumbnail">
-              <img src="http://s28.postimg.org/h0u04w999/55e059a7804e301247e8389cf892b61f.jpg" alt="Lorem image">
+              <img src="//s28.postimg.org/h0u04w999/55e059a7804e301247e8389cf892b61f.jpg" alt="Lorem image">
               <div class="caption text-center">
                 <h3>Lorem Impus</h3>
                 <p class="project-info">Lorem ipsum dolor sit amet, consectetur adipiscing elit </p>

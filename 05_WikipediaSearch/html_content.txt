@@ -15,7 +15,7 @@
       <i class="material-icons left">search</i>
       Search
     </button>  
-    <a class="waves-effect waves-light btn deep-orange lighten-1" href="http://en.wikipedia.org/wiki/Special:Random" target="_blanck">
+    <a class="waves-effect waves-light btn deep-orange lighten-1" href="//en.wikipedia.org/wiki/Special:Random" target="_blanck">
       <i class="material-icons left">shuffle</i>
       Random Article
     </a>  

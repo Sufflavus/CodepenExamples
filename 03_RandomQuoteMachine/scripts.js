@@ -14,7 +14,7 @@
   }
   
   function getQuote() {
-    var url = getNewQuoteUrl();
+    var url = generateNewQuoteUrl();
     return $.getJSON(url)
       .then(function(result) {      
         var quoteData = result[0];
@@ -32,18 +32,18 @@
         $quoteContent.html(quote.content);
         $quoteTitle.text(quote.title);
         $(this).fadeIn(500);      
-        var tweetUrl = getTweetUrl(quote);
+        var tweetUrl = generateTweetUrl(quote);
         $btnTweet.attr("href", tweetUrl);
     });   
   }
   
-  function getNewQuoteUrl() {
+  function generateNewQuoteUrl() {
     var ts = new Date().getTime();
     return "//quotesondesign.com/wp-json/posts?" + 
       "filter[orderby]=rand&filter[posts_per_page]=1&callback=&_=" + ts;
   }
   
-  function getTweetUrl(quote) {
+  function generateTweetUrl(quote) {
     return "//twitter.com/intent/tweet?hashtags=quotes&related=freecodecamp&text=" + 
       encodeURIComponent("'" + quote.content + "' " + quote.title);
   }

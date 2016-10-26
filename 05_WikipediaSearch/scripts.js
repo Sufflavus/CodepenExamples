@@ -14,7 +14,7 @@
   
   function searchWiki(request) {
     $.ajax({
-      url: "http://en.wikipedia.org/w/api.php?format=json&action=query&generator=search&gsrnamespace=0&gsrlimit=10&prop=extracts&pilimit=max&exintro&explaintext&exsentences=1&exlimit=max&gsrsearch=" + request, 
+      url: "//en.wikipedia.org/w/api.php?format=json&action=query&generator=search&gsrnamespace=0&gsrlimit=10&prop=extracts&pilimit=max&exintro&explaintext&exsentences=1&exlimit=max&gsrsearch=" + request, 
       type: "GET",
       jsonp: "callback", 
       dataType: "jsonp",       
@@ -59,7 +59,7 @@
     var link = $("<a/>", {
       class: "deep-orange-text text-lighten-2",
       text: "Open in a new tab",
-      href: "http://en.wikipedia.org/?curid=" + article.pageid,
+      href: "//en.wikipedia.org/?curid=" + article.pageid,
       target: "_blank"
     }).appendTo(linkContainer);
 
