@@ -1,11 +1,12 @@
 (function() {
   // http://forum.freecodecamp.com/t/use-the-twitchtv-json-api/19541
-  //
+  
   var userNames = ["freecodecamp", "storbeck", "terakilobyte", "habathcx","RobotCaleb","thomasballinger","noobs2ninjas","beohoff", "ESL_SC2", "OgamingSC2", "cretetion", "fakke"];
   
   var usersUrl = "//api.twitch.tv/kraken/users/";
   var streamsUrl = "//api.twitch.tv/kraken/streams/";
-  var dummyImg = "http://dummyimage.com/50x50/bdbdbd/ffffff.png&text=0x3F";
+  var apiKeySuffix = "/?client_id=a59qej09oftmvj165yc0tnhll3sxps";
+  var dummyImg = "//dummyimage.com/50x50/bdbdbd/ffffff.png&text=0x3F";
   var userProfileUrl = "//twitch.tv/";
     
   var $users = $("#users");
@@ -55,37 +56,16 @@
               url: userProfileUrl + name
             };            
             initClosedUserSection(user);
-        }); 
-      
-      /* $.getJSON(usersUrl + name + "/?client_id=a59qej09oftmvj165yc0tnhll3sxps")
-        .then(function(data) {
-          console.log(name + " users: ");
-          console.log(data);
-          user.name = data.display_name;
-          user.logo = data.logo || dummyImg;
-          user.url = "http://twitch.tv/" + data.name;                  
-          return $.getJSON(streamsUrl + name + "/?client_id=a59qej09oftmvj165yc0tnhll3sxps")
-        }).then(function(data) {  
-            console.log(name + " streams: ");
-            console.log(data);
-            if(data.stream) {            
-              user.message = data.stream.game + ": " + data.stream.channel.status;
-              initOnlineUserSection(user);
-            } else {
-              initOfflineUserSection(user);
-            }            
-          }).fail(function(a, b, c) {
-            initClosedUserSection(user);
-        });  */     
-    })
+        });            
+    });
   }
   
   function getUser(userName) {
-    return $.getJSON(usersUrl + userName + "/?client_id=a59qej09oftmvj165yc0tnhll3sxps");
+    return $.getJSON(usersUrl + userName + apiKeySuffix);
   }
   
   function getStream(userName) {
-    return $.getJSON(streamsUrl + userName + "/?client_id=a59qej09oftmvj165yc0tnhll3sxps")
+    return $.getJSON(streamsUrl + userName + apiKeySuffix)
   }
   
   function subscribeTabs() {

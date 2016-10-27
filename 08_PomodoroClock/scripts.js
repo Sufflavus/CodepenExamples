@@ -9,9 +9,9 @@
   var $breakLabel = $("#breakLabel");
   var $progressBar = $("#progressBar");
   
-  var sessionEndAudio = new Audio("http://www.oringz.com/oringz-uploads/sounds-928-gentle-alarm.mp3");
+  var sessionEndAudio = new Audio("//static1.grsites.com/archive/sounds/cartoon/cartoon015.mp3");
   
-  var breakEndAudio = new Audio("http://www.oringz.com/oringz-uploads/sounds-882-solemn.mp3");
+  var breakEndAudio = new Audio("//static1.grsites.com/archive/sounds/cartoon/cartoon016.mp3");
     
   var timer;
        
@@ -109,7 +109,7 @@
     };
     
     var currentTimerType = timerType.none;
-    var isPaused = false;
+    var isPaused = true;
     
     var leftTime = getDuration(sessionLength);
            
