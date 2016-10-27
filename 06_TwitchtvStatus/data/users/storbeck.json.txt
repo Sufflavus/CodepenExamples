@@ -1,0 +1,13 @@
+{
+    "display_name": "storbeck",
+    "_id": 86238744,
+    "name": "storbeck",
+    "type": "user",
+    "bio": "",
+    "created_at": "2015-03-25T02:23:40Z",
+    "updated_at": "2016-10-27T11:00:29Z",
+    "logo": "https://static-cdn.jtvnw.net/jtv_user_pictures/storbeck-profile_image-7ab13c2f781b601d-300x300.jpeg",
+    "_links": {
+        "self": "https://api.twitch.tv/kraken/users/storbeck"
+    }
+}

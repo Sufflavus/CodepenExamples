@@ -1,0 +1,13 @@
+{
+    "display_name": "cretetion",
+    "_id": 90401618,
+    "name": "cretetion",
+    "type": "user",
+    "bio": "I am a retired Police Officer.  I believe in the Thin Blue Line.  I support Law Enforcement, Firefighters, and EMS.  I am a Sheep Dog and I am part of a Pack.  I want you to join my Pack.  We can fight the Evil in the world together.",
+    "created_at": "2015-05-06T15:57:40Z",
+    "updated_at": "2016-10-27T11:01:00Z",
+    "logo": "https://static-cdn.jtvnw.net/jtv_user_pictures/cretetion-profile_image-12bae34d9765f222-300x300.jpeg",
+    "_links": {
+        "self": "https://api.twitch.tv/kraken/users/cretetion"
+    }
+}

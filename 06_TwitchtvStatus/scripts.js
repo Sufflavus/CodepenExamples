@@ -1,9 +1,12 @@
 (function() {
-  var userNames = ["freecodecamp", "storbeck", "terakilobyte", "habathcx","RobotCaleb","thomasballinger","noobs2ninjas","beohoff", "brunofin", "OgamingSC2"];
+  // http://forum.freecodecamp.com/t/use-the-twitchtv-json-api/19541
+  //
+  var userNames = ["freecodecamp", "storbeck", "terakilobyte", "habathcx","RobotCaleb","thomasballinger","noobs2ninjas","beohoff", "ESL_SC2", "OgamingSC2", "cretetion", "fakke"];
   
-  var usersUrl = "https://api.twitch.tv/kraken/users/";
-  var streamsUrl = "https://api.twitch.tv/kraken/streams/";
+  var usersUrl = "//api.twitch.tv/kraken/users/";
+  var streamsUrl = "//api.twitch.tv/kraken/streams/";
   var dummyImg = "http://dummyimage.com/50x50/bdbdbd/ffffff.png&text=0x3F";
+  var userProfileUrl = "//twitch.tv/";
     
   var $users = $("#users");
   
@@ -27,23 +30,62 @@
     userNames.forEach(function(name) {
       var user = {};      
       
-      $.getJSON(usersUrl + name)
+      $.when(getUser(name), getStream(name))
+        .then(function(usersResult, streamsResult) {
+          var userData = usersResult[0];
+          var streamData = streamsResult[0].stream;
+        
+          var user = {
+            name: userData.display_name,
+            logo: userData.logo || dummyImg,
+            url: userProfileUrl + userData.name
+          };   
+          
+          if(streamData) {            
+            user.message = streamData.game + ": " + streamData.channel.status;
+            initOnlineUserSection(user);
+          } else {
+            initOfflineUserSection(user);
+          }    
+        })
+        .fail(function(a, b, c) {        
+            var user = {
+              name: name,
+              logo: dummyImg,
+              url: userProfileUrl + name
+            };            
+            initClosedUserSection(user);
+        }); 
+      
+      /* $.getJSON(usersUrl + name + "/?client_id=a59qej09oftmvj165yc0tnhll3sxps")
         .then(function(data) {
+          console.log(name + " users: ");
+          console.log(data);
           user.name = data.display_name;
           user.logo = data.logo || dummyImg;
           user.url = "http://twitch.tv/" + data.name;                  
-          return $.getJSON(streamsUrl + name)
-        }).then(function(data) {          
+          return $.getJSON(streamsUrl + name + "/?client_id=a59qej09oftmvj165yc0tnhll3sxps")
+        }).then(function(data) {  
+            console.log(name + " streams: ");
+            console.log(data);
             if(data.stream) {            
               user.message = data.stream.game + ": " + data.stream.channel.status;
-              showOnlineUserSection(user);
+              initOnlineUserSection(user);
             } else {
-              showOfflineUserSection(user);
+              initOfflineUserSection(user);
             }            
           }).fail(function(a, b, c) {
-            showClosedUserSection(user);
-        });      
+            initClosedUserSection(user);
+        });  */     
     })
+  }
+  
+  function getUser(userName) {
+    return $.getJSON(usersUrl + userName + "/?client_id=a59qej09oftmvj165yc0tnhll3sxps");
+  }
+  
+  function getStream(userName) {
+    return $.getJSON(streamsUrl + userName + "/?client_id=a59qej09oftmvj165yc0tnhll3sxps")
   }
   
   function subscribeTabs() {
@@ -99,18 +141,10 @@
         }        
       });       
     });
-  }
-    
-  function showOnlineUserSection(user) {    
-    var section = $("<li/>", {        
-      class: "collection-item avatar invisible",
-      "data-id": user.name.toLowerCase()
-    }).appendTo($users);
-
-    var logo = $("<img/>", {
-      src: user.logo,
-      class: "circle"
-    }).appendTo(section);
+  }  
+      
+  function initOnlineUserSection(user) {    
+    var section = initUserSectionWithAvatar(user);
     
     var link = $("<a/>", {
       class: "title teal-text text-lighten-1",
@@ -140,16 +174,8 @@
     onlineUserSections.push(section);
   }
   
-  function showOfflineUserSection(user) {    
-    var section = $("<li/>", {        
-      class: "collection-item avatar invisible",
-      "data-id": user.name.toLowerCase()
-    }).appendTo($users);
-
-    var logo = $("<img/>", {
-      src: user.logo,
-      class: "circle"
-    }).appendTo(section);
+  function initOfflineUserSection(user) {    
+    var section = initUserSectionWithAvatar(user);
     
     var link = $("<a/>", {
       class: "title pink-text text-lighten-2",
@@ -174,16 +200,8 @@
     offlineUserSections.push(section);
   }
   
-  function showClosedUserSection(user) {        
-    var section = $("<li/>", {        
-      class: "collection-item avatar invisible",
-      "data-id": user.name.toLowerCase()
-    }).appendTo($users);
-
-    var logo = $("<img/>", {
-      src: user.logo,
-      class: "circle"
-    }).appendTo(section);
+  function initClosedUserSection(user) {        
+    var section = initUserSectionWithAvatar(user);
     
     var link = $("<a/>", {
       class: "title pink-text text-lighten-2",
@@ -206,5 +224,19 @@
     
     allUserSections.push(section);
     offlineUserSections.push(section);
+  }
+  
+  function initUserSectionWithAvatar(user) {
+    var section = $("<li/>", {        
+      class: "collection-item avatar invisible",
+      "data-id": user.name.toLowerCase()
+    }).appendTo($users);
+
+    var logo = $("<img/>", {
+      src: user.logo,
+      class: "circle"
+    }).appendTo(section);
+    
+    return section;
   }
 })();

@@ -1,0 +1,293 @@
+[
+{
+"ID": 2430,
+"title": "Gemma O’Brien",
+"content": "<p>The great thing about personal work is that it can shape your commercial work. Clients see what you create for yourself and that can be the starting point for a new project, which closes the cap between the work you love making and the work you get paid for.</p>\n",
+"link": "https://quotesondesign.com/gemma-obrien/"
+},
+{
+"ID": 2425,
+"title": "William Edmund Hick",
+"content": "<p>The time it takes to make a decision increases as the number of alternatives increases.</p>\n",
+"link": "https://quotesondesign.com/william-edmund-hick/"
+},
+{
+"ID": 2423,
+"title": "John Maeda",
+"content": "<p>Design is a solution to a problem. Art is a question to a problem.</p>\n",
+"link": "https://quotesondesign.com/john-maeda-5/"
+},
+{
+"ID": 2417,
+"title": "George Nelson",
+"content": "<p>You don’t think your way to creative work. You work your way to creative thinking.</p>\n",
+"link": "https://quotesondesign.com/george-nelson/"
+},
+{
+"ID": 2415,
+"title": "Ralf Speth",
+"content": "<p>If you think good design is expensive, you should look at the cost of bad design.</p>\n",
+"link": "https://quotesondesign.com/ralf-speth/"
+},
+{
+"ID": 2413,
+"title": "Ray Bradbury",
+"content": "<p>Those who don’t build must burn.</p>\n",
+"link": "https://quotesondesign.com/ray-bradbury/"
+},
+{
+"ID": 2411,
+"title": "Massimo Vignelli",
+"content": "<p>Styles come and go. Good design is a language, not a style.</p>\n",
+"link": "https://quotesondesign.com/massimo-vignelli-3/"
+},
+{
+"ID": 2409,
+"title": "Hillman Curtis",
+"content": "<p>The goal of a designer is to listen, observe, understand, sympathize, empathize, synthesize, and glean insights that enable him or her to make the invisible visible.</p>\n",
+"link": "https://quotesondesign.com/hillman-curtis/"
+},
+{
+"ID": 2407,
+"title": "Nicholas Negroponte",
+"content": "<p>Where do new ideas come from? The answer is simple: differences. Creativity comes from unlikely juxtapositions.</p>\n",
+"link": "https://quotesondesign.com/nicholas-negroponte/"
+},
+{
+"ID": 2405,
+"title": "Andrew Grove",
+"content": "<p>How well we communicate is determined not by how well we say things, but how well we are understood.</p>\n",
+"link": "https://quotesondesign.com/andrew-grove/"
+},
+{
+"ID": 2403,
+"title": "Charles Eames",
+"content": "<p>Recognizing the need is the primary condition for design.</p>\n",
+"link": "https://quotesondesign.com/charles-eames-4/"
+},
+{
+"ID": 2398,
+"title": "Michael Stinson",
+"content": "<p>Letterspacing creates speedbumps for the reader.</p>\n",
+"link": "https://quotesondesign.com/michael-stinson-3/"
+},
+{
+"ID": 2396,
+"title": "Alexander Isley",
+"content": "<p>I don&#8217;t think of myself as an artist. I know some designers consider themselves such, but I can&#8217;t. This is not to say that I don&#8217;t hope that our work has artistic merit. Anyway, I never know how someone could proclaim himself or herself to be an &#8216;artist&#8217;; I think it should be a designation best left for others to bestow, much like &#8216;genius&#8217; and &#8216;asshole&#8217;.</p>\n",
+"link": "https://quotesondesign.com/alexander-isley-6/"
+},
+{
+"ID": 2394,
+"title": "Anthony Liccione",
+"content": "<p>Her complexity is a glorious fire that consumes, while her simplicity goes unapproachable. But if one takes time to understand her, there is something beautiful to find, something simple to be loved. But she goes unloved, for being misunderstood.</p>\n",
+"link": "https://quotesondesign.com/anthony-liccione/"
+},
+{
+"ID": 2391,
+"title": "Samadara Ginige",
+"content": "<p>A good design solves a problem. A bad design creates many.</p>\n",
+"link": "https://quotesondesign.com/samadara-ginige-4/"
+},
+{
+"ID": 2389,
+"title": "Rami Hassan",
+"content": "<p>If you spend an hour now, you can save five later.</p>\n",
+"link": "https://quotesondesign.com/rami-hassan/"
+},
+{
+"ID": 2387,
+"title": "Shawn Lukas",
+"content": "<p>A portfolio as pretty as pictures is nothing but a tip of the iceberg, the real treasure underlies the ocean.</p>\n",
+"link": "https://quotesondesign.com/shawn-lukas-2/",
+"custom_meta": {
+"Source": "<a href=\"http://shawnlukas.com/reads/cools/\">article</a>"
+}
+},
+{
+"ID": 2384,
+"title": "Shawn Lukas",
+"content": "<p>When typography is on point, words become images.</p>\n",
+"link": "https://quotesondesign.com/shawn-lukas/",
+"custom_meta": {
+"Source": "<a href=\"http://design-milk.com/from-sketch-to-shape-special-edition-wallpaper-by-will-holmes/\">sketch</a>"
+}
+},
+{
+"ID": 2382,
+"title": "William Childs",
+"content": "<p>Much like music, great art is also found in the spaces between your graphic elements.</p>\n",
+"link": "https://quotesondesign.com/william-childs-3/"
+},
+{
+"ID": 2379,
+"title": "Ricardo Zea",
+"content": "<p>Learning Web Design is like playing video games: You start small and build your character as you progress, then you beat the boss, literally.</p>\n",
+"link": "https://quotesondesign.com/ricardo-zea/",
+"custom_meta": {
+"Source": "<a href=\"https://twitter.com/ricardozea/status/675150834108354561\">tweet</a>"
+}
+},
+{
+"ID": 2376,
+"title": "Michael Stinson",
+"content": "<p>Graphic design is building systems.</p>\n",
+"link": "https://quotesondesign.com/michael-stinson-2/"
+},
+{
+"ID": 2373,
+"title": "Claude Bernard",
+"content": "<p>Art is I; science is we.</p>\n",
+"link": "https://quotesondesign.com/claude-bernard/",
+"custom_meta": {
+"Source": "<a href=\"https://archive.org/stream/b21270557/b21270557_djvu.txt\">paper</a>"
+}
+},
+{
+"ID": 2370,
+"title": "Samadara Ginige",
+"content": "<p>Research not to discover what&#8217;s already there, but to discover what&#8217;s not.</p>\n",
+"link": "https://quotesondesign.com/samadara-ginige-3/",
+"custom_meta": {
+"Source": "<a href=\"https://twitter.com/SamadaraG/status/658176707409477633\">tweet</a>"
+}
+},
+{
+"ID": 2367,
+"title": "John D. Cook",
+"content": "<p>When it comes to writing code, the number one most important skill is how to keep a tangle of features from collapsing under the weight of its own complexity.</p>\n",
+"link": "https://quotesondesign.com/john-d-cook/",
+"custom_meta": {
+"Source": "<a href=\"http://www.johndcook.com/blog/2015/06/18/most-important-skill-in-software/\">article</a>"
+}
+},
+{
+"ID": 2362,
+"title": "Rebecca Rolfe",
+"content": "<p>Instead of asking the user to make a choice up front, maybe we can set a smart default and see if there is high demand after launch for more customization.</p>\n",
+"link": "https://quotesondesign.com/rebecca-rolfe/",
+"custom_meta": {
+"Source": "<a href=\"http://www.refinery29.com/female-white-hat-hackers-google-chrome\">interview</a>"
+}
+},
+{
+"ID": 2358,
+"title": "Ralph Caplan",
+"content": "<p>[Designers&#8217;] primary competence lies not in the technicalities of a craft but in the mastery of a process.</p>\n",
+"link": "https://quotesondesign.com/ralph-caplan-2/",
+"custom_meta": {
+"Source": "<a href=\"http://www.amazon.com/Design-2nd-Bathroom-Object-Lessons/dp/1563673495\">book</a>"
+}
+},
+{
+"ID": 2356,
+"title": "Ralph Caplan",
+"content": "<p>Design is a process for making things right, for shaping what people need.</p>\n",
+"link": "https://quotesondesign.com/ralph-caplan/",
+"custom_meta": {
+"Source": "<a href=\"http://www.amazon.com/Design-There-Bathroom-Object-Lessons/dp/0070097771\">book</a>"
+}
+},
+{
+"ID": 2352,
+"title": "Vital Lokossou",
+"content": "<p>Tech without design is the business&#8217;s perdition.</p>\n",
+"link": "https://quotesondesign.com/vital-lokossou/"
+},
+{
+"ID": 2349,
+"title": "Sir Ken Robinson",
+"content": "<p>If you&#8217;re not prepared to be wrong, you&#8217;ll never come up with anything original.</p>\n",
+"link": "https://quotesondesign.com/sir-ken-robinson/"
+},
+{
+"ID": 2347,
+"title": "Elon Musk",
+"content": "<p>Any product that needs a manual to work is broken.</p>\n",
+"link": "https://quotesondesign.com/elon-musk/"
+},
+{
+"ID": 2345,
+"title": "Martin LeBlanc",
+"content": "<p>A user interface is like a joke. If you have to explain it, it&#8217;s not that good. </p>\n",
+"link": "https://quotesondesign.com/martin-leblanc/",
+"custom_meta": {
+"Source": "<a href=\"https://twitter.com/iconfinder/status/472014218267742208\">tweet</a>"
+}
+},
+{
+"ID": 2343,
+"title": "Startup L. Jackson",
+"content": "<p>Y&#8217;all talk about UX like it&#8217;s just another feature. For a user, it literally is the product. Full stop. Everything else is inside baseball.</p>\n",
+"link": "https://quotesondesign.com/startup-l-jackson/",
+"custom_meta": {
+"Source": "<a href=\"https://twitter.com/startupljackson/status/523539069444177920?lang=en\">tweet</a>"
+}
+},
+{
+"ID": 2328,
+"title": "Pete Episcopo",
+"content": "<p>Everything we do communicates.</p>\n",
+"link": "https://quotesondesign.com/pete-episcopo-2/"
+},
+{
+"ID": 2326,
+"title": "Bruce Ediger",
+"content": "<p>The only &#8220;intuitive&#8221; interface is the nipple. After that it&#8217;s all learned.</p>\n",
+"link": "https://quotesondesign.com/bruce-ediger/",
+"custom_meta": {
+"Source": "<a href=\"http://www.greenend.org.uk/rjk/misc/nipple.html\">website</a>"
+}
+},
+{
+"ID": 2323,
+"title": "Victoria Pater",
+"content": "<p>Only show work you like, or you&#8217;ll end up being hired to do things you don&#8217;t like.</p>\n",
+"link": "https://quotesondesign.com/victoria-pater/",
+"custom_meta": {
+"Source": "<a href=\"https://learnthesecrethandshake.com/victoria-pater/\">website</a>"
+}
+},
+{
+"ID": 2320,
+"title": "Jennifer Cirpici",
+"content": "<p>If you want to be the designer that stands out of the rest, do something more than just designing. Make an interesting project like for charity, start an agency, hold an exhibition, start a design festival or build a site like Behance. Become interesting.</p>\n",
+"link": "https://quotesondesign.com/jennifer-cirpici/",
+"custom_meta": {
+"Source": "<a href=\"https://learnthesecrethandshake.com/jennifer-cirpici-if-you-want-to-be-the-designer-that-stands-out-of-the-rest/\">website</a>"
+}
+},
+{
+"ID": 2317,
+"title": "Alexander Isley",
+"content": "<p>It takes a lot of effort to make something seem effortless.</p>\n",
+"link": "https://quotesondesign.com/alexander-isley-5/",
+"custom_meta": {
+"Source": "<a href=\"http://alexanderisley.com/about/what-we-believe\">personal site</a>"
+}
+},
+{
+"ID": 2315,
+"title": "Wim Crouwel",
+"content": "<p>The grid is like the lines on a football field. You can play a great game in the grid or a lousy game. But the goal is to play a really fine game.</p>\n",
+"link": "https://quotesondesign.com/wim-crouwel-3/",
+"custom_meta": {
+"Source": "<a href=\"http://www.adweek.com/fishbowlny/from-the-mouths-of-legends-quotes-from-wim-crouwel-and-massimo-vignelli/275297\">interview</a>"
+}
+},
+{
+"ID": 2313,
+"title": "William Childs",
+"content": "<p>Advertising is the one industry where all the experts seem to be the people who don&#8217;t work in it.</p>\n",
+"link": "https://quotesondesign.com/william-childs-2/"
+},
+{
+"ID": 2311,
+"title": "Morgan Ashley",
+"content": "<p>Just because it&#8217;s simple doesn&#8217;t mean it makes sense.</p>\n",
+"link": "https://quotesondesign.com/morgan-ashley/",
+"custom_meta": {
+"Source": "<a href=\"https://getflywheel.com/layout/shouldnt-use-flat-design/\">article</a>"
+}
+}
+]

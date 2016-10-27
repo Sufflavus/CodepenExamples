@@ -1,0 +1,13 @@
+{
+    "display_name": "noobs2ninjas",
+    "_id": 82534701,
+    "name": "noobs2ninjas",
+    "type": "user",
+    "bio": "Live Programming my face off while hanging out with some of the most kick ass programmers on the planet.",
+    "created_at": "2015-02-13T08:13:11Z",
+    "updated_at": "2016-10-27T03:01:21Z",
+    "logo": "https://static-cdn.jtvnw.net/jtv_user_pictures/noobs2ninjas-profile_image-34707f847a73d934-300x300.png",
+    "_links": {
+        "self": "https://api.twitch.tv/kraken/users/noobs2ninjas"
+    }
+}

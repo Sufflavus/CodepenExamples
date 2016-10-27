@@ -1,0 +1,13 @@
+{
+    "display_name": "habathcx",
+    "_id": 6726509,
+    "name": "habathcx",
+    "type": "user",
+    "bio": "League of Legends, Music, Nerd Stuff, Chat.. blah blah blah",
+    "created_at": "2009-06-07T15:04:55Z",
+    "updated_at": "2016-10-27T11:00:51Z",
+    "logo": "https://static-cdn.jtvnw.net/jtv_user_pictures/habathcx-profile_image-d75385dbe4f42a66-300x300.jpeg",
+    "_links": {
+        "self": "https://api.twitch.tv/kraken/users/habathcx"
+    }
+}

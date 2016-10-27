@@ -1,0 +1,7 @@
+{
+    "stream": null,
+    "_links": {
+        "self": "https://api.twitch.tv/kraken/streams/OgamingSC2",
+        "channel": "https://api.twitch.tv/kraken/channels/OgamingSC2"
+    }
+}

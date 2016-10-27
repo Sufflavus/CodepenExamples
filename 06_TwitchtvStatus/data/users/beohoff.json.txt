@@ -1,0 +1,13 @@
+{
+    "display_name": "beohoff",
+    "_id": 83897020,
+    "name": "beohoff",
+    "type": "user",
+    "bio": "My name is Ben and you should watch along as I livestream myself programming different things including tutorials and small-medium scale projects.\r\rI am a Mechanical Engineer by education and a programmer by trade. I've been professionally programming for 2+ years, mainly using C++ and Python.",
+    "created_at": "2015-02-27T12:25:44Z",
+    "updated_at": "2016-10-25T11:00:17Z",
+    "logo": null,
+    "_links": {
+       "self": "https://api.twitch.tv/kraken/users/beohoff"
+    }
+}

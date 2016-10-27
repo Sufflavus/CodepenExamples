@@ -1,0 +1,7 @@
+{
+    "stream": null,
+    "_links": {
+        "self": "https://api.twitch.tv/kraken/streams/terakilobyte",
+        "channel": "https://api.twitch.tv/kraken/channels/terakilobyte"
+    }
+}

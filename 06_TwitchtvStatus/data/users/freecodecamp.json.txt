@@ -1,0 +1,13 @@
+{
+    "display_name": "FreeCodeCamp",
+    "_id": 79776140,
+    "name": "freecodecamp",
+    "type": "user",
+    "bio": "We help you learn to code, then practice by building projects for nonprofits. Learn Full-stack JavaScript, build a portfolio, and get a coding job by joining our open source community at https://freecodecamp.com",
+    "created_at": "2015-01-14T03:36:48Z",
+    "updated_at": "2016-10-27T11:00:55Z",
+    "logo": "https://static-cdn.jtvnw.net/jtv_user_pictures/freecodecamp-profile_image-d9514f2df0962329-300x300.png",
+    "_links": {
+        "self": "https://api.twitch.tv/kraken/users/freecodecamp"
+    }
+}
