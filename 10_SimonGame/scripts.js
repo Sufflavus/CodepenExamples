@@ -1,14 +1,15 @@
 (function() {
+  //http://www.grsites.com/archive/sounds/category/23/?offset=12
   var $btnStrict = $("#btnStrict");
   var $score = $("#score");
   var $switchCheckbox = $("#switchCheckbox");
   var $btnStart = $("#btnStart");
   var $segments = $(".segment");
   
-  var game = new Game();  
+  var game = new Game();
     
-  var errorAudio = new Audio("http://www.oringz.com/oringz-uploads/sounds-972-thats-nasty.mp3");
-  var winAudio = new Audio("http://www.oringz.com/oringz-uploads/sounds-727-good-morning.mp3");  
+  var errorAudio = new Audio("//static1.grsites.com/archive/sounds/cartoon/cartoon004.mp3");
+  var winAudio = new Audio("//static1.grsites.com/archive/sounds/musical/musical097.mp3");  
   
   var segments = {
     red: $("#redSegment"),
@@ -25,10 +26,10 @@
   };
   
   var segmentAudio = { 
-    red: new Audio("https://s3.amazonaws.com/freecodecamp/simonSound1.mp3"),
-    blue: new Audio("https://s3.amazonaws.com/freecodecamp/simonSound2.mp3"),
-    yellow: new Audio("https://s3.amazonaws.com/freecodecamp/simonSound3.mp3"),
-    green: new Audio("https://s3.amazonaws.com/freecodecamp/simonSound4.mp3")
+    red: new Audio("//s3.amazonaws.com/freecodecamp/simonSound1.mp3"),
+    blue: new Audio("//s3.amazonaws.com/freecodecamp/simonSound2.mp3"),
+    yellow: new Audio("//s3.amazonaws.com/freecodecamp/simonSound3.mp3"),
+    green: new Audio("//s3.amazonaws.com/freecodecamp/simonSound4.mp3")
   };
   
   var segmentHighlightClass = {

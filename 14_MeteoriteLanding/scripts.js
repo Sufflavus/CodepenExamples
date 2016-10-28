@@ -1,9 +1,9 @@
 // world map is based on example http://bl.ocks.org/mbostock/8fadc5ac9c2a9e7c5ba2
 
 (function() {
-  var mapUrl = "https://raw.githubusercontent.com/mbostock/topojson/master/examples/world-50m.json";
+  var mapUrl = "//raw.githubusercontent.com/Sufflavus/CodepenExamples/master/14_MeteoriteLanding/world-50m.json";
   
-  var meteoriteUrl = "https://raw.githubusercontent.com/FreeCodeCamp/ProjectReferenceData/master/meteorite-strike-data.json"
+  var meteoriteUrl = "//raw.githubusercontent.com/Sufflavus/CodepenExamples/master/14_MeteoriteLanding/meteorite-strike-data.json"
   
   var bodyRect = d3.select(".content").node().getBoundingClientRect();
   
@@ -43,6 +43,7 @@
 
   svg.call(zoom).call(zoom.event);
 
+  // world map is based on example http://bl.ocks.org/mbostock/8fadc5ac9c2a9e7c5ba2
   d3.json(mapUrl, function(error, world) {
     if (error) {
       throw error;

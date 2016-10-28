@@ -44,9 +44,9 @@ var TableHeader = React.createClass({
 var TableRow = React.createClass({
   render: function() {  
     return (
-      <tr>        
+      <tr>
         <td>{this.props.index}</td>
-        <td>          
+        <td>
           <a href={this.props.user.url} target="_blank">
             <img className="circle" src={this.props.user.img}/>
             <span>{this.props.user.username}</span>            
@@ -71,10 +71,10 @@ var CampersTable = React.createClass({
     });
   },
   loadTopRecentUsers: function() {
-    this.loadUsers("https://fcctop100.herokuapp.com/api/fccusers/top/recent");    
+    this.loadUsers("//fcctop100.herokuapp.com/api/fccusers/top/recent");    
   },
   loadTopAllTimeUsers: function() {
-    this.loadUsers("https://fcctop100.herokuapp.com/api/fccusers/top/alltime");      
+    this.loadUsers("//fcctop100.herokuapp.com/api/fccusers/top/alltime");      
   },
   getInitialState: function() {
     return {rows: []};

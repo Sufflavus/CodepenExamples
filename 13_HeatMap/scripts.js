@@ -9,7 +9,7 @@
   
   var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
     
-  var dataUrl = "https://raw.githubusercontent.com/FreeCodeCamp/ProjectReferenceData/master/global-temperature.json";
+  var dataUrl = "//raw.githubusercontent.com/Sufflavus/CodepenExamples/master/13_HeatMap/global-temperature.json";
   
   var tooltip = d3.select("#tooltip");
   var tooltipDate = d3.select("#date");
@@ -17,7 +17,7 @@
   var tooltipVariance = d3.select("#variance");
   
   var numberFormat = d3.format(",.2f");
-  
+
   // chart container
   var svg = d3.select("div.content")
     .append("svg")

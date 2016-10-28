@@ -11,7 +11,7 @@
   var tooltipTime = d3.select("#time");
   var tooltipDoping = d3.select("#doping");
     
-  var dataUrl = "https://raw.githubusercontent.com/FreeCodeCamp/ProjectReferenceData/master/cyclist-data.json";
+  var dataUrl = "//raw.githubusercontent.com/Sufflavus/CodepenExamples/master/12_ScatterplotGraph/cyclist-data.json";
   
   // chart container
   var svg = d3.select("div.content")

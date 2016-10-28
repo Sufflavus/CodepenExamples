@@ -14,7 +14,7 @@
   var tooltipYear = d3.select("#year");
   var tooltipMonth = d3.select("#month");
     
-  var dataUrl = "https://raw.githubusercontent.com/FreeCodeCamp/ProjectReferenceData/master/GDP-data.json";
+  var dataUrl = "//raw.githubusercontent.com/Sufflavus/CodepenExamples/master/11_BarChart/GDP-data.json";
   
   // chart container
   var svg = d3.select("div.content")
