@@ -1,0 +1,68 @@
+@column-width-1: 200px;
+@column-width-2: 150px;
+@column-width-3: 170px;
+@scroll-width: 25px;
+
+html, body {
+  margin: 0;
+  height: 100%;
+}
+
+table {
+  margin: 0 auto;
+  border: none;
+  border-collapse: collapse;
+}
+
+tr,
+td,
+th {
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+tbody,
+thead,
+tfoot { 
+  display: block; 
+}
+
+thead,
+tfoot { 
+  width: @column-width-1 + @column-width-2 + @column-width-3 + @scroll-width;  
+}
+
+tbody {
+  overflow-y: auto;
+  height: auto;
+  background: #EDFDFF;
+  min-height: 50px;
+}
+
+.overflow {
+  height: ~"calc(100vh - 40px)";
+}
+
+thead,
+tfoot {
+  text-align: left;
+  background: #3EC0D1;
+  color: #ffffff;  
+}
+
+thead th {
+  font-weight: normal;
+}
+
+.header1 {
+  width: @column-width-1; 
+}
+
+.header2 {
+  width: @column-width-2; 
+}
+
+.header3 {
+  width: @column-width-3; 
+}
