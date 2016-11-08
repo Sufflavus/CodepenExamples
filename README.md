@@ -208,3 +208,11 @@ Source code for [codepen experiments](http://codepen.io/sufflavus/pens/public/) 
 
 - [Angular 1.5.5](https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.5/angular.min.js) 
 - [Angular's jqLite](https://docs.angularjs.org/api/ng/function/angular.element)
+
+## 24. Scrollable table
+
+[Scrollable table](http://codepen.io/sufflavus/full/PbwVEV/) is based on 
+- [jQuery 3.1.0](https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js) 
+
+![25_ScrollableTable_1](https://github.com/Sufflavus/CodepenExamples/blob/master/images/25_ScrollableTable_1.png)
+![25_ScrollableTable_2](https://github.com/Sufflavus/CodepenExamples/blob/master/images/25_ScrollableTable_2.png)
