@@ -8,7 +8,32 @@ html, body {
   height: 100%;
 }
 
+.scrollable-table {
+  height: 100%;
+  max-height: 100%; 
+}
+
+/* http://jsfiddle.net/poztin/MFHj7/1/ */
+.container {  
+  height: 100%;
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: row;
+  -webkit-flex-direction: row;
+  -webkit-align-content: stretch;
+  align-content: stretch;
+}
+
+.table-wrapper {
+  -webkit-flex: 1;
+  flex: 1;
+  position: relative;
+  vertical-allign: centre;
+}
+
 table {
+  height: 100%;
+  max-height: 100vh;
   margin: 0 auto;
   border: none;
   border-collapse: collapse;
@@ -41,7 +66,7 @@ tbody {
 }
 
 .overflow {
-  height: ~"calc(100vh - 40px)";
+  height: ~"calc(100% - 40px)";
 }
 
 thead,
