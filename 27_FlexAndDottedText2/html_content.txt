@@ -1,0 +1,17 @@
+<div class="block">
+  <span class="block__element_fixed">
+    1
+  </span>
+  <span class="block__element_fixed">
+    2
+  </span>
+  <span class="block__element_flexible">
+    <span class="block__element_flexible-dotted">
+      3 a very long sentence. 
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus luctus neque eget ligula posuere laoreet. Maecenas dapibus ligula a tellus molestie pellentesque. Mauris iaculis magna mi, a hendrerit urna tincidunt eget. Aenean ultrices massa id malesuada dictum. Mauris non dui in nunc convallis gravida et eu est. Maecenas quis eleifend nulla. Ut dignissim eu ex ac sodales. Vivamus placerat urna mauris, vel aliquet nisi tincidunt tristique. Praesent risus odio, rhoncus a odio sit amet, tempor eleifend metus.
+    </span>    
+  </span>
+  <span class="block__element_fixed">
+    4 another short text
+  </span>
+</div>

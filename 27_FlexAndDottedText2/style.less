@@ -1,0 +1,37 @@
+.block {
+  display: flex;
+  margin: 20px 10px;
+  background: #310736;
+  flex-flow: row;
+  flex-wrap: wrap;
+  min-width: 350px;
+  min-height: 200px;
+  color: #310736;
+}
+
+.block__element_fixed,
+.block__element_flexible {
+  display: flex;
+  align-items: center;
+  margin: 10px;
+  padding: 10px;
+}
+
+.block__element_fixed {
+  flex-grow: 0;
+  flex-basis: auto;
+  flex-shrink: 0;
+  background: #05ffb0;    
+}
+
+.block__element_flexible {
+  flex-grow: 1;
+  background: #ff3860;    
+  width: 200px;  
+}
+
+.block__element_flexible-dotted {
+  white-space: nowrap;   
+  text-overflow: ellipsis;
+  overflow: hidden;  
+}
