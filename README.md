@@ -222,6 +222,7 @@ Source code for [codepen experiments](http://codepen.io/sufflavus/pens/public/) 
 [Flex and dotted text 1](http://codepen.io/sufflavus/full/yVPodz)
 
 The task is:
+
 1. Blocks 1, 2 and 4 has fixed width based on content width.
 2. Block 3 has to fill all available space.
 3. Text in block 3 should be in one line. If text too long it has to be truncated with three dots.
