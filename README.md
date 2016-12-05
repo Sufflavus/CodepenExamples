@@ -214,8 +214,8 @@ Source code for [codepen experiments](http://codepen.io/sufflavus/pens/public/) 
 [Scrollable table](http://codepen.io/sufflavus/full/PbwVEV/) is based on 
 - [jQuery 3.1.0](https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js) 
 
-![25_ScrollableTable_1](https://github.com/Sufflavus/CodepenExamples/blob/master/images/25_ScrollableTable_1.png)
-![25_ScrollableTable_2](https://github.com/Sufflavus/CodepenExamples/blob/master/images/25_ScrollableTable_2.png)
+![24_ScrollableTable_1](https://github.com/Sufflavus/CodepenExamples/blob/master/images/24_ScrollableTable_1.png)
+![24_ScrollableTable_2](https://github.com/Sufflavus/CodepenExamples/blob/master/images/24_ScrollableTable_2.png)
 
 ## 25. Flex and dotted text 1
 
@@ -228,6 +228,22 @@ The task is:
 3. Text in block 3 should be in one line. If text too long it has to be truncated with three dots.
 4. If width of the screen is too small so there is no anought space for the forth block, the forth block should be moved to the next line.
 
-![26_FlexAndDottedText1_1](https://github.com/Sufflavus/CodepenExamples/blob/master/images/26_FlexAndDottedText1_1.png)
-![26_FlexAndDottedText1_2](https://github.com/Sufflavus/CodepenExamples/blob/master/images/26_FlexAndDottedText1_2.png)
-![26_FlexAndDottedText1_3](https://github.com/Sufflavus/CodepenExamples/blob/master/images/26_FlexAndDottedText1_3.png)
+![25_FlexAndDottedText1_1](https://github.com/Sufflavus/CodepenExamples/blob/master/images/25_FlexAndDottedText1_1.png)
+![25_FlexAndDottedText1_2](https://github.com/Sufflavus/CodepenExamples/blob/master/images/25_FlexAndDottedText1_2.png)
+![25_FlexAndDottedText1_3](https://github.com/Sufflavus/CodepenExamples/blob/master/images/25_FlexAndDottedText1_3.png)
+
+## 26. Flex and dotted text 2
+
+[Flex and dotted text 2](http://codepen.io/sufflavus/full/PbORGQ/)
+
+The task is:
+
+1. Blocks 1, 2 and 4 has fixed width based on content width.
+2. Block 3 has to fill all available space.
+3. Text in block 3 should be in one line. If text too long it has to be truncated with three dots.
+4. If width of the screen is too small so there is no anought space for the forth block, the forth block should be moved to the next line.
+5. Text in all blocks has to be centered by height.
+
+![26_FlexAndDottedText2_1](https://github.com/Sufflavus/CodepenExamples/blob/master/images/26_FlexAndDottedText2_1.png)
+![26_FlexAndDottedText2_2](https://github.com/Sufflavus/CodepenExamples/blob/master/images/26_FlexAndDottedText2_2.png)
+![26_FlexAndDottedText2_3](https://github.com/Sufflavus/CodepenExamples/blob/master/images/26_FlexAndDottedText2_3.png)
