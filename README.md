@@ -247,3 +247,7 @@ The task is:
 ![26_FlexAndDottedText2_1](https://github.com/Sufflavus/CodepenExamples/blob/master/images/26_FlexAndDottedText2_1.png)
 ![26_FlexAndDottedText2_2](https://github.com/Sufflavus/CodepenExamples/blob/master/images/26_FlexAndDottedText2_2.png)
 ![26_FlexAndDottedText2_3](https://github.com/Sufflavus/CodepenExamples/blob/master/images/26_FlexAndDottedText2_3.png)
+
+## 28. Honeycomb
+
+[Honeycomb](http://codepen.io/sufflavus/full/dNZOWz)
