@@ -251,3 +251,5 @@ The task is:
 ## 28. Honeycomb
 
 [Honeycomb](http://codepen.io/sufflavus/full/dNZOWz)
+
+![28_Honeycomb](https://github.com/Sufflavus/CodepenExamples/blob/master/images/28_Honeycomb.png)
