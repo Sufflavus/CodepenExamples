@@ -253,3 +253,9 @@ The task is:
 [Honeycomb](http://codepen.io/sufflavus/full/dNZOWz)
 
 ![28_Honeycomb](https://github.com/Sufflavus/CodepenExamples/blob/master/images/28_Honeycomb.png)
+
+## 29. Honeycomb with image
+
+[Honeycomb with image](http://codepen.io/sufflavus/full/JEpGpx/)
+
+![29_HoneycombWithImage](https://github.com/Sufflavus/CodepenExamples/blob/master/images/29_HoneycombWithImage.png)
