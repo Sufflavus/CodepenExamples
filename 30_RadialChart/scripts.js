@@ -107,7 +107,7 @@
       }],
       plotOptions: {
       },
-      series: data.map(function(person) {
+      series: data.data.map(function(person) {
           return {
             name: person.name,
             data: person.points.map(function(point) {

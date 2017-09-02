@@ -259,3 +259,13 @@ The task is:
 [Honeycomb with image](http://codepen.io/sufflavus/full/JEpGpx/)
 
 ![29_HoneycombWithImage](https://github.com/Sufflavus/CodepenExamples/blob/master/images/29_HoneycombWithImage.png)
+
+## 30. Radial chart
+
+[Radial chart](https://codepen.io/sufflavus/full/EvdzwO/) is based on 
+
+- [Highcharts 5.0.14](http://code.highcharts.com/highcharts.js) 
+- [Highcharts-more 5.0.14](http://code.highcharts.com/highcharts-more.js) 
+- [jQuery 3.2.1](http://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js)
+
+![30_RadialChart](https://github.com/Sufflavus/CodepenExamples/blob/master/images/30_RadialChart.png)

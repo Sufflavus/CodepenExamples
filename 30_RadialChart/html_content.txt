@@ -1,1 +1,1 @@
-<div id="container" style="height: 400px; min-width: 800px"></div>
+<div id="container" class="chart"></div>
