@@ -1,43 +1,23 @@
-{ "data": [{
-  "name": "Ammy",
-  "points": [{
-    "area": "Career",
-    "value": 8,
+{ 
+  "data": [{
+    "name": "Ammy",
+    "points": [
+      { "area": "Career", "value": 8 }, 
+      { "area": "Spirituality", "value": 3 }, 
+      { "area": "Finance", "value": 7 }, 
+      { "area": "Fun", "value": 12 }, 
+      { "area": "Health", "value": 5 }, 
+      { "area": "Relationships", "value": 7 }
+    ]
   }, {
-    "area": "Spirituality",
-    "value": 3,
-  }, {
-    "area": "Finance",
-    "value": 7,
-  }, {
-    "area": "Fun",
-    "value": 12,
-  }, {
-    "area": "Health",
-    "value": 5,
-  }, {
-    "area": "Relationships",
-    "value": 7,
+    "name": "Bob",
+    "points": [
+      { "area": "Career", "value": 12 }, 
+      { "area": "Spirituality", "value": 5 }, 
+      { "area": "Finance", "value": 10 }, 
+      { "area": "Fun", "value": 3 }, 
+      { "area": "Health", "value": 7 }, 
+      { "area": "Relationships", "value": 2 }
+    ]
   }]
-}, {
-  "name": "Bob",
-  "points": [{
-    "area": "Career",
-    "value": 12,
-  }, {
-    "area": "Spirituality",
-    "value": 5,
-  }, {
-    "area": "Finance",
-    "value": 10,
-  }, {
-    "area": "Fun",
-    "value": 3,
-  }, {
-    "area": "Health",
-    "value": 7,
-  }, {
-    "area": "Relationships",
-    "value": 2,
-  }]
-}]}
+}
