@@ -1,0 +1,52 @@
+.content {
+  min-width: 300px;
+  width: 80%;
+  margin: 20px auto;
+  text-align: center;
+  font-family:"Open Sans", sans-serif;
+}
+
+.header {
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
+.description {
+  
+}
+
+.search-field {
+  margin: 20px 0;  
+}
+
+.search-field__input {
+  display: inline-block;
+  width: calc(100% - 240px);
+  min-width: 300px;
+  margin-bottom: 10px;
+}
+
+.search-field__buttons-group {
+  display: inline-block;
+}
+
+.search-field__button {
+  width: 100px;
+}
+
+.result {
+  
+}
+
+.result__text {
+  display: none;
+}
+
+.result__text_error {
+  color: red;
+}
+
+.result__map {
+  margin: 20px 0;
+  min-height: 300px;
+}
