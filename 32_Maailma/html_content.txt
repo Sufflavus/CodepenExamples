@@ -1,16 +1,19 @@
 <div class="content">
   <div class="header">MaailmA</div>
-  <div class="description">Enter address in the way you do in Google Maps search field and get coordinates of the point.
+  <div>Enter address in the way you do in Google Maps' search field and get coordinates of the point.
   </div>
   <div class="search-field">
-    <input class="search-field__input" id="input_search"/>
+    <input class="search-field__input" id="input_search"/>    
     <div class="search-field__buttons-group">
       <button class="search-field__button" id="btn_search">Search</button>
       <button class="search-field__button" id="btn_clean">Clean</button>      
     </div>    
   </div>
   <div class="result" id="result_wrapper">
-    <div class="result__text" id="result_text">lat: -25.363, lng: 131.044</div>    
+    <div class="result__text" id="result_text"></div>  
+    <div class="result__link-wrapper" id="result_link_wrapper">
+      <a id="result_link" href="#" target="blank">link</a>
+    </div>
     <div class="result__map" id="result_map"></div>
   </div>
 </div>
