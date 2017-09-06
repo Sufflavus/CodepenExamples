@@ -12,6 +12,7 @@
   let geocoder = new google.maps.Geocoder();
   let zoom = 5;
   let map;
+  let currentPoint;
   let marker; 
   
   const EnterCode = 13;
@@ -19,19 +20,20 @@
   
   init();
   
-  function init() {
-    let somePoint = {lat: -25.363, lng: 131.044};
-    let link = createLink(somePoint);
+  function init() {    
+    currentPoint = {lat: -25.2334936, lng: 130.98486980000007};
+    let link = createLink(currentPoint);
     
     setMapHeight();
-    initMap(somePoint);   
+    initMap(currentPoint);   
     
-    $resultText.text(pointToString(somePoint));
+    $inputSearch[0].value = "Yulara, Australia";
+    $resultText.text(pointToString(currentPoint));
     $resultLink.attr("href", link).text(link);
     $resultText.show();
     $resultLinkWrapper.show();
     
-    $window.resize(setMapHeight);  
+    $window.resize(refreshMap);  
     $inputSearch.keyup(onInputSearchKeyup);  
     $btnSearch.click(search);  
     $btnClean.click(clean);
@@ -76,8 +78,13 @@
     marker.setMap(null);
   }
   
+  function refreshMap() {
+    setMapHeight();
+    map.setCenter(currentPoint);
+  }
+  
   function setMapHeight() {
-    $resultMap.height($resultMap.width());
+    $resultMap.height($resultMap.width());    
   }
   
   function geocodeCallBack(results, status) {
@@ -91,18 +98,18 @@
   }
   
   function showSuccessfulSearchResult(location) {
-    let point = {
+    currentPoint = {
       lat: location.lat(), 
       lng: location.lng()
     };
 
-    let link = createLink(point);
+    let link = createLink(currentPoint);
     
     map.setCenter(location);
     marker.setMap(map);
     marker.setPosition(location);
     $resultText.removeClass(ErrorClassName);
-    $resultText.text(pointToString(point));
+    $resultText.text(pointToString(currentPoint));
     $resultLink.attr("href", link).text(link);
     $resultText.show();
     $resultLinkWrapper.show();
@@ -125,5 +132,3 @@
     marker.setMap(null);
   }
 })($, google);
-
-// https://stackoverflow.com/questions/6582834/use-a-url-to-link-to-a-google-map-with-a-marker-on-it

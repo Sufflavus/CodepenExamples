@@ -269,3 +269,12 @@ The task is:
 - [jQuery 3.2.1](http://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js)
 
 ![30_RadialChart](https://github.com/Sufflavus/CodepenExamples/blob/master/images/30_RadialChart.png)
+
+## 32. MaailmA
+
+[MaailmA](https://codepen.io/sufflavus/full/rzRQaG/) is based on 
+
+- [Google Maps JavaScript API](https://developers.google.com/maps/documentation/javascript/)
+- [jQuery 3.2.1](http://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js)
+
+![32_Maailma](https://github.com/Sufflavus/CodepenExamples/blob/master/images/32_Maailma.png)
