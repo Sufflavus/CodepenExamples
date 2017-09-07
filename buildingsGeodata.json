@@ -1,0 +1,45 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          60.70897549999999, 
+          28.74744959999998
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "address": "Suvorovskiy prosp., 4, Vyborg, Leningradskaya oblast', Russia, 188800",
+        "description": "Library that is build by Alvar Aalto",
+        "name": "Central City Alvar Aalto Library",
+        "author": "Alvar Aalto",
+        "year": "1935",
+        "imageUrl": "http://images.adsttc.com/media/images/547e/49ed/e58e/ce8b/6f00/001f/slideshow/ninara.jpg?1417562593",
+        "link": "https://en.wikipedia.org/wiki/Vyborg_Library",
+        "imageCopyright": "Image © Flickr user ninara"
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          60.70897549999999, 
+          28.74744959999998
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "address": "Suvorovskiy prosp., 4, Vyborg, Leningradskaya oblast', Russia, 188800",
+        "description": "Library that is build by Alvar Aalto",
+        "name": "Central City Alvar Aalto Library",
+        "author": "Alvar Aalto",
+        "year": "1935",
+        "imageUrl": "http://images.adsttc.com/media/images/547e/49ed/e58e/ce8b/6f00/001f/slideshow/ninara.jpg?1417562593",
+        "link": "https://en.wikipedia.org/wiki/Vyborg_Library",
+        "imageCopyright": "Image © Flickr user ninara"
+      }
+    }
+  ]
+}
