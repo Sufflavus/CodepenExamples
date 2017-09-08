@@ -4,3 +4,46 @@ html, body { height: 100%; }
   width: 100%;
   height: 100%;
 }
+
+.info-window {
+  font-size: 13px;
+}
+
+.info-window:after {
+  clear: both;
+}
+
+.info-window__header {
+  font-weight: bold;
+  font-size: 15px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.info-window__content {
+  float: right;
+  max-width: 300px;
+}
+
+.info-window__row {
+  margin-bottom: 5px;
+}
+
+.info-window__label {
+  font-weight: bold;
+}
+
+.info-window__image-wrapper {
+  margin-right: 11px;
+  float: left;
+  font-size: 0;
+  width: 150px;
+}
+
+.info-window__image {  
+  width: 100%;
+}
+
+.info-window__image_info {
+  font-size: 10px;
+}
