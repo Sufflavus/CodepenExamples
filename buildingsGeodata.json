@@ -4,17 +4,16 @@
     {
       "geometry": {
         "type": "Point",
-        "coordinates": [
-          60.70897549999999, 
-          28.74744959999998
+        "coordinates": [           
+          28.74744959999998,
+          60.70897549999999
         ]
       },
       "type": "Feature",
       "properties": {
-        "address": "Suvorovskiy prosp., 4, Vyborg, Leningradskaya oblast', Russia, 188800",
-        "description": "Library that is build by Alvar Aalto",
+        "address": "Suvorovskiy prosp., 4, Vyborg, Leningradskaya oblast', Russia, 188800",        
         "name": "Central City Alvar Aalto Library",
-        "author": "Alvar Aalto",
+        "architect": "Alvar Aalto",
         "year": "1935",
         "imageUrl": "http://images.adsttc.com/media/images/547e/49ed/e58e/ce8b/6f00/001f/slideshow/ninara.jpg?1417562593",
         "link": "https://en.wikipedia.org/wiki/Vyborg_Library",
@@ -25,20 +24,19 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          60.70897549999999, 
-          28.74744959999998
+          24.556910300000027, 
+          60.293703
         ]
       },
       "type": "Feature",
       "properties": {
-        "address": "Suvorovskiy prosp., 4, Vyborg, Leningradskaya oblast', Russia, 188800",
-        "description": "Library that is build by Alvar Aalto",
-        "name": "Central City Alvar Aalto Library",
-        "author": "Alvar Aalto",
-        "year": "1935",
-        "imageUrl": "http://images.adsttc.com/media/images/547e/49ed/e58e/ce8b/6f00/001f/slideshow/ninara.jpg?1417562593",
-        "link": "https://en.wikipedia.org/wiki/Vyborg_Library",
-        "imageCopyright": "Image © Flickr user ninara"
+        "address": "Nuuksiontie 84, 02820 Espoo, Finland",        
+        "name": "Finnish Nature Centre Haltia, Espoo",
+        "architect": "Rainer Mahlamäki",
+        "year": "2013",
+        "imageUrl": "http://www.ark-l-m.fi/site/assets/files/1102/an36999_7000_panorama8_photo_by_mika_huisman.jpg",
+        "link": "http://www.ark-l-m.fi/projects/culture/finnish-nature-centre-haltia-espoo-finland/",
+        "imageCopyright": "Image © Lahdelma & Mahlamäki Architects"
       }
     }
   ]
