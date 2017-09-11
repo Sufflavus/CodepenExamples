@@ -11,8 +11,18 @@
       zoom: 4,
       center: centerPoint
     });
+    
+    map.data.loadGeoJson("//raw.githubusercontent.com/Sufflavus/CodepenExamples/master/buildingsGeodata.json", 
+                         null, function(features) {
+      var markers = features.map(function (feature) {
+        var g = feature.getGeometry();
+        var marker = new google.maps.Marker({ 'position': g.get(0) });
+        return marker;
+      });
 
-    map.data.loadGeoJson("//raw.githubusercontent.com/Sufflavus/CodepenExamples/master/buildingsGeodata.json");    
+      var markerCluster = new MarkerClusterer(map, markers,
+            {imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});
+    });    
     infoWindow.setOptions({pixelOffset: new google.maps.Size(0, -30)});
     map.data.addListener('click', onMarkerClick);
   }
@@ -34,7 +44,7 @@
     const imageUrl = pointData.getProperty('imageUrl');
     const imageCopyright = pointData.getProperty('imageCopyright');
     const link = pointData.getProperty('link');
-    let content = sanitizeHTML`
+    let content = sanitizeHTML`      
       <div class="info-window">
         <div class="info-window__header">${name}</div> 
         <div class="info-window__image-wrapper">
