@@ -182,11 +182,11 @@ function MarkerClusterer(map, opt_markers, opt_options) {
 
 /**
  * The marker cluster image path.
- *
+ * TODO: Change the path when this bug is fixed https://github.com/googlemaps/js-marker-clusterer/issues/55
  * @type {string}
  * @private
  */
-MarkerClusterer.prototype.MARKER_CLUSTER_IMAGE_PATH_ = '../images/m';
+MarkerClusterer.prototype.MARKER_CLUSTER_IMAGE_PATH_ = '//cdn.rawgit.com/Sufflavus/CodepenExamples/tree/master/31_ArchitecturalPearls/vendor/google_maps/images/m';
 
 
 /**
