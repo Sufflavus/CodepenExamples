@@ -186,7 +186,7 @@ function MarkerClusterer(map, opt_markers, opt_options) {
  * @type {string}
  * @private
  */
-MarkerClusterer.prototype.MARKER_CLUSTER_IMAGE_PATH_ = '//cdn.rawgit.com/Sufflavus/CodepenExamples/tree/master/31_ArchitecturalPearls/vendor/google_maps/images/m';
+MarkerClusterer.prototype.MARKER_CLUSTER_IMAGE_PATH_ = '//cdn.rawgit.com/Sufflavus/CodepenExamples/master/31_ArchitecturalPearls/vendor/google_maps/images/m';
 
 
 /**
