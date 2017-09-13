@@ -21,7 +21,9 @@
       });
 
       var markerCluster = new MarkerClusterer(map, markers,
-            {imagePath: '//cdn.rawgit.com/Sufflavus/CodepenExamples/master/31_ArchitecturalPearls/vendor/google_maps/images/m'});
+            {imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});
+      map.data.setMap(null);
+      // https://google-developers.appspot.com/maps/documentation/javascript/examples/full/marker-clustering
       // https://github.com/googlemaps/v3-utility-library/tree/master/markerclusterer/images
       // https://code.google.com/archive/p/google-maps-utility-library-v3/source/default/source
       // https://github.com/googlemaps/js-marker-clusterer/issues/55

@@ -15,7 +15,7 @@
         "name": "Central City Alvar Aalto Library",
         "architect": "Alvar Aalto",
         "year": "1935",
-        "imageUrl": "http://images.adsttc.com/media/images/547e/49ed/e58e/ce8b/6f00/001f/slideshow/ninara.jpg?1417562593",
+        "imageUrl": "//cdn.rawgit.com/Sufflavus/CodepenExamples/master/31_ArchitecturalPearls/images/001_CentralCityAlvarAaltoLibrary.jpg",
         "link": "https://en.wikipedia.org/wiki/Vyborg_Library",
         "imageCopyright": "Image © Flickr user ninara"
       }
@@ -34,7 +34,7 @@
         "name": "Finnish Nature Centre Haltia, Espoo",
         "architect": "Rainer Mahlamäki",
         "year": "2013",
-        "imageUrl": "http://www.ark-l-m.fi/site/assets/files/1102/an36999_7000_panorama8_photo_by_mika_huisman.jpg",
+        "imageUrl": "//cdn.rawgit.com/Sufflavus/CodepenExamples/master/31_ArchitecturalPearls/images/002_FinnishNatureCentreHaltia.jpg",
         "link": "http://www.ark-l-m.fi/projects/culture/finnish-nature-centre-haltia-espoo-finland/",
         "imageCopyright": "Image © Lahdelma & Mahlamäki Architects"
       }
