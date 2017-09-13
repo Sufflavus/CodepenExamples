@@ -1,4 +1,4 @@
-(function initMap(google) {    
+(function initMap(google, MarkerClusterer) {    
   let infoWindow = new google.maps.InfoWindow();
   let map;
   
@@ -12,7 +12,7 @@
       center: centerPoint
     });
     
-    map.data.loadGeoJson("//raw.githubusercontent.com/Sufflavus/CodepenExamples/master/buildingsGeodata.json", 
+    map.data.loadGeoJson("//cdn.rawgit.com/Sufflavus/CodepenExamples/master/31_ArchitecturalPearls/buildingsGeodata.json", 
                          null, function(features) {
       var markers = features.map(function (feature) {
         var g = feature.getGeometry();
@@ -21,7 +21,10 @@
       });
 
       var markerCluster = new MarkerClusterer(map, markers,
-            {imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});
+            {imagePath: '//cdn.rawgit.com/Sufflavus/CodepenExamples/master/31_ArchitecturalPearls/vendor/google_maps/images/m'});
+      // https://github.com/googlemaps/v3-utility-library/tree/master/markerclusterer/images
+      // https://code.google.com/archive/p/google-maps-utility-library-v3/source/default/source
+      // https://github.com/googlemaps/js-marker-clusterer/issues/55
     });    
     infoWindow.setOptions({pixelOffset: new google.maps.Size(0, -30)});
     map.data.addListener('click', onMarkerClick);
@@ -87,4 +90,4 @@
     
   //https://developers.google.com/maps/solutions/store-locator/simple-store-locator
   // http://www.ark-l-m.fi/projects/current-projects/
-})(google);
+})(google, MarkerClusterer);
