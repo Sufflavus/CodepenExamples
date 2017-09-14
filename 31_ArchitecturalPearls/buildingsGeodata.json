@@ -1,7 +1,6 @@
 {
   "type": "FeatureCollection",
-  "features": [
-    {
+  "features": [ {
       "geometry": {
         "type": "Point",
         "coordinates": [           
@@ -12,15 +11,14 @@
       "type": "Feature",
       "properties": {
         "address": "Suvorovskiy prosp., 4, Vyborg, Leningradskaya oblast', Russia, 188800",        
-        "name": "Central City Alvar Aalto Library",
+        "name": "Central City Alvar Aalto Library (Viipuri Municipal Library)",
         "architect": "Alvar Aalto",
         "year": "1935",
         "imageUrl": "//cdn.rawgit.com/Sufflavus/CodepenExamples/master/31_ArchitecturalPearls/images/001_CentralCityAlvarAaltoLibrary.jpg",
         "link": "https://en.wikipedia.org/wiki/Vyborg_Library",
         "imageCopyright": "Image © Flickr user ninara"
       }
-    },
-    {
+    }, {
       "geometry": {
         "type": "Point",
         "coordinates": [
@@ -30,13 +28,31 @@
       },
       "type": "Feature",
       "properties": {
-        "address": "Nuuksiontie 84, 02820 Espoo, Finland",        
+        "address": "Nuuksiontie 84, 02820 Espoo, Finland",
         "name": "Finnish Nature Centre Haltia, Espoo",
         "architect": "Rainer Mahlamäki",
         "year": "2013",
         "imageUrl": "//cdn.rawgit.com/Sufflavus/CodepenExamples/master/31_ArchitecturalPearls/images/002_FinnishNatureCentreHaltia.jpg",
         "link": "http://www.ark-l-m.fi/projects/culture/finnish-nature-centre-haltia-espoo-finland/",
         "imageCopyright": "Image © Lahdelma & Mahlamäki Architects"
+      }
+    }, {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          20.99318399999993, 
+          52.2493743
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "address": "6 Mordechaja Anielewicza  St. 00-157 Warsaw Poland",
+        "name": "Museum of the History of Polish Jews",
+        "architect": "Rainer Mahlamäki, Ilmari Lahdelma",
+        "year": "2013",
+        "imageUrl": "//cdn.rawgit.com/Sufflavus/CodepenExamples/master/31_ArchitecturalPearls/images/003_MuseumOfTheHistoryOfThePolishJews.jpg",
+        "link": "http://www.ark-l-m.fi/projects/culture/museum-of-the-history-of-polish-jews-warsaw-poland/",
+        "imageCopyright": "© Image by W Krynski"
       }
     }
   ]
