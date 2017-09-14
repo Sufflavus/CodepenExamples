@@ -1,0 +1,18 @@
+Helpfull links:
+1. Google example (style markers, load data from json)
+    https://developers.google.com/maps/solutions/store-locator/simple-store-locator
+2. Solving problems with MarkerClusterer (hide markers, add InfoWindows)
+    https://stackoverflow.com/questions/29849843/google-maps-api-multiple-geojson-layers-with-markerclusterer-toggle
+3. Google example (on the page there is a working example of how to show clusterers with working scripts and images)
+    https://google-developers.appspot.com/maps/documentation/javascript/examples/full/marker-clustering
+4. Some images for clusters
+    https://github.com/googlemaps/v3-utility-library/tree/master/markerclusterer/images
+5. Source of google-maps-utility-library-v3
+    https://code.google.com/archive/p/google-maps-utility-library-v3/source/default/source
+6. Issues with clusters
+    https://github.com/googlemaps/js-marker-clusterer/issues/55
+7. How to prevent XSS.
+    https://www.owasp.org/index.php/XSS_%28Cross_Site_Scripting%29_Prevention_Cheat_Sheet#RULE_.231_-_HTML_Escape_Before_Inserting_Untrusted_Data_into_HTML_Element_Content
+8. Lahdelma & Mahlamäki Architects web site
+    http://www.ark-l-m.fi/projects/current-projects/
+ 
