@@ -54,6 +54,24 @@
         "link": "http://www.ark-l-m.fi/projects/culture/museum-of-the-history-of-polish-jews-warsaw-poland/",
         "imageCopyright": "© Image by W Krynski"
       }
+    }, {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.94477660000007, 
+          60.47253899999999
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "address": "Tornatorintie 99, 48100 Kotka, Finland",
+        "name": "Maritime Centre Vellamo",
+        "architect": "Ilmari Lahdelma",
+        "year": "2013",
+        "imageUrl": "//cdn.rawgit.com/Sufflavus/CodepenExamples/master/31_ArchitecturalPearls/images/004_MaritimeCentreVellamo.jpg",
+        "link": "http://www.ark-l-m.fi/projects/culture/maritime-centre-vellamo-kotka-finland/",
+        "imageCopyright": "Image © Lahdelma & Mahlamäki Architects"
+      }
     }
   ]
 }
