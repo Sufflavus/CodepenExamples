@@ -72,6 +72,24 @@
         "link": "http://www.ark-l-m.fi/projects/culture/maritime-centre-vellamo-kotka-finland/",
         "imageCopyright": "Image © Lahdelma & Mahlamäki Architects"
       }
+    }, {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          28.85612, 
+          61.23670
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "address": "Tornatorintie 99, 48100 Kotka, Finland",
+        "name": "Church of the Three Crosses",
+        "architect": "Alvar Aalto",
+        "year": "1958",
+        "imageUrl": "//cdn.rawgit.com/Sufflavus/CodepenExamples/master/31_ArchitecturalPearls/images/005_ChurchOfTheThreeCrosses.jpg",
+        "link": "https://www.gosaimaa.com/en/Activities/Sights/Attractions/Attractions?id=4541a8f3-3bcf-4b91-82ce-6dc6b93c3c80",
+        "imageCopyright": "Image from Flickr © wakiiii"
+      }
     }
   ]
 }
