@@ -126,6 +126,60 @@
         "link": "https://www.alvaraalto.fi/studioaalto.htm",
         "imageCopyright": "Image from http://alvaraaltosarchitecture.blogspot.fi/ © Stefan"
       }
+    }, {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.958653400000003, 
+          60.1678509
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "address": "Katajanokanlaituri 1, 00160 Helsinki, Finland",
+        "name": "Stora Enso Oyj",
+        "architect": "Alvar Aalto",
+        "year": "1935-1936",
+        "imageUrl": "//cdn.rawgit.com/Sufflavus/CodepenExamples/master/31_ArchitecturalPearls/images/008_StoraEnso.jpg",
+        "link": "http://alvaraaltosarchitecture.blogspot.fi/2010/11/alvar-aalto-in-helsinki.html",
+        "imageCopyright": "Image from http://alvaraaltosarchitecture.blogspot.fi/ © Stefan"
+      }
+    }, {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.949575099999947, 
+          60.1684233
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "address": "Fabianinkatu 29, 00100 Helsinki, Finland",
+        "name": "The Former Nordic Union Bank",
+        "architect": "Alvar Aalto",
+        "year": "1960-65",
+        "imageUrl": "//cdn.rawgit.com/Sufflavus/CodepenExamples/master/31_ArchitecturalPearls/images/009_NordicUnionBank.jpg",
+        "link": "http://alvaraaltosarchitecture.blogspot.fi/2010/11/alvar-aalto-in-helsinki.html",
+        "imageCopyright": "Image from http://alvaraaltosarchitecture.blogspot.fi/ © Stefan"
+      }
+    }, , {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.94344490000003, 
+          60.1677811
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "address": "Pohjoisesplanadi 39, 00100 Helsinki, Finland",
+        "name": "The Academic Bookstore in Helsinki",
+        "architect": "Alvar Aalto",
+        "year": "1961-69",
+        "imageUrl": "//cdn.rawgit.com/Sufflavus/CodepenExamples/master/31_ArchitecturalPearls/images/010_AcademicBookstore.jpg",
+        "link": "http://alvaraaltosarchitecture.blogspot.fi/2010/11/alvar-aalto-in-helsinki.html",
+        "imageCopyright": "Image from http://alvaraaltosarchitecture.blogspot.fi/ © Stefan"
+      }
     }
   ]
 }
