@@ -90,6 +90,42 @@
         "link": "https://www.gosaimaa.com/en/Activities/Sights/Attractions/Attractions?id=4541a8f3-3bcf-4b91-82ce-6dc6b93c3c80",
         "imageCopyright": "Image from Flickr © wakiiii"
       }
+    }, {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.87635380000006, 
+          60.19677429999999
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "address": "Riihitie 20, 00330 Helsinki, Finland",
+        "name": "Alvar Aalto House",
+        "architect": "Alvar Aalto",
+        "year": "1935-1936",
+        "imageUrl": "//cdn.rawgit.com/Sufflavus/CodepenExamples/master/31_ArchitecturalPearls/images/006_AlvarAaltoHouse.jpg",
+        "link": "https://www.alvaraalto.fi/en/location/the-aalto-house/",
+        "imageCopyright": "Image from http://alvaraaltosarchitecture.blogspot.fi/ © Stefan"
+      }
+    }, {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.870154100000036, 
+          60.1982174
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "address": "Tiilimäki 20, 00330 Helsinki, Finland",
+        "name": "Studio Aalto in Helsinki",
+        "architect": "Alvar Aalto",
+        "year": "1935-1936",
+        "imageUrl": "//cdn.rawgit.com/Sufflavus/CodepenExamples/master/31_ArchitecturalPearls/images/007_StudioAalto.jpg",
+        "link": "https://www.alvaraalto.fi/studioaalto.htm",
+        "imageCopyright": "Image from http://alvaraaltosarchitecture.blogspot.fi/ © Stefan"
+      }
     }
   ]
 }
