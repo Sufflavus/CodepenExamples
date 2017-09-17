@@ -162,7 +162,7 @@
         "link": "http://alvaraaltosarchitecture.blogspot.fi/2010/11/alvar-aalto-in-helsinki.html",
         "imageCopyright": "Image from http://alvaraaltosarchitecture.blogspot.fi/ © Stefan"
       }
-    }, , {
+    }, {
       "geometry": {
         "type": "Point",
         "coordinates": [
@@ -177,6 +177,24 @@
         "architect": "Alvar Aalto",
         "year": "1961-69",
         "imageUrl": "//cdn.rawgit.com/Sufflavus/CodepenExamples/master/31_ArchitecturalPearls/images/010_AcademicBookstore.jpg",
+        "link": "http://alvaraaltosarchitecture.blogspot.fi/2010/11/alvar-aalto-in-helsinki.html",
+        "imageCopyright": "Image from http://alvaraaltosarchitecture.blogspot.fi/ © Stefan"
+      }
+    }, {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.943545099999938, 
+          60.16869149999999
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "address": "Keskuskatu 3, 00101 Helsinki, Finland",
+        "name": "The Rautatalo Office in Helsinki",
+        "architect": "Alvar Aalto",
+        "year": "1951-55",
+        "imageUrl": "//cdn.rawgit.com/Sufflavus/CodepenExamples/master/31_ArchitecturalPearls/images/011_Rautatalo.jpg",
         "link": "http://alvaraaltosarchitecture.blogspot.fi/2010/11/alvar-aalto-in-helsinki.html",
         "imageCopyright": "Image from http://alvaraaltosarchitecture.blogspot.fi/ © Stefan"
       }
