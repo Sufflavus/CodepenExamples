@@ -198,6 +198,42 @@
         "link": "http://alvaraaltosarchitecture.blogspot.fi/2010/11/alvar-aalto-in-helsinki.html",
         "imageCopyright": "Image from http://alvaraaltosarchitecture.blogspot.fi/ © Stefan"
       }
+    }, {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.930660999999986, 
+          60.16805189999999
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "address": "Kampinkuja 2, 00100 Helsinki, Finland",
+        "name": "Helsinki Energia",
+        "architect": "Alvar Aalto",
+        "year": "1965-76",
+        "imageUrl": "//cdn.rawgit.com/Sufflavus/CodepenExamples/master/31_ArchitecturalPearls/images/012_HelsinkiEnergia.jpg",
+        "link": "http://alvaraaltosarchitecture.blogspot.fi/2010/11/alvar-aalto-in-helsinki.html",
+        "imageCopyright": "Image from http://alvaraaltosarchitecture.blogspot.fi/ © Stefan"
+      }
+    }, {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.930660999999986, 
+          60.16805189999999
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "address": "Mannerheimintie 13e, 00100 Helsinki, Finland",
+        "name": "Finlandia Hall",
+        "architect": "Alvar Aalto",
+        "year": "1962-75",
+        "imageUrl": "//cdn.rawgit.com/Sufflavus/CodepenExamples/master/31_ArchitecturalPearls/images/013_FinlandiaHall.jpg",
+        "link": "http://alvaraaltosarchitecture.blogspot.fi/2014/03/finlandia-hall-update-1.html",
+        "imageCopyright": "Image from http://alvaraaltosarchitecture.blogspot.fi/ © Stefan"
+      }
     }
   ]
 }
