@@ -220,8 +220,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          24.932653999999957, 
-          60.17514529999999
+          24.933609199999978, 
+          60.1756992
         ]
       },
       "type": "Feature",
@@ -233,6 +233,60 @@
         "imageUrl": "//cdn.rawgit.com/Sufflavus/CodepenExamples/master/31_ArchitecturalPearls/images/013_FinlandiaHall.jpg",
         "link": "http://alvaraaltosarchitecture.blogspot.fi/2014/03/finlandia-hall-update-1.html",
         "imageCopyright": "Image from http://alvaraaltosarchitecture.blogspot.fi/ © Stefan"
+      }
+    }, {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.828430499999968, 
+          60.18625519999999
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "address": "Otakaari 1, 02150 Espoo, Finland",
+        "name": "Aalto University. Otaniemi Amfiteatteri",
+        "architect": "Alvar Aalto, Elissa Aalto",
+        "year": "1964, 1975",
+        "imageUrl": "//cdn.rawgit.com/Sufflavus/CodepenExamples/master/31_ArchitecturalPearls/images/014_OtaniemiAmfiteatteri.jpg",
+        "link": "http://www.aalto.fi/en/current/news/2015-09-01-002/",
+        "imageCopyright": "Image from Flickr © Picssr"
+      }
+    }, {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.828457200000003, 
+          60.1844887
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "address": "Otaniementie 9, Espoo, Finland",
+        "name": "Aalto University. Harald Herlin Learning Centre",
+        "architect": "Alvar Aalto",
+        "year": "1969",
+        "imageUrl": "//cdn.rawgit.com/Sufflavus/CodepenExamples/master/31_ArchitecturalPearls/images/015_HaraldHerlinLearningCentre.png",
+        "link": "http://www.aalto.fi/en/current/news/2016-11-04-004/",
+        "imageCopyright": "Image from https://en.wikipedia.org/wiki/Aalto_University_Library"
+      }
+    }, {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -81.85023000000001, 
+          28.1521334
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "address": "4700 Research Way, Lakeland, FL 33805, USA",
+        "name": "Florida Polytechnic University",
+        "architect": "Santiago Calatrava",
+        "year": "2014",
+        "imageUrl": "//cdn.rawgit.com/Sufflavus/CodepenExamples/master/31_ArchitecturalPearls/images/016_FloridaPolytechnicUniversity.jpg",
+        "link": "https://www.dezeen.com/2014/08/13/florida-polytechnic-university-santiago-calatrava/",
+        "imageCopyright": "Image from http://aasarchitecture.com/"
       }
     }
   ]
