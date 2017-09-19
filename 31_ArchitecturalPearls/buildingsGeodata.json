@@ -288,6 +288,42 @@
         "link": "https://www.dezeen.com/2014/08/13/florida-polytechnic-university-santiago-calatrava/",
         "imageCopyright": "Image from http://aasarchitecture.com/"
       }
+    }, {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.689242400000012, 
+          63.54686830000001
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "address": "Jyväskyläntie 3, 69601 Kaustinen, Finland",
+        "name": "The Centre of Folk Art",
+        "architect": "Lahdelma & Mahlamäki Architects",
+        "year": "1997",
+        "imageUrl": "//cdn.rawgit.com/Sufflavus/CodepenExamples/master/31_ArchitecturalPearls/images/015_CentreOfFolkArt.jpg",
+        "link": "http://www.ark-l-m.fi/projects/culture/the-centre-of-folk-art-kaustinen-finland/",
+        "imageCopyright": "Image © Lahdelma & Mahlamäki Architects"
+      }
+    }, {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          29.3251573, 
+          61.79822549999999
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "address": "Lustontie 1, 58450 Punkaharju, Finland",
+        "name": "Finnish Forest Museum and Information Centre Lusto",
+        "architect": "Rainer Mahlamäki, Ilmari Lahdelma",
+        "year": "1994",
+        "imageUrl": "//cdn.rawgit.com/Sufflavus/CodepenExamples/master/31_ArchitecturalPearls/images/016_FinnishForestMuseum.jpg",
+        "link": "http://www.ark-l-m.fi/projects/culture/finnish-forest-museum-and-information-centre-lusto-punkaharju-finland/",
+        "imageCopyright": "Image from https://museot.fi/"
+      }
     }
   ]
 }
