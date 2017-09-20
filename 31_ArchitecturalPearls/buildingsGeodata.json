@@ -324,6 +324,24 @@
         "link": "http://www.ark-l-m.fi/projects/culture/finnish-forest-museum-and-information-centre-lusto-punkaharju-finland/",
         "imageCopyright": "Image from https://museot.fi/"
       }
+    }, {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          25.526116000000002, 
+          65.00298289999999
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "address": "Sairaalanrinne 5, 90220 Oulu, Finland",
+        "name": "Kastelli School and Community Centre",
+        "architect": "Lahdelma & Mahlamäki Architects",
+        "year": "2015",
+        "imageUrl": "//cdn.rawgit.com/Sufflavus/CodepenExamples/master/31_ArchitecturalPearls/images/017_KastelliSchool.jpg",
+        "link": "http://www.ark-l-m.fi/projects/education/kastelli-school-and-community-centre-oulu-finland/",
+        "imageCopyright": "Photo by Kuvio from http://www.ark-l-m.fi/"
+      }
     }
   ]
 }
