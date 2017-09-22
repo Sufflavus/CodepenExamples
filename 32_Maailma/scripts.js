@@ -1,4 +1,5 @@
 (function($, google) {
+  //https://icons8.com/icon/pack/maps/androidL
   let $window = $(window);
   let $inputSearch = $("#input_search");
   let $btnSearch = $("#btn_search");
@@ -66,7 +67,7 @@
     $resultLinkWrapper.hide();
     $resultMap.hide();
     geocoder.geocode({ "address": $inputSearch[0].value}, geocodeCallBack);
-  }
+  } 
   
   function clean() {
     $inputSearch[0].value = "";
