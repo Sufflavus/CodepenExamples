@@ -51,9 +51,18 @@
   height: 35px;
   margin-left: 10px;
   box-sizing: border-box;  
-  border: 1px solid;
+  border: 1px solid rgb(238, 238, 238);
   border-collapse: collapse;
-  background: white;
+  background-color: transparent;
+  background-size: cover;
+}
+
+.search-field__button_search {
+  background-image: url(//cdn.rawgit.com/Sufflavus/CodepenExamples/master/32_Maailma/vendor/icons8/icons8-Location.svg);
+}
+
+.search-field__button_clear {
+  background-image: url(//cdn.rawgit.com/Sufflavus/CodepenExamples/master/32_Maailma/vendor/icons8/icons8-Delete.svg);
 }
 
 .result__text {
