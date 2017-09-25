@@ -276,5 +276,6 @@ The task is:
 
 - [Google Maps JavaScript API](https://developers.google.com/maps/documentation/javascript/)
 - [jQuery 3.2.1](http://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js)
+- Icons for buttons from [icons8](https://icons8.com/)
 
 ![32_Maailma](https://github.com/Sufflavus/CodepenExamples/blob/master/images/32_Maailma.png)

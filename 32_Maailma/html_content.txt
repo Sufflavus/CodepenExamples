@@ -5,14 +5,14 @@
   <div class="search-field">
     <input class="search-field__input" id="input_search"/>    
     <div class="search-field__buttons-group">
-      <button class="search-field__button" id="btn_search">S</button>
-      <button class="search-field__button" id="btn_clean">C</button>      
+      <button class="button button_search" id="btn_search"></button>
+      <button class="button button_clear" id="btn_clean"></button>      
     </div>    
   </div>
   <div class="result" id="result_wrapper">
     <div class="result__text" id="result_text"></div>  
     <div class="result__link-wrapper" id="result_link_wrapper">
-      <a id="result_link" href="#" target="blank">link</a>
+      <a id="result_link" class="result__link" href="#" target="blank">link</a>
     </div>
     <div class="result__map" id="result_map"></div>
   </div>
