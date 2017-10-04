@@ -342,6 +342,24 @@
         "link": "http://www.ark-l-m.fi/projects/education/kastelli-school-and-community-centre-oulu-finland/",
         "imageCopyright": "Photo by Kuvio from http://www.ark-l-m.fi/"
       }
+    }, {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          29.753584600000067, 
+          62.6016535
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "address": "Koskikatu 10, 80100 Joensuu, Finland",
+        "name": "Joensuu Primary School",
+        "architect": "Lahdelma & Mahlamäki Architects",
+        "year": "2006",
+        "imageUrl": "//cdn.rawgit.com/Sufflavus/CodepenExamples/master/31_ArchitecturalPearls/images/018_JoensuuSchool.jpg",
+        "link": "http://www.ark-l-m.fi/projects/education/joensuu-primary-school-joensuu-finland/",
+        "imageCopyright": "Image from  http://www.ark-l-m.fi/"
+      }
     }
   ]
 }
