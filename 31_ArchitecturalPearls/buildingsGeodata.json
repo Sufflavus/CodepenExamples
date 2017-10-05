@@ -360,6 +360,24 @@
         "link": "http://www.ark-l-m.fi/projects/education/joensuu-primary-school-joensuu-finland/",
         "imageCopyright": "Image from  http://www.ark-l-m.fi/"
       }
+    }, {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          22.294850699999984, 
+          60.4495928
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "address": "Joukahaisenkatu 3-5, 20520 Turku, Finland",
+        "name": "ICT Building",
+        "architect": "Lahdelma & Mahlamäki Architects",
+        "year": "2006",
+        "imageUrl": "//cdn.rawgit.com/Sufflavus/CodepenExamples/master/31_ArchitecturalPearls/images/019_IctBuilding.jpg",
+        "link": "http://www.ark-l-m.fi/projects/education/ict-building-turku-finland/",
+        "imageCopyright": "Image from  http://www.ark-l-m.fi/"
+      }
     }
   ]
 }
