@@ -1,0 +1,141 @@
+@track-width: 500px;
+@track-height: 0;
+@track-border-width: 1px;
+@track-color: #b5b5b6;
+
+@thumb-width: 16px;
+@thumb-height: @thumb-width;
+@thumb-color: #ef6c00;
+@thumb-focused-color: rgba(239,108,0,0.38);
+@thumb-focused-shadow: 0px 0px 0px 10px @thumb-focused-color;
+@thumb-radius: 50%;
+
+html, body {
+  background: #F5F5F6;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  margin: 50px;
+  text-align: center;
+}
+
+input[type="range"] {
+  -webkit-appearance: none;
+  width: @track-width;
+  margin: 0;
+  padding: 0;
+  border: none;
+  height: auto;
+
+  &:focus {
+    outline: none;
+  }
+
+  &::-webkit-slider-runnable-track {
+    width: @track-width;
+    height: 0;
+    cursor: pointer;
+    box-shadow: none;
+    background: @track-color;
+    border-radius: 25px;
+    border: @track-border-width solid @track-color;
+  }
+  
+  &::-webkit-slider-thumb::before {
+    background: @thumb-color;
+  }
+
+  &::-webkit-slider-thumb {
+    box-shadow: none;
+    border-width: 0;
+    width: @thumb-width;
+    height: @thumb-height;
+    border-radius: @thumb-radius;
+    background: @thumb-color;
+    cursor: pointer;
+    -webkit-appearance: none;
+    margin-top: -1/2*@thumb-height;
+  }
+  
+  &:focus::-webkit-slider-thumb {    
+    box-shadow: @thumb-focused-shadow;
+    -webkit-box-shadow: @thumb-focused-shadow;
+  }
+
+  &:focus::-webkit-slider-runnable-track {
+    background: @track-color;
+  }
+
+  &::-moz-range-track {
+    box-shadow: none;
+    width: @track-width;
+    height: 0;
+    border: @track-border-width solid @track-color;
+    cursor: pointer;
+  }
+  
+  &::-moz-range-progress {
+    background: @thumb-color;
+  }
+
+  &::-moz-range-thumb {
+    box-shadow: none;
+    width: @thumb-width;
+    height: @thumb-height;
+    border-width: 0;
+    border-radius: @thumb-radius;
+    background: @thumb-color;
+    cursor: pointer;
+  }
+  
+  &:focus::-moz-range-thumb {    
+    box-shadow: @thumb-focused-shadow;
+    -moz-box-shadow: @thumb-focused-shadow;
+  }
+
+  &::-ms-track {
+    width: @track-width;
+    height: 1px;
+    cursor: pointer;
+    background: transparent;
+    border-color: transparent;
+    border-style: solid;
+    border-width: @thumb-width 0;
+    color: transparent;
+  }
+
+  &::-ms-fill-lower {
+    box-shadow: none;
+    background: @thumb-color;
+  }
+
+  &::-ms-fill-upper {
+    box-shadow: none;
+    background: @track-color;
+  }
+  
+  &:focus::-ms-fill-lower {
+    background: @thumb-color;
+  }
+
+  &:focus::-ms-fill-upper {
+    background: @track-color;
+  }
+
+  &::-ms-thumb {
+    box-shadow: none;
+    width: @thumb-width;
+    height: @thumb-height;
+    border-width: 0;
+    border-radius: @thumb-radius;
+    background: @thumb-color;
+    cursor: pointer;
+  }  
+  
+  &:focus::-ms-thumb {
+    box-shadow: @thumb-focused-shadow;
+    -ms-box-shadow: @thumb-focused-shadow;
+  }  
+}
