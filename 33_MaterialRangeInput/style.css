@@ -7,7 +7,8 @@
 @thumb-height: @thumb-width;
 @thumb-color: #ef6c00;
 @thumb-focused-color: rgba(239,108,0,0.38);
-@thumb-focused-shadow: 0px 0px 0px 10px @thumb-focused-color;
+@thumb-focused-shadow-height: 10px;
+@thumb-focused-shadow: 0px 0px 0px @thumb-focused-shadow-height @thumb-focused-color;
 @thumb-radius: 50%;
 
 html, body {
@@ -38,9 +39,7 @@ input[type="range"] {
     height: 0;
     cursor: pointer;
     box-shadow: none;
-    background: @track-color;
-    border-radius: 25px;
-    border: @track-border-width solid @track-color;
+    
   }
   
   &::-webkit-slider-thumb::before {
@@ -59,7 +58,9 @@ input[type="range"] {
     margin-top: -1/2*@thumb-height;
   }
   
-  &:focus::-webkit-slider-thumb {    
+  &:focus::-webkit-slider-thumb,
+  &:active::-webkit-slider-thumb{   
+    -webkit-appearance: none;
     box-shadow: @thumb-focused-shadow;
     -webkit-box-shadow: @thumb-focused-shadow;
   }
@@ -102,7 +103,7 @@ input[type="range"] {
     background: transparent;
     border-color: transparent;
     border-style: solid;
-    border-width: @thumb-width 0;
+    border-width: (@thumb-width + @thumb-focused-shadow-height/2) 0;
     color: transparent;
   }
 
@@ -138,4 +139,13 @@ input[type="range"] {
     box-shadow: @thumb-focused-shadow;
     -ms-box-shadow: @thumb-focused-shadow;
   }  
+}
+
+/* hack for webkit browsers */
+@media screen and (-webkit-min-device-pixel-ratio:0)
+{
+  input[type="range"] {
+    height: 2px;  
+    background: @track-color;
+  }
 }
