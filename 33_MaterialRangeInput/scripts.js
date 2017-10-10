@@ -1,33 +1,43 @@
-// https://material.io/guidelines/components/sliders.html#
-// https://material.io/color/#!/?view.left=0&view.right=0&primary.color=F4511E
-// https://material.io/guidelines/style/color.html#color-color-tool
-// https://stackoverflow.com/questions/6339480/how-to-detect-if-a-browser-is-chrome-using-jquery
-// https://www.templatemonster.com/help/how-to-create-browser-specific-css-rules-styles.html
-// https://stackoverflow.com/questions/19291985/put-browser-specific-condition-in-css-selector
-
-(function($) {  
+(function($) {
   var $range = $('input[type="range"]');
   var trackColor = "#b5b5b6";
-  var thumbColor = "#ef6c00"; 
-  
-  setRangeColor($range);
-  
-  $range.change(function () {
-    var $this = $(this);    
+  var thumbColor = "#ef6c00";
+  var zeroClassName = "zero";
+
+  $.each($range, function(k, v) {
+    setRangeColor($(v));
+  });
+
+  $range.change(function() {
+    var $this = $(this);
     setRangeColor($this);
-  }); 
-  
-  function setRangeColor($element) {
-    var min = $element.attr('min') || 0;
-    var max = $element.attr('max') || 100;
+  });  
+
+  function setRangeColor($element) {    
+    var value = getValue($element);
     
-    var value = ($element.val() - min) / (max - min);  
+    if(value == 0) {
+      $element.addClass(zeroClassName);
+    } else {
+      $element.removeClass(zeroClassName);
+    }
     
-    $element.css('background',
-                '-webkit-linear-gradient(left, ' + thumbColor + ' 0%, '+ 
-                thumbColor + ' ' + value*100 + '%, ' + 
-                trackColor + ' ' + value*100 + '%, ' + trackColor + ' 100%)');   
+    var isDisabled = $element.attr("disabled");
+    
+    if(isDisabled) {
+      return;
+    }
+
+    $element.css("background", getTrackBackground(value));
   }
   
+  function getValue($element) {
+    var min = $element.attr("min") || 0;
+    var max = $element.attr("max") || 100;
+    return ($element.val() - min) / (max - min);
+  }
+  
+  function getTrackBackground(value) {
+    return `-webkit-linear-gradient(left, ${thumbColor} 0%, ${thumbColor} ${value * 100}%, ${trackColor} ${value * 100}%, ${trackColor} 100%)`;
+  }
 })($);
-
