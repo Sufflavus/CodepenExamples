@@ -3,7 +3,8 @@
   var trackColor = "#b5b5b6";
   var thumbColor = "#ef6c00";
   var zeroClassName = "zero";
-
+  var isWebkit = 'WebkitAppearance' in document.documentElement.style;
+  
   $.each($range, function(k, v) {
     setRangeColor($(v));
   });
@@ -28,7 +29,9 @@
       return;
     }
 
-    $element.css("background", getTrackBackground(value));
+    if(isWebkit) {
+      $element.css("background", getTrackBackground(value));
+    }    
   }
   
   function getValue($element) {
