@@ -378,6 +378,24 @@
         "link": "http://www.ark-l-m.fi/projects/education/ict-building-turku-finland/",
         "imageCopyright": "Image from  http://www.ark-l-m.fi/"
       }
+    }, {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.963471099999992, 
+          60.20497469999999
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "address": "Gustaf Hällströmin katu 2B, 00014 University of Helsinki, Finland",
+        "name": "Exactum, University of Helsinki",
+        "architect": "Lahdelma & Mahlamäki Architects",
+        "year": "2004",
+        "imageUrl": "//cdn.rawgit.com/Sufflavus/CodepenExamples/master/31_ArchitecturalPearls/images/020_Exactum.jpg",
+        "link": "http://www.ark-l-m.fi/projects/education/exactum-university-of-helsinki-helsinki-finland/",
+        "imageCopyright": "Image from  http://www.ark-l-m.fi/"
+      }
     }
   ]
 }
