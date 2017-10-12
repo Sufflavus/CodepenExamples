@@ -396,6 +396,24 @@
         "link": "http://www.ark-l-m.fi/projects/education/exactum-university-of-helsinki-helsinki-finland/",
         "imageCopyright": "Image from  http://www.ark-l-m.fi/"
       }
+    }, {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          25.72803669999996, 
+          62.2371916
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "address": "Pitkäkatu 8, 40700 Jyväskylä, Finland",
+        "name": "Jyväskylä Primary School",
+        "architect": "Lahdelma & Mahlamäki Architects",
+        "year": "2002",
+        "imageUrl": "//cdn.rawgit.com/Sufflavus/CodepenExamples/master/31_ArchitecturalPearls/images/021_Primary_School.jpg",
+        "link": "http://www.ark-l-m.fi/projects/education/jyvaskyla-primary-school-jyvaskyla-finland/",
+        "imageCopyright": "Image from  http://www.ark-l-m.fi/"
+      }
     }
   ]
 }
