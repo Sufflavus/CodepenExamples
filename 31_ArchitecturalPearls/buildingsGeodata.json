@@ -414,6 +414,24 @@
         "link": "http://www.ark-l-m.fi/projects/education/jyvaskyla-primary-school-jyvaskyla-finland/",
         "imageCopyright": "Image from  http://www.ark-l-m.fi/"
       }
+    }, {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.96210110000004, 
+          60.2056932
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "address": "Väinö Auerinkatu 11, Helsinki, Finland",
+        "name": "Physicum, University of Helsinki",
+        "architect": "Lahdelma & Mahlamäki Architects",
+        "year": "2001",
+        "imageUrl": "//cdn.rawgit.com/Sufflavus/CodepenExamples/master/31_ArchitecturalPearls/images/021_Primary_School.jpg",
+        "link": "http://www.ark-l-m.fi/projects/education/physicum-university-of-helsinki-helsinki-finland/",
+        "imageCopyright": "Image from  http://www.ark-l-m.fi/"
+      }
     }
   ]
 }
