@@ -1,6 +1,6 @@
 <div class="page">
   <div class="introduction">
-    The <a target="_blank" href="https://www.w3.org/wiki/HTML/Elements/input/range">HTML5 range input</a> element is styled according to the material <a target="_blank" href="https://material.io/guidelines/components/sliders.html">Slider spec</a>. Tested in IE, Opera, FF, Chrome, Safari. Unfortunately, so far (October 2017) there are no ways to fully style this element for webkit browsers (Chrome, Opera, Safari). Because of this, there is a JS (jQuery) code used for styling.
+    The <a target="_blank" href="https://www.w3.org/wiki/HTML/Elements/input/range">HTML5 range input</a> element is styled according to the material <a target="_blank" href="https://material.io/guidelines/components/sliders.html">Slider spec</a>. Tested in Opera, FF, Chrome, Safari. Focused state looks differently in IE.
   </div>
   
   <h3>Normal</h3>

@@ -1,15 +1,20 @@
 @page-background: #F5F5F6;
 
+@disabled-color: #000000;
+@disabled-opacity: 0.26;
+@off-opacity: 0.26;
+@off-focused-opacity: 0.38;
+
 @track-width: 500px;
 @track-height: 0;
 @track-border-width: 1px;
-@track-color: #b5b5b6;
+@track-color: #9E9E9E;
 
 @thumb-width: 16px;
 @thumb-height: @thumb-width;
 @thumb-disabled-width: 0.8*@thumb-width;
 @thumb-disabled-height: @thumb-disabled-width;
-@thumb-color: #ef6c00;
+@thumb-color: #FF9800;
 @thumb-focused-color: rgba(239,108,0,0.38);
 @thumb-focused-shadow-height: 10px;
 @thumb-focused-shadow: 0px 0px 0px @thumb-focused-shadow-height @thumb-focused-color;
@@ -214,8 +219,8 @@ input[type="range"] {
   } 
   
   &:focus:enabled::-ms-thumb {
-    box-shadow: @thumb-focused-shadow;
-    -ms-box-shadow: @thumb-focused-shadow;
+    /*box-shadow: @thumb-focused-shadow;
+    -ms-box-shadow: @thumb-focused-shadow;*/
   }  
   
   &:disabled::-ms-fill-lower {
