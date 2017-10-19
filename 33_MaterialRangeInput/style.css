@@ -1,24 +1,28 @@
 @page-background: #F5F5F6;
 
-@disabled-color: #000000;
-@disabled-opacity: 0.26;
-@off-opacity: 0.26;
-@off-focused-opacity: 0.38;
-
 @track-width: 500px;
 @track-height: 0;
 @track-border-width: 1px;
-@track-color: #9E9E9E;
+@track-color: #9E9E9E; // base color 500
 
-@thumb-width: 16px;
+@track-disabled-color: #B6B6B6; // #000000, Opacity 26%
+@track-off-color: #B6B6B6; // #000000, Opacity 26%
+@track-off-focused-color: #9A9A9A; // #000000, Opacity 38%
+
+@thumb-width: 12px;
 @thumb-height: @thumb-width;
-@thumb-disabled-width: 0.8*@thumb-width;
+@thumb-disabled-width: 0.7*@thumb-width;
 @thumb-disabled-height: @thumb-disabled-width;
-@thumb-color: #FF9800;
-@thumb-focused-color: rgba(239,108,0,0.38);
+@thumb-color: #FF9800; // base color 500
+@thumb-focused-color: #FBD499; // base color 500, Opacity 38%
 @thumb-focused-shadow-height: 10px;
-@thumb-focused-shadow: 0px 0px 0px @thumb-focused-shadow-height @thumb-focused-color;
+@thumb-focused-shadow: 0px 0px 0px @thumb-focused-shadow-height rgba(255,152,0,0.38);
 @thumb-radius: 50%;
+
+@thumb-disabled-color: @track-disabled-color;
+@thumb-off-color: @track-off-color;
+@thumb-off-focused-color: @track-off-focused-color;
+@thumb-off-focused-shadow: 0px 0px 0px @thumb-focused-shadow-height rgba(0,0,0,0.38);
 
 html, body {
   margin: 0;
@@ -89,9 +93,9 @@ input[type="range"] {
     cursor: pointer;    
   }
   
-  &.zero::-webkit-slider-thumb {       
+  &.off::-webkit-slider-thumb {       
     background: @page-background;
-    border: 2px @thumb-color solid;
+    border: 2px @thumb-off-color solid;
   }   
   
   &:focus:enabled::-webkit-slider-thumb,
@@ -100,26 +104,42 @@ input[type="range"] {
     box-shadow: @thumb-focused-shadow;
     -webkit-box-shadow: @thumb-focused-shadow;
   }
+  
+  &.off:focus:enabled::-webkit-slider-thumb,
+  &.off:active:enabled::-webkit-slider-thumb {  
+    border-color: @thumb-off-focused-color;    
+    box-shadow: @thumb-off-focused-shadow;
+    -webkit-box-shadow: @thumb-off-focused-shadow;
+  }  
+  
+  &.off:focus:enabled::-webkit-slider-runnable-track {
+    background: @track-off-focused-color;
+  }
 
   &:focus::-webkit-slider-runnable-track {
     background: @track-color;
   }
   
+  &:disabled::-webkit-slider-runnable-track {
+    background: @track-disabled-color;
+  }
+  
   &:disabled::-webkit-slider-thumb::before {
-    background: @track-color;
+    background: @track-disabled-color;
   }
   
   &:disabled::-webkit-slider-thumb {
     margin-top: -1/2*@thumb-disabled-height;
     width: @thumb-disabled-width;
     height: @thumb-disabled-height;    
-    background: @track-color;
-    border: 2px @page-background solid;
+    background: @thumb-disabled-color;
+    border: 2px @thumb-disabled-color solid;    
+    box-shadow: 0px 0px 0px 2px @page-background;
+    -webkit-box-shadow: 0px 0px 0px 2px @thumb-focused-shadow-height @page-background;
   }
   
-  &.zero:disabled::-webkit-slider-thumb {       
-    background: @page-background;
-    border: 2px @track-color solid;
+  &.off:disabled::-webkit-slider-thumb {  
+    background: @page-background;    
   }
 
   &::-moz-range-track {
@@ -145,7 +165,7 @@ input[type="range"] {
     cursor: pointer;
   }
   
-  &.zero::-moz-range-thumb {       
+  &.off::-moz-range-thumb {       
     background: @page-background;
     border: 2px @thumb-color solid;
   }   
@@ -166,7 +186,7 @@ input[type="range"] {
     border: 2px @page-background solid;
   }
   
-  &.zero:disabled::-moz-range-thumb {       
+  &.off:disabled::-moz-range-thumb {       
     background: @page-background;
     border: 2px @track-color solid;
   }
@@ -234,7 +254,7 @@ input[type="range"] {
     border: 2px @page-background solid;
   }
     
-  &.zero:disabled::-ms-thumb {       
+  &.off:disabled::-ms-thumb {       
     background: @page-background;
     border: 2px @track-color solid;
   }
@@ -245,5 +265,17 @@ input[type="range"] {
   input[type="range"] {
     height: @track-border-width*2;  
     background: @track-color;
+    
+    &:disabled {
+      background: @track-disabled-color;
+    }
+    
+    &.zero:enabled {
+      background: @track-off-color;
+    }
+    
+    &.zero:focus {
+      background: @track-off-focused-color;
+    }
   }
 }
