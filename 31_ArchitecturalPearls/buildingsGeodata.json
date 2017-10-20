@@ -424,12 +424,30 @@
       },
       "type": "Feature",
       "properties": {
-        "address": "Väinö Auerinkatu 11, Helsinki, Finland",
+        "address": "Väinö Auerinkatu 11, 00560 Helsinki, Finland",
         "name": "Physicum, University of Helsinki",
         "architect": "Lahdelma & Mahlamäki Architects",
         "year": "2001",
         "imageUrl": "//cdn.rawgit.com/Sufflavus/CodepenExamples/master/31_ArchitecturalPearls/images/022_Physicum.jpg",
         "link": "http://www.ark-l-m.fi/projects/education/physicum-university-of-helsinki-helsinki-finland/",
+        "imageCopyright": "Image from  http://www.ark-l-m.fi/"
+      }
+    }, {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.99891930000001, 
+          60.24938659999999
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "address": "Kenttäpolku 3, 00700 Helsinki, Finland",
+        "name": "Soininen Primary School (now Pukinmäenkaari Comprehensive School)",
+        "architect": "Lahdelma & Mahlamäki Architects",
+        "year": "1997",
+        "imageUrl": "//cdn.rawgit.com/Sufflavus/CodepenExamples/master/31_ArchitecturalPearls/images/023_SoininenPrimarySchool.jpg",
+        "link": "http://www.ark-l-m.fi/projects/education/soininen-primary-school-helsinki-finland/",
         "imageCopyright": "Image from  http://www.ark-l-m.fi/"
       }
     }
