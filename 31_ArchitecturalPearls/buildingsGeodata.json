@@ -450,6 +450,24 @@
         "link": "http://www.ark-l-m.fi/projects/education/soininen-primary-school-helsinki-finland/",
         "imageCopyright": "Image from  http://www.ark-l-m.fi/"
       }
+    }, {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.7825922, 
+          61.4031953
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "address": "Korkeakoulunkatu 10, 33720 Tampere, Finland",
+        "name": "Festia, Tampere University of Technology",
+        "architect": "Toivo Korhonen, Lahdelma & Mahlamäki Architects",
+        "year": "1997",
+        "imageUrl": "//cdn.rawgit.com/Sufflavus/CodepenExamples/master/31_ArchitecturalPearls/images/024_Festia.jpg",
+        "link": "http://www.ark-l-m.fi/projects/education/soininen-primary-school-helsinki-finland/",
+        "imageCopyright": "Image from  http://www.ark-l-m.fi/"
+      }
     }
   ]
 }
