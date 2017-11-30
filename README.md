@@ -279,3 +279,13 @@ The task is:
 - Icons for buttons from [icons8](https://icons8.com/)
 
 ![32_Maailma](https://github.com/Sufflavus/CodepenExamples/blob/master/images/32_Maailma.png)
+
+## 33. Material range input (SeekBar)
+
+[Material range input](https://codepen.io/sufflavus/full/gGvpqx/) is based on 
+
+- [jQuery 3.2.1](http://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js)
+- [Material design slider spec](https://material.io/guidelines/components/sliders.html)
+- [Material design color spec](https://material.io/guidelines/style/color.html)
+
+![33_MaterialRangeInput](https://github.com/Sufflavus/CodepenExamples/blob/master/images/33_MaterialRangeInput.png)
