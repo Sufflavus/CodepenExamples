@@ -270,6 +270,13 @@ The task is:
 
 ![30_RadialChart](https://github.com/Sufflavus/CodepenExamples/blob/master/images/30_RadialChart.png)
 
+## 31. Architectural Pearls
+
+[Architectural Pearls](https://codepen.io/sufflavus/full/QMYmjv/) is based on 
+
+- [Google Maps JavaScript API](https://developers.google.com/maps/documentation/javascript/)
+- Minimalistic modern buildings that were designed by [Alvar Aalto](https://en.wikipedia.org/wiki/Alvar_Aalto) and [Lahdelma & Mahlamäki Architects](http://www.ark-l-m.fi/)
+
 ## 32. MaailmA
 
 [MaailmA](https://codepen.io/sufflavus/full/rzRQaG/) is based on 

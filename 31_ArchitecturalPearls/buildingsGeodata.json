@@ -3,7 +3,7 @@
   "features": [ {
       "geometry": {
         "type": "Point",
-        "coordinates": [           
+        "coordinates": [
           28.74744959999998,
           60.70897549999999
         ]
@@ -358,7 +358,7 @@
         "year": "2006",
         "imageUrl": "//cdn.rawgit.com/Sufflavus/CodepenExamples/master/31_ArchitecturalPearls/images/018_JoensuuSchool.jpg",
         "link": "http://www.ark-l-m.fi/projects/education/joensuu-primary-school-joensuu-finland/",
-        "imageCopyright": "Image from  http://www.ark-l-m.fi/"
+        "imageCopyright": "Image from http://www.ark-l-m.fi/"
       }
     }, {
       "geometry": {
@@ -376,7 +376,7 @@
         "year": "2006",
         "imageUrl": "//cdn.rawgit.com/Sufflavus/CodepenExamples/master/31_ArchitecturalPearls/images/019_IctBuilding.jpg",
         "link": "http://www.ark-l-m.fi/projects/education/ict-building-turku-finland/",
-        "imageCopyright": "Image from  http://www.ark-l-m.fi/"
+        "imageCopyright": "Image from http://www.ark-l-m.fi/"
       }
     }, {
       "geometry": {
@@ -394,7 +394,7 @@
         "year": "2004",
         "imageUrl": "//cdn.rawgit.com/Sufflavus/CodepenExamples/master/31_ArchitecturalPearls/images/020_Exactum.jpg",
         "link": "http://www.ark-l-m.fi/projects/education/exactum-university-of-helsinki-helsinki-finland/",
-        "imageCopyright": "Image from  http://www.ark-l-m.fi/"
+        "imageCopyright": "Image from http://www.ark-l-m.fi/"
       }
     }, {
       "geometry": {
@@ -412,7 +412,7 @@
         "year": "2002",
         "imageUrl": "//cdn.rawgit.com/Sufflavus/CodepenExamples/master/31_ArchitecturalPearls/images/021_Primary_School.jpg",
         "link": "http://www.ark-l-m.fi/projects/education/jyvaskyla-primary-school-jyvaskyla-finland/",
-        "imageCopyright": "Image from  http://www.ark-l-m.fi/"
+        "imageCopyright": "Image from http://www.ark-l-m.fi/"
       }
     }, {
       "geometry": {
@@ -430,7 +430,7 @@
         "year": "2001",
         "imageUrl": "//cdn.rawgit.com/Sufflavus/CodepenExamples/master/31_ArchitecturalPearls/images/022_Physicum.jpg",
         "link": "http://www.ark-l-m.fi/projects/education/physicum-university-of-helsinki-helsinki-finland/",
-        "imageCopyright": "Image from  http://www.ark-l-m.fi/"
+        "imageCopyright": "Image from http://www.ark-l-m.fi/"
       }
     }, {
       "geometry": {
@@ -448,7 +448,7 @@
         "year": "1997",
         "imageUrl": "//cdn.rawgit.com/Sufflavus/CodepenExamples/master/31_ArchitecturalPearls/images/023_SoininenPrimarySchool.jpg",
         "link": "http://www.ark-l-m.fi/projects/education/soininen-primary-school-helsinki-finland/",
-        "imageCopyright": "Image from  http://www.ark-l-m.fi/"
+        "imageCopyright": "Image from http://www.ark-l-m.fi/"
       }
     }, {
       "geometry": {
@@ -466,7 +466,25 @@
         "year": "1995",
         "imageUrl": "//cdn.rawgit.com/Sufflavus/CodepenExamples/master/31_ArchitecturalPearls/images/024_Festia.jpg",
         "link": "http://www.ark-l-m.fi/projects/education/festia-tampere-university-of-technology-iv-phase-tampere-finland/",
-        "imageCopyright": "Image from  http://www.ark-l-m.fi/"
+        "imageCopyright": "Image from http://www.ark-l-m.fi/"
+      }
+    }, {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.907195300000012, 
+          60.19071099999999
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "address": "Haartmaninkatu 4, 00290 Helsinki, Finland",
+        "name": "Meilahti Hospital Area, New Entrance Lobby",
+        "architect": "Lahdelma & Mahlamäki Architects",
+        "year": "2010",
+        "imageUrl": "//cdn.rawgit.com/Sufflavus/CodepenExamples/master/31_ArchitecturalPearls/images/024_Festia.jpg",
+        "link": "http://www.ark-l-m.fi/projects/public-service/meilahti-hospital-area-new-entrance-lobby-helsinki-finland/",
+        "imageCopyright": "Image from http://www.ark-l-m.fi/"
       }
     }
   ]
