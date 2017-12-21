@@ -296,3 +296,11 @@ The task is:
 - [Material design color spec](https://material.io/guidelines/style/color.html)
 
 ![33_MaterialRangeInput](https://github.com/Sufflavus/CodepenExamples/blob/master/images/33_MaterialRangeInput.png)
+
+## 34. Div that fills a remaining horizontal space
+
+[Div that fills a remaining horizontal space](https://codepen.io/sufflavus/full/opLJJa/) is based on 
+
+- [CSS](https://www.w3.org/Style/CSS/)
+
+![33_MaterialRangeInput](https://github.com/Sufflavus/CodepenExamples/blob/master/images/34_Div.png)

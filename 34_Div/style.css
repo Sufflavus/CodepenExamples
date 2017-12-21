@@ -1,0 +1,43 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  padding: 20px;
+  font: 16px Open Sans, sans-serif;
+}
+
+.block {
+  width: 100%; 
+  color: #ffffff;
+}
+
+.clearfix {
+  clear: both;
+  margin: 20px;
+}
+
+.block__element_flexible {
+  width: auto;
+  overflow: hidden;  
+  height: 100px;
+  padding: 20px;
+  background: #4EB34F;  
+}
+
+.block__element_fixed {
+  width: 200px;
+  height: 100px;  
+  padding: 20px;
+  background: #292929; 
+}
+
+.block__element_fixed-left {
+  float: left;  
+}
+
+.block__element_fixed-right {
+  float: right;  
+}

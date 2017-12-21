@@ -1,0 +1,19 @@
+<div class="block">
+  <div class="block__element_fixed block__element_fixed-left">I am a div with fixed width. I should always be on the left side.</div>
+  <div class="block__element_flexible">I am a div with flexible width. I should fill the remaining horisontal space.</div>
+</div>
+
+<div class="clearfix"></div>
+
+<div class="block">
+  <div class="block__element_fixed block__element_fixed-right">I am a div with fixed width. I should always be on the right side.</div>
+  <div class="block__element_flexible">I am a div with flexible width. I should fill the remaining horisontal space.</div>
+</div>
+
+<div class="clearfix"></div>
+
+<div class="block">
+  <div class="block__element_fixed block__element_fixed-left">I am a div with fixed width. I should always be on the left side.</div>
+  <div class="block__element_fixed block__element_fixed-right">I am a div with fixed width. I should always be on the right side.</div>
+  <div class="block__element_flexible">I am a div with flexible width. I should fill the remaining horisontal space.</div>
+</div>
