@@ -303,7 +303,7 @@ The task is:
 
 - [CSS](https://www.w3.org/Style/CSS/)
 
-![33_MaterialRangeInput](//cdn.rawgit.com/Sufflavus/CodepenExamples/master/images/34_Div.png)
+![34_Div](https://cdn.rawgit.com/Sufflavus/CodepenExamples/master/images/34_Div.png)
 
 ## 35. Ring diagram
 
@@ -312,4 +312,4 @@ The task is:
 - [CSS](https://www.w3.org/Style/CSS/)
 - [Less](http://lesscss.org/)
 
-![35_RingDiagram](//cdn.rawgit.com/Sufflavus/CodepenExamples/master/images/35_RingDiagram.png)
+![35_RingDiagram](https://cdn.rawgit.com/Sufflavus/CodepenExamples/master/images/35_RingDiagram.png)
