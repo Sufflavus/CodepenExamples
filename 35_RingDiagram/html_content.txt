@@ -1,0 +1,54 @@
+
+<!-- 15% => 15/100*360+90 => rotate ring__progress_start by 144deg -->
+<div class="ring ring_less-than-50">
+    <div class="ring__progress ring__progress_start" style="transform: rotate(144deg)">      
+    </div>
+    <div class="ring__progress ring__progress_end">      
+    </div>
+  <div class="ring__value">15%</div>
+</div>
+
+<!-- 33% => 33/100*360+90 => rotate ring__progress_start by 208.8deg -->
+<div class="ring ring_less-than-50">
+    <div class="ring__progress ring__progress_start" style="transform: rotate(208.8deg)">      
+    </div>
+    <div class="ring__progress ring__progress_end">      
+    </div>
+  <div class="ring__value">33%</div>
+</div>
+
+<!-- 50% => 50/100*360+90 => rotate ring__progress_start by 270deg -->
+<div class="ring ring_less-than-50">
+    <div class="ring__progress ring__progress_start" style="transform: rotate(270deg)">      
+    </div>
+    <div class="ring__progress ring__progress_end">      
+    </div>
+  <div class="ring__value">50%</div>
+</div>
+
+<!-- 72% => 72/100*360 => rotate ring__progress_end by 259.2deg -->
+<div class="ring ring_more-than-50">
+    <div class="ring__progress ring__progress_start">      
+    </div>
+    <div class="ring__progress ring__progress_end" style="transform: rotate(259.2deg);">      
+    </div>
+    <div class="ring__value">72%</div>
+</div>
+
+<!-- 85% => 85/100*360 => rotate ring__progress_end by 306deg -->
+<div class="ring ring_more-than-50">
+    <div class="ring__progress ring__progress_start">      
+    </div>
+    <div class="ring__progress ring__progress_end" style="transform: rotate(306deg);">      
+    </div>
+    <div class="ring__value">85%</div>
+</div>
+
+<!-- 100% => 100/100*360 => rotate ring__progress_end by 360deg -->
+<div class="ring ring_more-than-50">
+    <div class="ring__progress ring__progress_start">      
+    </div>
+    <div class="ring__progress ring__progress_end" style="transform: rotate(360deg);">      
+    </div>
+    <div class="ring__value">100%</div>
+</div>

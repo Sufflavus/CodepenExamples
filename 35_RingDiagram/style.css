@@ -1,0 +1,73 @@
+@width: 100px;
+@height: @width;
+@ring-width: 10px;
+@ring-base-color: #F2F2F2;
+@ring-progress-color: #85B9E5;
+@font-color: #5EA1DB;
+@font-size: 30px;
+
+.ring {
+  position: relative; 
+  float: left;
+  margin: 20px;
+  width: @width;
+  height: @height;    
+  border: @ring-width solid;  
+  border-radius: 50%;
+  color: @font-color;
+}
+
+.ring_less-than-50 {
+  border-color: @ring-progress-color;
+  
+  .ring__progress {
+    border-color: @ring-base-color;
+  }
+  
+  .ring__progress_end {
+    transform: rotate(0deg);
+  }
+}
+
+.ring_more-than-50 {
+  border-color: @ring-base-color;  
+  
+  .ring__progress {
+    border-color: @ring-progress-color;
+  }
+  
+  .ring__progress_start {
+    transform: rotate(90deg);
+  }
+}
+
+.ring__progress {
+  position: absolute;
+  top: -1*@ring-width;
+  left: -1*@ring-width;
+  width: 100%;
+  height: 100%;
+  border: @ring-width solid; 
+  border-radius: 100%;  
+}
+
+.ring__progress_start {  
+  clip: rect(0 @width+2*@ring-width @width/2+@ring-width 0);
+}
+
+.ring__progress_end {
+  clip: rect(0 @width/2+@ring-width @width+2*@ring-width 0);
+}
+
+.ring__value {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;  
+  line-height: @height;  
+  font-size: @font-size;   
+  font-family: sans-serif; 
+  text-align: center;
+  vertical-align: middle;
+}
