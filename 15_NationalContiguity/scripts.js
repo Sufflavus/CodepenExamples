@@ -5,7 +5,7 @@
   var chartWidth = 1250;
   var chartHeight = 500;
            
-  var dataUrl = "//raw.githubusercontent.com/Sufflavus/CodepenExamples/master/15_NationalContiguity/countries.json";
+  var dataUrl = "//cdn.rawgit.com/Sufflavus/CodepenExamples/master/15_NationalContiguity/countries.json";
   
   // chart container
   var svg = d3.select("div.content")
