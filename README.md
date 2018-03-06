@@ -313,3 +313,21 @@ The task is:
 - [Less](http://lesscss.org/)
 
 ![35_RingDiagram](https://cdn.rawgit.com/Sufflavus/CodepenExamples/master/images/35_RingDiagram.png)
+
+## 36. Koch Curve
+
+[Koch Curve](https://codepen.io/sufflavus/full/QQjepZ/) is based on 
+
+- [Mathematical Koch Curve](https://de.wikipedia.org/wiki/Koch-Kurve)
+- [Cd3.js](https://cdnjs.cloudflare.com/ajax/libs/d3/4.13.0/d3.min.js)
+
+![36_KochCurve](https://cdn.rawgit.com/Sufflavus/CodepenExamples/master/images/36_KochCurve.png)
+
+## 37. Koch snow flake
+
+[Koch snow flake](https://codepen.io/sufflavus/full/wybKzP/) is based on 
+
+- [Mathematical Koch snowflake](https://en.wikipedia.org/wiki/Koch_snowflake)
+- [Cd3.js](https://cdnjs.cloudflare.com/ajax/libs/d3/4.13.0/d3.min.js)
+
+![36_KochCurve](https://cdn.rawgit.com/Sufflavus/CodepenExamples/master/images/37_KochSnowFlake.png)

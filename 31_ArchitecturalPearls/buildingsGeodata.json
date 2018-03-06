@@ -482,8 +482,26 @@
         "name": "Meilahti Hospital Area, New Entrance Lobby",
         "architect": "Lahdelma & Mahlamäki Architects",
         "year": "2010",
-        "imageUrl": "//cdn.rawgit.com/Sufflavus/CodepenExamples/master/31_ArchitecturalPearls/images/024_Festia.jpg",
+        "imageUrl": "//cdn.rawgit.com/Sufflavus/CodepenExamples/master/31_ArchitecturalPearls/images/025_MeilahtiHospital.jpg",
         "link": "http://www.ark-l-m.fi/projects/public-service/meilahti-hospital-area-new-entrance-lobby-helsinki-finland/",
+        "imageCopyright": "Image from http://www.ark-l-m.fi/"
+      }
+    }, {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          25.021731799999998, 
+          60.2278989
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "address": "Mustialankatu 3, 00790 Helsinki, Finland",
+        "name": "Evira, Finnish Food Safety Authority",
+        "architect": "Lahdelma & Mahlamäki Architects",
+        "year": "2006",
+        "imageUrl": "//cdn.rawgit.com/Sufflavus/CodepenExamples/master/31_ArchitecturalPearls/images/026_Evira.jpg",
+        "link": "http://www.ark-l-m.fi/projects/public-service/evira-finnish-food-safety-authority-helsinki-finland/",
         "imageCopyright": "Image from http://www.ark-l-m.fi/"
       }
     }
