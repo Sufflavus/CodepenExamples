@@ -1,0 +1,14 @@
+Helpfull links:
+1. The Algorithmic Beauty of Plants by Przemyslaw Prusinkiewicz and Aristid Lindenmaye
+    http://algorithmicbotany.org/papers/abop/abop.pdf
+2. L-system
+    https://en.wikipedia.org/wiki/L-system
+3. Generating artificial plants using stochastic Lindenmayer systems with d3.js
+    https://cartesianfaith.com/2014/01/18/generating-artificial-plants-using-stochastic-lindenmayer-systems-with-d3-js/
+4. SVG Paths and D3.js
+    https://www.dashingd3js.com/svg-paths-and-d3js
+5. The Nature of Code by Daniel Shiffman. Chapter 8 - Fractals
+    http://natureofcode.com/book/chapter-8-fractals/
+6. Drawing an SVG path using D3.js
+    http://knowledgestockpile.blogspot.fi/2012/01/drawing-svg-path-using-d3js.html
+ 

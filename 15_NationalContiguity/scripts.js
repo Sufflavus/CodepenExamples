@@ -16,7 +16,7 @@
     })
     .append("g");
   
-  svg.append("text")        
+  svg.append("text")
     .attr({
       class: "title",
       x: canvasWidth/2,
@@ -42,11 +42,11 @@
 
     var chartTop = 200;
 
-    var chart = svg.append("g")        
+    var chart = svg.append("g")
       .attr({
         width: chartWidth,
         height: chartHeight,
-        transform: "translate(0, " + chartTop + ")"          
+        transform: "translate(0, " + chartTop + ")"
       });
 
     var link = chart.selectAll(".link")
@@ -78,7 +78,7 @@
 
       node    
         .style("top", function(d) {return chartTop + d.y + "px"})
-        .style("left", function(d) {return d.x + "px"});         
+        .style("left", function(d) {return d.x + "px"});
     });         
   });    
 })();

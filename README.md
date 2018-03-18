@@ -277,6 +277,8 @@ The task is:
 - [Google Maps JavaScript API](https://developers.google.com/maps/documentation/javascript/)
 - Minimalistic modern buildings that were designed by [Alvar Aalto](https://en.wikipedia.org/wiki/Alvar_Aalto) and [Lahdelma & Mahlamäki Architects](http://www.ark-l-m.fi/)
 
+![31_ArchitecturalPearls](https://cdn.rawgit.com/Sufflavus/CodepenExamples/master/images/31_ArchitecturalPearls.png)
+
 ## 32. MaailmA
 
 [MaailmA](https://codepen.io/sufflavus/full/rzRQaG/) is based on 
@@ -331,3 +333,16 @@ The task is:
 - [Cd3.js](https://cdnjs.cloudflare.com/ajax/libs/d3/4.13.0/d3.min.js)
 
 ![36_KochCurve](https://cdn.rawgit.com/Sufflavus/CodepenExamples/master/images/37_KochSnowFlake.png)
+
+## 38. LSystem Trees
+
+[L-System Trees](https://codepen.io/sufflavus/full/jzOOyr/) is based on 
+
+- [L-system](https://en.wikipedia.org/wiki/L-system)
+- [The Algorithmic Beauty of Plants](http://algorithmicbotany.org/papers/abop/abop.pdf) by Przemyslaw Prusinkiewicz and Aristid Lindenmaye
+- [Cd3.js](https://cdnjs.cloudflare.com/ajax/libs/d3/4.13.0/d3.min.js)
+
+![38_LSystemTrees_1](https://cdn.rawgit.com/Sufflavus/CodepenExamples/master/images/38_LSystemTrees_1.png)
+![38_LSystemTrees_1](https://cdn.rawgit.com/Sufflavus/CodepenExamples/master/images/38_LSystemTrees_2.png)
+![38_LSystemTrees_1](https://cdn.rawgit.com/Sufflavus/CodepenExamples/master/images/38_LSystemTrees_3.png)
+![38_LSystemTrees_1](https://cdn.rawgit.com/Sufflavus/CodepenExamples/master/images/38_LSystemTrees_4.png)
